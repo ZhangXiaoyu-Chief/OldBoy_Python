@@ -19,9 +19,7 @@ from model.customer import customer
 
 
 
-goods = goods(conf.goods_file)
-#print(goods.get_list())
-customer = customer(conf.customer_file)
+
 
 def alignment(str1, space, align = 'left', chars = None):
         if chars == None:
@@ -41,7 +39,7 @@ def alignment(str1, space, align = 'left', chars = None):
 
 def print_main_menu():
     MAIN_MENU = ['血拼','查看购物车','退出']
-    print('欢迎%s，余额为%s。祝您购物愉快\n------------------------------------' %(current_user_info['username'], current_user_info['balance']))
+    print('欢迎%s，您当前余额为%s。祝您购物愉快\n------------------------------------' %(current_user_info['username'], current_user_info['balance']))
     for i in range(len(MAIN_MENU)):
         print(" %s、%s " %(str(i+1).rjust(2), MAIN_MENU[i]))
 
@@ -106,7 +104,7 @@ def shopping():
 
 def show_shopping_cart():
     total = 0
-    print(goods.get_shopping_cart())
+    #print(goods.get_shopping_cart())
     print(' %s    %s%s    %s%s\n%s' %(alignment('商品编号',8), alignment('商品名称',50), alignment('单价',8, 'right'), alignment('个数',8, 'right'), alignment('小计',8, 'right'), '-'*95))
     res = goods.get_shopping_cart()
     if len(res) != 0:
@@ -124,7 +122,7 @@ def show_shopping_cart():
 def shoppin_cart():
     while True:
         total = show_shopping_cart()
-        print(total)
+        #print(total)
         chose = input("请选择您的操作：").strip()
         if chose == 'e':
             if total != 0:
@@ -155,6 +153,9 @@ def shoppin_cart():
 
 
 if __name__ == '__main__':
+    goods = goods(conf.goods_file)
+    #print(goods.get_list())
+    customer = customer(conf.customer_file)
     print(conf.app_info)
     print('请先登录：')
     if customer.authenticate():
