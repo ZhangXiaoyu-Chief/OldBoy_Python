@@ -22,6 +22,17 @@ class MyFileHelper(object):
             print('Error: file "%s" is not exit, please check!' %self.__file)
             exit(1)
 
+    def getlist(self):
+        if os.path.exists(self.__file):
+            li = []
+            with codecs.open(self.__file, "r", "utf-8") as f:
+                for line in f.readlines():
+                    li.append(line.strip().split())
+            return li
+        else:
+            print('Error: file "%s" is not exit, please check!' %self.__file)
+            exit(1)
+
     def dict_to_file(self,dict):
         f = open(self.__file, 'w')
         for key,val in dict.items():

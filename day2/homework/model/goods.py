@@ -7,18 +7,43 @@ from utility.MyHelper import MyHelper
 class goods(object):
     def __init__(self, file):
         self.__helper = MyFileHelper(file)
-        self.__all_list = self.__helper.getdict()
+        self.__all_goods = self.__helper.getlist()
+        self.__all_goods_list = []
+        self.__shopping_cart = []
+
+        for goods in self.__helper.getlist():
+            temp_dict = {}
+            temp_dict['id'] = goods[0]
+            temp_dict['name'] = goods[1]
+            temp_dict['price'] = goods[2]
+            temp_dict['class'] = goods[3]
+            self.__all_goods_list.append(temp_dict)
 
     def getfile(self):
         return  self.__helper.getfile()
 
-    def print_goods_list(self):
-        #print(self.__all_list)
-        print('+%s+' %('-'*70))
-        print('| %s%s%s%s |' %(MyHelper.alignment('编号',8, 'left'), MyHelper.alignment('名称',40, 'left') , MyHelper.alignment('价格', 10, 'left'), MyHelper.alignment('分类',10, 'left')))
-        print('+%s+' %('-'*70))
-        province_list = sorted(self.__all_list.items(), key = lambda d:int(d[0]))
-        #print(province_list)
-        for goods in province_list:
-            print('| %s%s%s%s |' %(MyHelper.alignment(goods[0],8, 'left'),MyHelper.alignment(goods[1][0],40, 'left'), MyHelper.alignment(goods[1][1],10, 'left'),MyHelper.alignment(goods[1][2],10, 'left')))
-        print('+%s+' %('-'*70))
+    def get_all_list(self):
+        return self.__all_goods_list
+
+
+
+    def add_to_shopping_cart(self, gid):
+        temp_dict = {}
+        for one_goods in self.__shopping_cart:
+            if one_goods['id'] == gid:
+                one_goods['num'] += 1
+                one_goods['subtotal'] += int(self.__all_goods_list[int(gid)-1]['price'])
+                break
+        else:
+            temp_dict['id'] = gid
+            temp_dict['name'] = self.__all_goods_list[int(gid)-1]['name']
+            temp_dict['price'] = int(self.__all_goods_list[int(gid)-1]['price'])
+            temp_dict['num'] = 1
+            temp_dict['subtotal'] = temp_dict['price']
+            self.__shopping_cart.append(temp_dict)
+
+    def get_shopping_cart(self):
+        return self.__shopping_cart
+
+
+
