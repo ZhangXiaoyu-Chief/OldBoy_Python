@@ -11,7 +11,7 @@ class customer(object):
         self.__error_count_num = 3
         self.__balance_col_num = 4
         self.__error_count_max = conf.error_count_max
-        self.__current_customer_info ={}
+        self.__current_customer_info = {}
 
     def __get_customer_list(self):
         return self.__helper.getdict()
@@ -65,3 +65,11 @@ class customer(object):
                     self.__customer_list_to_file()
                     break
                 self.__customer_list_to_file()
+
+    def pay(self, total):
+        current_user =  self.__customer_list[self.__current_customer_info['username']]
+        balance = int(current_user[self.__balance_col_num - 1])
+        current_user[self.__balance_col_num - 1] = str(balance - total)
+        self.__current_customer_info['balance'] = current_user[self.__balance_col_num - 1]
+        self.__customer_list_to_file()
+

@@ -45,5 +45,5 @@ class goods(object):
     def get_shopping_cart(self):
         return self.__shopping_cart
 
-
-
+    def del_all_cart(self):
+        self.__shopping_cart = []
