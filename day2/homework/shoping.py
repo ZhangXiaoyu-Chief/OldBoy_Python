@@ -40,7 +40,7 @@ def alignment(str1, space, align = 'left', chars = None):
     elif align == 'right':
         str1 = chars* space +str1
     elif align == 'center':
-        str1 = chars * (space //2) +str1 + chars* (space - space // 2)
+        str1 = chars * (space // 2) +str1 + chars* (space - space // 2)
     return str1
 
 
