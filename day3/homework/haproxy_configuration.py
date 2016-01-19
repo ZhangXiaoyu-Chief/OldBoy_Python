@@ -17,4 +17,4 @@ from model.haproxy import haproxy
 
 if __name__ == '__main__':
     haproxy = haproxy('haproxy.conf')
-    print(haproxy.get_backend())
+    print(haproxy.get_backend() )
