@@ -23,12 +23,18 @@ class haproxy(object):
             line = line.strip()
 
             if line.startswith('backend'):
+
                 backend_name = line.split()[1]
                 temp_dict = {}
                 temp_dict['backend'] = backend_name
-                temp_dict['record'] = {}
+                temp_dict['record'] = []
+                backends_list.append(temp_dict)
 
-            if line.startswith(server)
+            if line.startswith('server'):
+                temp_dict['record'].append(line.split())
+
+        for li in backends_list:
+            print(li)
 
 
 
