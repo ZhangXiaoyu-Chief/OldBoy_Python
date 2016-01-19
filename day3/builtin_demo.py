@@ -19,3 +19,8 @@ if __name__ == '__main__':
     print(any([None, "", [], (), {}]))
     print(bin(10))
     print(bool([]))
+    enu = enumerate(['abc', 'def', 'ghi'])
+    print(enu)
+    for i in enu:
+        print(i)
+    print(list(enu))
