@@ -44,7 +44,11 @@ class MyFileHelper(object):
         f.close()
 
     def get_all(self):
-        f = open(self.__file, 'r')
+        try:
+            f = open(self.__file, 'r')
 
-        all_lines = f.readlines()
-        return all_lines
+            all_lines = f.readlines()
+            return all_lines
+        except Exception:
+            input('读取文件失败，按任意键退出程序')
+            exit(1)
