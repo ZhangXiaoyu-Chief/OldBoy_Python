@@ -34,21 +34,39 @@ class MyFileHelper(object):
             exit(1)
 
     def dict_to_file(self,dict):
-        f = open(self.__file, 'w')
-        for key,val in dict.items():
-            line = []
-            line.append(key)
-            line.extend(val)
-            #print(' '.join(line))
-            f.write(' '.join(line) + '\n')
-        f.close()
+        if os.path.exists(self.__file):
+            f = open(self.__file, 'w')
+            for key,val in dict.items():
+                line = []
+                line.append(key)
+                line.extend(val)
+                #print(' '.join(line))
+                f.write(' '.join(line) + '\n')
+            f.close()
+        else:
+            print('Error: file "%s" is not exit, please check!' %self.__file)
+            exit(1)
 
     def get_all(self):
-        try:
-            f = open(self.__file, 'r')
+        if os.path.exists(self.__file):
+            try:
+                with codecs.open(self.__file, "r", "utf-8") as f:
 
-            all_lines = f.readlines()
-            return all_lines
+                    all_lines = f.readlines()
+                    return all_lines
+
+            except Exception:
+                exit(1)
+        else:
+            print('Error: file "%s" is not exit, please check!' %self.__file)
+            exit(1)
+
+    def write_all(self, file_str):
+        try:
+            with codecs.open(self.__file, "w", "utf-8") as f:
+
+                f.write(file_str)
+
+                return True
         except Exception:
-            input('读取文件失败，按任意键退出程序')
             exit(1)

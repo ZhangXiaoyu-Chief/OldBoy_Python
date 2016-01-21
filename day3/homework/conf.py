@@ -8,8 +8,8 @@ app_info = '''
 | 作者: 张晓宇（65年哥）            |
 +-----------------------------------+'''
 
-main_menu = ['获取Haproxy记录', '增加Haproxy记录', '删除Haproxy记录', '将修改写入到文件', '显示修改结果']
-goods_file = "haproxy.conf"
+main_menu = ['获取Haproxy记录', '增加/修改Haproxy记录', '删除Haproxy记录', '将修改写入到文件', '显示全部backend']
+haproxy_file = "haproxy.conf"
 indentation = 4
 record_op_list = ['server','weight', 'maxconn']
 record_op = {'server':"", 'weight':0 , 'maxconn':0}
