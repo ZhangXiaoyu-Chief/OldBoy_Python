@@ -24,7 +24,7 @@ class calculator(object):
         '''
         逐一找出乘除法表达式，并计算出所有表达式的结果
         :param expression: 四则运算表达式
-        :return: 返回所有包含乘除法的四则运算表达式，也就是说只有加减法
+        :return: 返回不包含乘除法的四则运算表达式，也就是说只有加减法
         '''
         res = re.search(self.__multiplication_division_ex, expression)
 
@@ -50,8 +50,8 @@ class calculator(object):
     def __add_subtraction(self, expression):
         '''
         逐一找出加减法表达式，并计算出所有表达式的结果
-        :param expression:
-        :return:
+        :param expression: 加减法运算表达式
+        :return: 返回预算结果
         '''
         expression = expression.replace('++','+').replace('+-','-').replace('--',"+").replace('-+','-')
         res = re.search(self.__add_sub_ex, expression)
@@ -83,13 +83,18 @@ class calculator(object):
 
 
     def __four_arithmetic_operation(self, expression):
+        '''
+        进行没有括号的四则运算
+        :param expression: 四则运算表达式
+        :return: 运算结果
+        '''
         expression = self.__multiplication_division(expression)
         #print(expression)
         return self.__add_subtraction(expression)
 
     def __base_arithmetic(self, num1, operate, num2):
         '''
-        基本计算方法，计算两个数的加减乘除结果
+        基础运算方法，计算两个数的加减乘除结果
         :param num1: 第一个数
         :param operate: 计算符号
         :param num2: 第二个数
@@ -118,6 +123,11 @@ class calculator(object):
         else:
             return str(result)
     def __parentheses(self, expression):
+        '''
+        带括号的四则运算
+        :param expression: 带括号的四则运算表达式
+        :return: 返回不包含括号的四则运算表达式
+        '''
         res = re.search(self.__one_parentheses_ex, expression)
         if res:
             res = res.group()
@@ -136,5 +146,10 @@ class calculator(object):
             return expression
         pass
     def getResult(self, expression):
+        '''
+        计算带括号的四则运算的值
+        :param expression: 带括号的四则运算表达式
+        :return: 最终的结果
+        '''
         expression = self.__parentheses(expression)
         return self.__four_arithmetic_operation(expression)
