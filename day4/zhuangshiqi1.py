@@ -28,5 +28,6 @@ def tv(name, passwd):
     return 4
 def movie(name):
     print('Welcome [%s] to movie page' %name)
+
 if __name__ == '__main__':
     print(tv('zhangxiaoyu', 123))
