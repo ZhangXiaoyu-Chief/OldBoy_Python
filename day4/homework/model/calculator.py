@@ -11,12 +11,12 @@ class calculator(object):
         '''
         self.__one_parentheses_ex = '\([^\(\)]+\)' # 匹配有一个括号的，用来提取括号内的子串
         #self.__no_parentheses = '^[^\(\)]+$'
-        self.__check_no_parentheses_ex = '^[\+\-]{0,1}\d+[.]{0,1}\d*([\+\-\*\/]{1}[\+\-]{0,1}\d+[.]{0,1}\d*)+$' # 检查不加括号的表达式是否合法
+        self.__check_no_parentheses_ex = '^[\+\-]{0,1}\d+[\.]{0,1}\d*([\+\-\*\/]{1}[\+\-]{0,1}\d+[\.]{0,1}\d*)+$' # 检查不加括号的表达式是否合法
         #self.__multiplication_division = '[\+\-]*\d+[.]{0,1}\d+[\*\/]{1}[\+\-]*\d+[.]*\d+' # 匹配乘除法表达式
-        self.__multiplication_division_ex = '[\+\-]{0,1}\d+[.]{0,1}\d*[\*\/]{1}[\+\-]*\d+[.]{0,1}\d*' # 匹配乘除法表达式
+        self.__multiplication_division_ex = '[\+\-]{0,1}\d+[\.]{0,1}\d*[\*\/]{1}[\+\-]*\d+[\.]{0,1}\d*' # 匹配乘除法表达式
         #self.__add_sub = '[\+\-]*\d+[.]*\d*[\+\-]{1}[\+\-]*\d+[.]*\d*' # 匹配加法
-        self.__add_sub_ex = '[\+\-]{0,1}\d+[.]*\d*[\+\-]+\d+[.]*\d*' #匹配加减法表达式
-        self.__is_num = '^[\+\-]{0,1}\d+[.]{0,1}\d*$' # 匹配单个数字，用于括号内只有一个数字的情况下，例如(-1.0)
+        self.__add_sub_ex = '[\+\-]{0,1}\d+[\.]*\d*[\+\-]+\d+[\.]*\d*' #匹配加减法表达式
+        self.__is_num = '^[\+\-]{0,1}\d+[\.]{0,1}\d*$' # 匹配单个数字，用于括号内只有一个数字的情况下，例如(-1.0)
         self.__mult_sign = '[\+\-]{2,}' # 匹配多个连续正负号的情况，用于替换多个符号
 
 
@@ -52,7 +52,7 @@ class calculator(object):
             res = res.group()
             #tmp_list = re.split()
             #num1,num2  = re.split('[\*\/]', res)
-            num1, num2 = re.findall('[\+\-]{0,1}\d+[.]{0,1}\d*', res) # 获得表达式的两个数
+            num1, num2 = re.findall('[\+\-]{0,1}\d+[\.]{0,1}\d*', res) # 获得表达式的两个数
             #print(num1,num2)
             operate = re.search('[\*\/]', res).group() # 获得符号
             #print(re.split('[\*\/]', res))
@@ -88,7 +88,7 @@ class calculator(object):
             #num1, num2 = re.split('[\+\-]', res)[1:]
             #num1, num2 = re.search('[\+\-]\d+[.]*\d*', res).group()
             #print(re.findall('[\+\-]*\d+[.]*\d*', res))
-            num1, num2 = re.findall('[\+\-]{0,1}\d+[.]{0,1}\d*', res)
+            num1, num2 = re.findall('[\+\-]{0,1}\d+[\.]{0,1}\d*', res)
             operate = '+'
             # 说明这里的为什么符号都用加号，因为所谓的减法其实就是加法，例如2-1等于2+(-1)
 
