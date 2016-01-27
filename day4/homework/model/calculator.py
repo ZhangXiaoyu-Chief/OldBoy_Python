@@ -20,8 +20,9 @@ class calculator(object):
         self.__mult_sign = '[\+\-]{2,}' # 匹配多个连续正负号的情况，用于替换多个符号
 
 
-    def __replace_sign(self, expression):
+    def __replace_sign2(self, expression):
         '''
+        比较low的一个方法，已经被下面的方法替代了
         替换多个连续+-符号的问题，例如+-----，遵循奇数个负号等于正否则为负的原则进行替换
         :param expression: 表达式，包括有括号的情况
         :return: 返回经过处理的表达式
@@ -31,10 +32,27 @@ class calculator(object):
         if signs: # 判断是否存在
             # 存在则逐一替换
             for sign in signs:
-                if sign.count('-')%2 ==1:
+                if sign.count('-')%2 == 1:
                     expression = expression.replace(sign, '-', 1)
                 else:
                     expression = expression.replace(sign, '+', 1)
+        return expression
+
+    def __replace_sign(self, expression):
+        '''
+        替换多个连续+-符号的问题，例如+-----，遵循奇数个负号等于正否则为负的原则进行替换
+        :param expression: 表达式，包括有括号的情况
+        :return: 返回经过处理的表达式
+        '''
+        def re_sign(m):
+            if m:
+                if m.group().count('-')%2 == 1:
+                    return '-'
+                else:
+                    return '+'
+            else:
+                return ''
+        expression = re.sub(  self.__mult_sign, re_sign, expression)
         return expression
 
     def __multiplication_division(self, expression):
@@ -231,11 +249,11 @@ class calculator(object):
         expression = self.__replace_sign(expression)
         #print(expression)
         expression = self.__parentheses(expression)
-        expression = self.__replace_sign(expression)
+        #expression = self.__replace_sign(expression)
         if not expression:
             return False
         else:
-            # expression = self.__replace_sign(expression)
+            expression = self.__replace_sign(expression)
             if self.__check_expression(expression):
                 return self.__four_arithmetic_operation(expression)
             else:
