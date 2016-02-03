@@ -94,7 +94,8 @@ class atm(object):
     def auth(self):
         return True
 
-    def get_crurrent
+    def get_crurrent(self):
+        return self.__current_account
 
 
 
