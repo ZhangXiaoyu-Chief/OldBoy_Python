@@ -62,22 +62,26 @@ def myfind(str1, sub, color_id = None):
         color_id = 31
     return str1.replace(sub, color(sub, color_id))
 
-
-print(myljust('中文',20,'*'))
-print(myljust('abc',20,'*'))
-print(myljust('中文abc',20,'*'))
-print(myrjust('中文',20,'*'))
-print(myrjust('abc',20,'*'))
-print(myrjust('中文abc',20,'*'))
-print(mycenter('中文',20,'*'))
-print(mycenter('abc',20,'*'))
-print(mycenter('中文abc',20,'*'))
-
-print(color('红色', 31))
-print(color('黄色', 33))
-print(color('绿色', 32))
-print(color('蓝色', 34))
-
-print(myfind('Pythonathon', 'thon'))
+def jiami(str):
+    import hashlib
+    m = hashlib.md5()
+    m.update(str.encode('utf-8'))
+    return m.hexdigest()
+# print(myljust('中文',20,'*'))
+# print(myljust('abc',20,'*'))
+# print(myljust('中文abc',20,'*'))
+# print(myrjust('中文',20,'*'))
+# print(myrjust('abc',20,'*'))
+# print(myrjust('中文abc',20,'*'))
+# print(mycenter('中文',20,'*'))
+# print(mycenter('abc',20,'*'))
+# print(mycenter('中文abc',20,'*'))
+#
+# print(color('红色', 31))
+# print(color('黄色', 33))
+# print(color('绿色', 32))
+# print(color('蓝色', 34))
+#
+# print(myfind('Pythonathon', 'thon'))
 
 
