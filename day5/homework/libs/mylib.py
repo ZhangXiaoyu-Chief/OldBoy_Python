@@ -67,6 +67,17 @@ def jiami(str):
     m = hashlib.md5()
     m.update(str.encode('utf-8'))
     return m.hexdigest()
+
+def pagination(li, max_per_page, page = 1):
+    li_count = len(li) # 列表元素的数量
+    page_div = divmod(li_count, max_per_page)
+    max_page = page_div[0] if page_div[1] == 0 else page_div[0]+1 # 计算需要多少页
+    if page <= max_page:
+        start = ((page - 1) * max_per_page)
+        end = start + max_per_page
+        return li[start:end], max_page
+    else:
+        return [], max_page
 # print(myljust('中文',20,'*'))
 # print(myljust('abc',20,'*'))
 # print(myljust('中文abc',20,'*'))

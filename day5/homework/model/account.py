@@ -54,7 +54,7 @@ class account(object):
             max_balance = conf.MAX_BALANCE
         account_info = {
             "cardid" : cardid, # 卡号
-            "password" : conf.DEFAULT_PASSWORD, # 密码
+            "password" : mylib.jiami(conf.DEFAULT_PASSWORD), # 密码
             "name" : name, # 持卡人姓名
             "tel" : tel, # 持卡人电话
             "mail" : mail, # 持卡人邮件，可以考虑邮件发送账单
@@ -217,9 +217,18 @@ class account(object):
             return True, msg
 
     def get_accounts(self):
+        '''
+        获取所有用户信息
+        :return: 所有用户信息列表
+        '''
         return self.__accounts
 
     def update_account(self, account):
+        '''
+        更新用户信息
+        :param account: 用户对象
+        :return: 更新成功返回True，否则返回Fasle
+        '''
         cardid = account['cardid']
         #old_account = self.__check_user(cardid)
         for i in range(len(self.__accounts)):
@@ -238,19 +247,3 @@ class account(object):
         else:
             msg = '用户不存在'
             return False, msg
-
-
-        #old_account = tmp_account
-        # if old_account:
-        #     old_account = account
-        #     print(id(old_account), id(account))
-        #     if self.__save_accounts():
-        #         msg = '修改成功'
-        #         return True, msg
-        #     else:
-        #         msg = '修改失败'
-        #         return False, msg
-        # else:
-        #     msg = '账户不存在'
-        #     return False, msg
-
