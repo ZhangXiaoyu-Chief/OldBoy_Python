@@ -3,6 +3,7 @@
 import conf
 import json
 import re
+import libs.mylib as mylib
 class account(object):
     def __init__(self):
         self.__account_file = conf.ACCOUNT_FILE
@@ -119,20 +120,21 @@ class account(object):
         '''
         try:
             with open(self.__account_file, 'w') as f:
-                json.dump(self.__accounts, f)
+                json.dump(self.__accounts, f, indent=4)
                 return True
         except Exception:
             return False
 
     def check_cardid(self, cardid):
         '''
-        检查cardid是否合法
+        检查cardid是否重复
         :param cardid: 卡号
-        :return: 合法返回True，否则返回False
+        :return: 重复返回True，否则返回False
         '''
-        m = self.__cardid_re.match(cardid)
-        if m:
-            return True
+        accounts = self.__accounts
+        for account in accounts:
+            if account.get("cardid") == cardid:
+                return True
         else:
             return False
 
@@ -247,3 +249,10 @@ class account(object):
         else:
             msg = '用户不存在'
             return False, msg
+
+    def flush_accounts(self):
+        '''
+        刷新用户列表
+        :return:
+        '''
+        self.__accounts = self.__read_accounts()

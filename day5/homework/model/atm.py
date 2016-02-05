@@ -53,7 +53,7 @@ class atm(object):
                     input('您的账户已经%s，请联系银行客服：95588', res.get('status'))
                     continue
                 if mylib.jiami(password) == res.get('password'):
-                    print('认证成功')
+                    input('认证成功，按任意键继续')
                     self.__current_account = res
                     return funce(self, *args, **kwargs)
                 else:
@@ -66,6 +66,36 @@ class atm(object):
                     else:
                         input('卡号或密码错误！！请重新输入，按任意键继续。')
                     self.__account.update_account(res) # 保存用户信息，主要是修改次数累加和状态
+        return wrapper
+
+    def admin_login(funce):
+        '''
+        装饰器，后台管理员登陆验证
+        :return: 登陆成功返回True，否则返回False
+        '''
+        import getpass
+        def wrapper(self,*args, **kwargs):
+
+            #print(accounts)
+            if self.__current_account: # 判断是否已经登录
+                return funce(self, *args, **kwargs)
+            while True: # 如果没有登录执行循环
+                username = input('用户名（输入quit退出）：').strip()
+                #password = getpass.getpass('密码：')
+                if username == 'quit':
+                    msg = '认证失败'
+                    return False, msg
+                password = input('密码：').strip()
+                #password = libs.pwd_input()
+
+                if username != conf.ADMIN_USER:
+                    input('用户名或密码错误，按任意键继续')
+                    continue
+                if mylib.jiami(password) == conf.ADMIN_PASSWORD:
+                    input('认证成功，按任意键继续')
+                    return funce(self, *args, **kwargs)
+                else:
+                    input('用户名或密码错误，按任意键继续')
         return wrapper
 
     @login
@@ -125,4 +155,7 @@ class atm(object):
                 msg = '余额不足'
                 return False, msg
 
+    #@admin_login
+    def admin_auth(self):
+        return True
 
