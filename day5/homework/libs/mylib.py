@@ -98,7 +98,7 @@ def pagination(li, max_per_page, page = 1):
     else:
         return [], max_page
 
-def validate_input(re_str, title, hint = '', back_str = 'r', error_str = '输入错误'):
+def validate_input(re_str, title, hint = '', back_str = 'r', error_str = '输入错误', is_pass = False):
     '''
     待验证的输入（通过正则表达式进行验证）如数不合法或输入不是back_str，则提示错误并循环
     :param re_str: 正则表达式
@@ -109,11 +109,15 @@ def validate_input(re_str, title, hint = '', back_str = 'r', error_str = '输入
     :return: 如果输入的合法返回输入的字符串，如果输入的是back_str原样返回
     '''
     import re
+    import getpass
 
     while True:
         if hint:
             print(hint)
-        input_str = input(title).strip()
+        if is_pass:
+            input_str = getpass.getpass(title).strip()
+        else:
+            input_str = input(title).strip()
         if input_str == back_str:
             return back_str
         if re.match(re_str, input_str):
@@ -131,6 +135,8 @@ def mylog(log_file_name):
     root_logger.addHandler(handler)
     root_logger.setLevel(logging.INFO)
     return root_logger
+
+# mmm = validate_input('\d', 'dafdsf', is_pass=True)
 
 
 

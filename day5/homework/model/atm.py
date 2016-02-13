@@ -35,14 +35,16 @@ class atm(object):
                 return funce(self, *args, **kwargs)
             while True: # 如果没有登录执行循环
                 accounts = self.__account.get_accounts()
-                print(accounts)
-                cardid = input('请输入卡号（输入quit退出认证）：').strip()
+                #Sprint(accounts)
+                #cardid = input('请输入卡号（输入quit退出认证）: ').strip()
+                cardid = mylib.validate_input(r'^\d{9}$','卡号（输入quit退出认证）: ')
                 #password = getpass.getpass('密码：')
                 if cardid == 'quit':
                     msg = '认证失败'
                     return False, msg
-                password = input('密码：').strip()
+                password = input('密码: ').strip()
                 #password = libs.pwd_input()
+                #password = getpass.getpass('密码: ').strip()
                 res,msg = self.__account.find_by_id(cardid)
 
                 if not res:
@@ -50,7 +52,7 @@ class atm(object):
                     continue
                 #print(res.get('status'))
                 if res.get('status') != '正常':
-                    input('您的账户已经%s，请联系银行客服：95588', res.get('status'))
+                    input('您的账户已经%s，请联系银行客服：95588' %res.get('status'))
                     continue
                 if mylib.jiami(password) == res.get('password'):
                     input('认证成功，按任意键继续')
@@ -86,6 +88,7 @@ class atm(object):
                     msg = '认证失败'
                     return False, msg
                 password = input('密码：').strip()
+                #password = getpass.getpass('密码: ').strip()
                 #password = libs.pwd_input()
 
                 if username != conf.ADMIN_USER:
@@ -151,11 +154,92 @@ class atm(object):
                 if res:
                     msg = '提现成功'
                     return res, msg
+                else:
+                    msg = '提现失败'
+                    return res, msg
+
             else:
                 msg = '余额不足'
                 return False, msg
+        else:
+            msg = '提现失败'
+            return False, msg
+    @login
+    def repayment(self, amount):
+        if self.__current_account:
+            if self.__current_account['arrearage'] > 0:
+                if self.__current_account['arrearage'] > amount:
+                    self.__current_account['arrearage'] -= amount
+                else:
+                    fall = amount - self.__current_account['arrearage']
+                    self.__current_account['arrearage'] = 0
+                    self.__current_account['balance'] += fall
+            else:
+                self.__current_account['balance'] += amount
 
-    #@admin_login
+            transaction_detail = {
+                    "date" : time.time(),
+                    "description" : '还款',
+                    "amount" : amount
+                }
+            self.__current_account['transaction_detail'].append(transaction_detail)
+            res, msg = self.__account.update_account(self.__current_account)
+            if res:
+                msg = '还款成功'
+                return res, msg
+            else:
+                msg = '还款失败'
+                return res, msg
+        else:
+            msg = '还款失败'
+            return False, msg
+
+    @login
+    def transfer_accounts(self, account_b, amount):
+        if self.__current_account:
+            if self.__current_account['cash'] >= amount and self.__current_account['balance'] >= amount:
+                self.__current_account['cash'] -= amount
+                self.__current_account['balance'] -= amount
+                transaction_detail = {
+                    "date" : time.time(),
+                    "description" : '转账支出',
+                    "amount" : amount
+                }
+                self.__current_account['transaction_detail'].append(transaction_detail)
+                res, msg = self.__account.update_account(self.__current_account)
+                if res:
+                    #print(res)
+                    #msg = '提现成功'
+                    if account_b['arrearage'] > 0:
+                        if account_b['arrearage'] > amount:
+                            account_b['arrearage'] -= amount
+                        else:
+                            fall = amount - account_b['arrearage']
+                            account_b['arrearage'] = 0
+                            account_b['balance'] += fall
+                    else:
+                        account_b['balance'] += amount
+
+                    transaction_detail = {
+                            "date" : time.time(),
+                            "description" : '转账收入',
+                            "amount" : amount
+                        }
+                    account_b['transaction_detail'].append(transaction_detail)
+                    res, msg = self.__account.update_account(account_b)
+                    if res:
+                        msg = '转账成功'
+                        return res, msg
+                else:
+                    msg = '转账失败'
+                    return res, msg
+            else:
+                msg = '余额不足'
+                return False, msg
+        else:
+            msg = '转账失败'
+            return False, msg
+
+    @admin_login
     def admin_auth(self):
         return True
-

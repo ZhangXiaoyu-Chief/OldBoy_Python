@@ -23,16 +23,17 @@ class account(object):
             "cash":7500,# 提现余额
             "arrearage":0, # 欠款，用来计算利息
             "bill":{# 账单
-            "new_balance":0, # 本期应还金额
-            "balance_bf":0, # 上期账单金额
-            "payment":0, # 上期还款金额
-            "new_charges":0, # 本期账单金额
-            "interest":0, # 循环利息
+                "new_balance":0, # 本期应还金额
+                "balance_bf":0, # 上期账单金额
+                "payment":0, # 上期还款金额
+                "new_charges":0, # 本期账单金额
+                "interest":0, # 循环利息
+            },
             "transaction_detail": [
             ],
             "status":"正常", #账户状态正常、锁定、冻结
             "error_count" : 0 #密码输入错误次数
-            }
+
         }
 
     def insert_account(self, cardid, name, tel, mail, address, max_balance = 0):
@@ -63,13 +64,10 @@ class account(object):
             "max_balance" : max_balance, # 最高可用余额
             "balance" : max_balance, # 当前余额
             "cash" : max_balance / 2,# 提现余额
-            "arrearage" : 0, # 欠款，用来计算利息
+            "arrearage" : 0, # 欠款，用来判断是否还清欠款
+            "arrearage_sum" : 0, # 欠款总额，用来计算利息
+            "is_arrearage" : False,
             "bill" : {# 账单
-                "new_balance" : 0, # 本期应还金额
-                "balance_bf" : 0, # 上期账单金额
-                "payment" : 0, # 上期还款金额
-                "new_charges" : 0, # 本期账单金额
-                "interest" : 0, # 循环利息
                 },
             "transaction_detail" : [],
             "status" : "正常", #账户状态正常、锁定、冻结
@@ -93,12 +91,13 @@ class account(object):
         读取所有用户信息
         :return: 返回所有用户信息列表，失败则返回None
         '''
+        import codecs
         try:
-            with open(self.__account_file, 'r') as f:
+            with codecs.open(self.__account_file, 'r', 'utf-8') as f:
                 accounts = json.load(f)
             return accounts
         except Exception:
-            return None
+            return []
 
     def __check_user(self, cardid):
         '''
@@ -107,9 +106,12 @@ class account(object):
         :return: 存在返回该用户信息，否则返回None
         '''
         accounts = self.__accounts
-        for account in accounts:
-            if account.get("cardid") == cardid:
-                return account
+        if accounts:
+            for account in accounts:
+                if account.get("cardid") == cardid:
+                    return account
+            else:
+                return None
         else:
             return None
 
@@ -118,9 +120,10 @@ class account(object):
         将用户信息列表保存至文件
         :return: 成功返回True，否则返回Fasle
         '''
+        import codecs
         try:
-            with open(self.__account_file, 'w') as f:
-                json.dump(self.__accounts, f, indent=4)
+            with codecs.open(self.__account_file, 'w', 'utf-8') as f:
+                json.dump(self.__accounts, f, ensure_ascii = False, indent=4)
                 return True
         except Exception:
             return False
@@ -132,9 +135,12 @@ class account(object):
         :return: 重复返回True，否则返回False
         '''
         accounts = self.__accounts
-        for account in accounts:
-            if account.get("cardid") == cardid:
-                return True
+        if accounts:
+            for account in accounts:
+                if account.get("cardid") == cardid:
+                    return True
+            else:
+                return False
         else:
             return False
 
