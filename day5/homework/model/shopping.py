@@ -108,7 +108,8 @@ class shopping(object):
                     one_goods['num'] -= 1 # 商品数量减1
                     one_goods['subtotal'] -= int(one_goods['price']) # 小计递减
                 msg = '成功删除1个%s' %one_goods['name']
-                self.__customer.update_customer(self.__current_customer)
+                if self.__current_customer:
+                    self.__customer.update_customer(self.__current_customer)
                 return True, msg
         else:
             msg = '该商品不在购物车内'

@@ -15,14 +15,11 @@ Help:
 '''
 
 import conf
-import json
-import re
-import libs.mylib as mylib
+
 from model.account import account
-from model.atm import atm
 import time
-import datetime
-time.localtime()
+
+
 
 
 if __name__ == '__main__':
@@ -74,14 +71,11 @@ if __name__ == '__main__':
                     new_charges = 0
                     day = list(time.localtime())
                     day[3:] = [0, 0, 0, 0, 0, 0] # 获取当前系统日期0点0分0秒0毫秒
-                    #print(day)
                     day1 = time.mktime(tuple(day)) # 获取当前系统日期0点0分0秒0毫秒
                     day[1] -=1 # 计算1个月前的日期
-                    #print(day)
                     day2 = time.mktime(tuple(day))
                     day[1] +=2 # 计算1个月前的日期
                     day[2] = conf.REPAYMENT_DAY # 日改成还款日，也就是下个月的还款日
-                    #print(day)
                     day3 = time.mktime(tuple(day)) # 获取本期账单的还款日
                     for transaction in account['transaction_detail']:
                         if day2 <= transaction['date'] < day1:
@@ -104,7 +98,3 @@ if __name__ == '__main__':
                     account['cash'] = account['max_balance'] / 2
                     #print(account)
                     ac.update_account(account)
-                    # print(payment)
-                    # print(balance_bf)
-                    # print(interest)
-                    # print(new_charges)

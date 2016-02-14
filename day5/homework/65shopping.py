@@ -78,11 +78,11 @@ if __name__ == '__main__':
                     continue
 
                 while True:
-                    password = mylib.validate_input(r'^.{6,15}$', '密码: ', '输入提示: 密码长度介于6~15个字符，输入r返回上级菜单')
+                    password = mylib.validate_input(r'^.{6,15}$', '密码: ', '输入提示: 密码长度介于6~15个字符，输入r返回上级菜单', is_pass=True)
                     if password == 'r':
                         flag = False
                         break
-                    confirm_password = mylib.validate_input(r'^.{6,15}$', '确认密码: ', '输入提示: 确认密码必须与密码一致，输入r返回上级菜单')
+                    confirm_password = mylib.validate_input(r'^.{6,15}$', '确认密码: ', '输入提示: 确认密码必须与密码一致，输入r返回上级菜单', is_pass=True)
                     if password == 'r':
                         flag = False
                         break
@@ -135,7 +135,7 @@ if __name__ == '__main__':
                     flag = False
                     continue
                 # 获取密码
-                password = mylib.validate_input(r'^.{6,15}$', '密码: ')
+                password = mylib.validate_input(r'^.{6,15}$', '密码: ', is_pass = True)
                 #print(password)
                 # 调用shopping对象的login方法，验证用户名和密码
                 res = shopping.login(username, password)
@@ -239,7 +239,10 @@ if __name__ == '__main__':
                         if do_chose == '1':
                             # 调用shopping对象add_to_shopping_cart将选定的商品加入到购物车
                             shopping.add_to_shopping_cart(chose_goods, 1)
-                            logger.info('用户%s将%s添加到购物车' %(customer['username'], chose_goods['name']))
+                            if shopping.get_crurrent_customer():
+                                logger.info('用户%s将%s添加到购物车' %(shopping.get_crurrent_customer()['username'], chose_goods['name']))
+                            else:
+                                logger.info('游客将%s添加到购物车' %chose_goods['name'])
                             input('成功将%s加入购物车，按任意键继续' %chose_goods['name'])
                         elif do_chose == '2':
                             do_flag = False
@@ -291,7 +294,10 @@ if __name__ == '__main__':
                     if confirm == 'y': # 判断用户确认
                         # 确认清空
                         shopping.empty_cart() # 调用goods对象的del_all_cart方法清空购物车
-                        logger.info('用户%s清空购物车' %(customer['username']))
+                        if shopping.get_crurrent_customer():
+                            logger.info('用户%s清空购物车' %(shopping.get_crurrent_customer()['username']))
+                        else:
+                            logger.info('游客清空购物车')
                         input('购物车已经清空，按任意键继续')
                     else:
                         input('清空购物车已经取消，按任意键继续')
@@ -302,15 +308,15 @@ if __name__ == '__main__':
                 # 选择p，支付
                 if shopping.get_crurrent_customer():
                     if total != 0:
-                        res, msg = atm.pay_api('65商城购物', total)
+                        res = atm.pay_api('65商城购物', total)
 
                         if res:
                             shopping.empty_cart()
-                            logger.info('用户%s成功支付%s' %(customer['username'], total))
+                            logger.info('用户%s成功支付%s' %(shopping.get_crurrent_customer()['username'], total))
                             input('%s，按任意键返回上级菜单' %msg)
                             break
                         else:
-                            input('%s，按任意键继续' %msg)
+                            input('支付失败，按任意键继续')
                     else:
                         input('您的购物车还是空空如也，快去血拼吧！，按任意键继续')
 
@@ -326,21 +332,65 @@ if __name__ == '__main__':
                     continue
                 else:
                     cart_list = shopping.get_cart()
-                    confirm = mylib.validate_input('^[y]$', '请确认删除1个%s(y/n): ' %cart_list[int(del_chose) - 1]['name'], back_str = 'n')
+                    gname = cart_list[int(del_chose) - 1]['name']
+                    confirm = mylib.validate_input('^[y]$', '请确认删除1个%s(y/n): ' %gname, back_str = 'n')
                     if confirm == 'y':
-                        print(cart_list)
+                        #print(cart_list)
                         gid = cart_list[int(del_chose) - 1]['id']
                         res, msg = shopping.del_goods_from_cart(gid)
+                        if shopping.get_crurrent_customer():
+                            logger.info('用户%s删除购物车内%s ' %(shopping.get_crurrent_customer()['username'], gname))
+                        else:
+                            logger.info('游客删除购物车内%s' %gname)
                         input(msg)
                     else:
                         input('删除操作已经取消，按任意键继续')
 
-
-
-
-
-
-
+    def change_password():
+        '''
+        修改密码函数
+        :return: 无
+        '''
+        flag = True
+        while flag:
+            customer = shopping.get_crurrent_customer()
+            if not customer:
+                input('您还没有登录，不能修改密码，请先登录，按任意键继续')
+                flag = False
+                continue
+            # 获取用户输入的旧密码
+            # old_password = input('原密码(输入r返回上级菜单): ').strip()
+            # old_password = mylib.validate_input('\d', 'dafdsf', is_pass=True)
+            old_password = mylib.validate_input(r'^.{6,15}$', '原密码: ', '输入提示: 输入r返回上级菜单', is_pass=True)
+            # 判断用户输入的是否是r，如果是r退出循环
+            if old_password == 'r':
+                flag = False
+                continue
+            # 获取用户输入的新密码及确认密码
+            # new_password = input('新密码: ').strip()
+            new_password = mylib.validate_input(r'^.{6,15}$', '密码: ', '输入提示: 密码长度介于6~15个字符，输入r返回上级菜单', is_pass=True)
+            # confirm_password = input('确认密码: ').strip()
+            confirm_password = mylib.validate_input(r'^.{6,15}$', '确认密码: ', '输入提示: 密码长度介于6~15个字符，输入r返回上级菜单', is_pass=True)
+            old_password = mylib.jiami(old_password)
+            # 判断旧密码是否正确
+            if old_password == customer['password']:
+                # 判断新密码是否和确认密码一致
+                if new_password == confirm_password:
+                    new_password = mylib.jiami(new_password)
+                    # 判断新密码是否和旧密码不一样
+                    if new_password != old_password:
+                        # 修改密码
+                        customer['password'] = new_password
+                        res, msg = cu.update_customer(customer)
+                        input('密码%s，按任意键返回上级菜单' %msg)
+                        logger.info('用户%s修改密码，%s' %(customer['username'], msg))
+                        flag = False
+                    else:
+                        input('新密码和旧密码不能一样，按任意键继续')
+                else:
+                   input('新密码和确认密码不一致，按任意键继续')
+            else:
+                input('原密码错误，按任意键继续')
     flag = True
     while flag:
         print_welcome()
@@ -354,7 +404,7 @@ if __name__ == '__main__':
         elif chose == '4':
             logout()
         elif chose == '5':
-            pass
+            change_password()
         elif chose == '6':
             shopping_cart()
         elif chose == '7':

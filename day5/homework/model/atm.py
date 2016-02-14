@@ -3,13 +3,8 @@
 
 
 import conf
-import json
-import re
-import datetime
 import time
-#from libs import libs
 from libs import mylib
-
 from model.account import account
 
 
@@ -17,10 +12,9 @@ from model.account import account
 class atm(object):
 
     def __init__(self):
-        #self.__current_account = {'mail': '61411916@qq.com', 'cardid': '123456780', 'tel': '13800138000', 'name': '张晓宇', 'balance': 13500.0,
-                                  #'bill': {'bill_date':1453392000.0,'payment_date':1455033600.0,'payment': 0.0, 'balance_bf': 0.0, 'new_balance': 0.0, 'interest': 0.0, 'new_charges': 0.0}, 'error_count': 0, 'status': '正常', 'cash': 7500.0, 'transaction_detail': [{"date": "2016-02-03 16:58:13", "amount": 500, "description": "sss"}, {"date": "2016-02-03 17:22:15", "amount": 500, "description": "sss"}, {"date": "2016-02-03 17:24:08", "amount": 500, "description": "sss"}], 'address': '北京市通州区', 'max_balance': 15000, 'arrearage': 0, 'password': 'cbff36039c3d0212b3e34c23dcde1456'}
         self.__current_account = {}
         self.__account = account()
+        self.__admin_login = False
 
     def login(funce):
         '''
@@ -30,27 +24,22 @@ class atm(object):
         import getpass
         def wrapper(self,*args, **kwargs):
 
-            #print(accounts)
             if self.__current_account: # 判断是否已经登录
                 return funce(self, *args, **kwargs)
             while True: # 如果没有登录执行循环
-                accounts = self.__account.get_accounts()
-                #Sprint(accounts)
-                #cardid = input('请输入卡号（输入quit退出认证）: ').strip()
-                cardid = mylib.validate_input(r'^\d{9}$','卡号（输入quit退出认证）: ')
-                #password = getpass.getpass('密码：')
+                #accounts = self.__account.get_accounts()
+                cardid = mylib.validate_input(r'^\d{9}$','卡号（输入quit退出认证）: ', back_str = 'quit')
                 if cardid == 'quit':
                     msg = '认证失败'
-                    return False, msg
-                password = input('密码: ').strip()
-                #password = libs.pwd_input()
+                    # return False, msg
+                    break
                 #password = getpass.getpass('密码: ').strip()
+                password = input('密码: ').strip()
                 res,msg = self.__account.find_by_id(cardid)
 
                 if not res:
                     input('卡号或密码错误！！请重新输入，按任意键继续。')
                     continue
-                #print(res.get('status'))
                 if res.get('status') != '正常':
                     input('您的账户已经%s，请联系银行客服：95588' %res.get('status'))
                     continue
@@ -77,25 +66,23 @@ class atm(object):
         '''
         import getpass
         def wrapper(self,*args, **kwargs):
-
-            #print(accounts)
-            if self.__current_account: # 判断是否已经登录
+            # if self.__current_account: # 判断是否已经登录
+            #     return funce(self, *args, **kwargs)
+            if self.__admin_login:
                 return funce(self, *args, **kwargs)
             while True: # 如果没有登录执行循环
                 username = input('用户名（输入quit退出）：').strip()
-                #password = getpass.getpass('密码：')
                 if username == 'quit':
                     msg = '认证失败'
-                    return False, msg
-                password = input('密码：').strip()
-                #password = getpass.getpass('密码: ').strip()
-                #password = libs.pwd_input()
-
+                    # return False, msg
+                    break
+                password = getpass.getpass('密码: ').strip()
                 if username != conf.ADMIN_USER:
                     input('用户名或密码错误，按任意键继续')
                     continue
                 if mylib.jiami(password) == conf.ADMIN_PASSWORD:
                     input('认证成功，按任意键继续')
+                    self.__admin_login  = True
                     return funce(self, *args, **kwargs)
                 else:
                     input('用户名或密码错误，按任意键继续')
@@ -125,31 +112,56 @@ class atm(object):
             else:
                 msg = '余额不足'
                 return False, msg
-        # print(self.__current_account['cardid'])
-        # print(self.__current_account['name'])
-        # print(self.__current_account['transaction_detail'])
-        # print(self.__account.update_account(self.__current_account))
 
     @login
     def auth(self):
-        return True
+        '''
+        登录验证方法，用于atm_main调用，实现启动程序后必须登录
+        :return: True
+        '''
+        if self.__current_account:
+            return True
+        else:
+             return False
+
 
     @login
     def get_crurrent(self):
+        '''
+        获取当前账户
+        :return: 当前账户
+        '''
         return self.__current_account
 
     @login
     def take_cash(self, amount):
+        '''
+        提取现金方法
+        :param amount: 欲提现金额
+        :return: 成功返回True，否则返回False 以及消息
+        '''
+        # 判断是否登录
         if self.__current_account:
+            # 判断余额和提现余额是否够
+            amount = amount + amount * 5 / 1000
             if self.__current_account['cash'] >= amount and self.__current_account['balance'] >= amount:
+                # 余额和提现余额减少
                 self.__current_account['cash'] -= amount
                 self.__current_account['balance'] -= amount
+                # 创建提现交易记录
                 transaction_detail = {
                     "date" : time.time(),
                     "description" : '提现',
                     "amount" : amount
                 }
                 self.__current_account['transaction_detail'].append(transaction_detail)
+                transaction_detail = {
+                    "date" : time.time(),
+                    "description" : '手续费',
+                    "amount" : amount * 5 / 1000
+                }
+                self.__current_account['transaction_detail'].append(transaction_detail)
+                # 调用self.__account的update_account方法更新账户
                 res, msg = self.__account.update_account(self.__current_account)
                 if res:
                     msg = '提现成功'
@@ -157,31 +169,39 @@ class atm(object):
                 else:
                     msg = '提现失败'
                     return res, msg
-
             else:
                 msg = '余额不足'
                 return False, msg
         else:
             msg = '提现失败'
             return False, msg
+
     @login
     def repayment(self, amount):
+        '''
+        还款方法
+        :param amount: 还款金额
+        :return: 成功返回True，否则返回False 以及消息
+        '''
+        # 判断是否登录
         if self.__current_account:
+            self.__current_account['balance'] += amount # 余额加上还款金额
+            # 判断是否有欠款，有欠款就减少欠款金额，直到欠款为0
             if self.__current_account['arrearage'] > 0:
                 if self.__current_account['arrearage'] > amount:
                     self.__current_account['arrearage'] -= amount
                 else:
-                    fall = amount - self.__current_account['arrearage']
+                    #fall = amount - self.__current_account['arrearage']
                     self.__current_account['arrearage'] = 0
-                    self.__current_account['balance'] += fall
-            else:
-                self.__current_account['balance'] += amount
+                    #self.__current_account['balance'] += fall
 
+            # 生成还款交易记录
             transaction_detail = {
                     "date" : time.time(),
                     "description" : '还款',
                     "amount" : amount
                 }
+            # 更新账户信息
             self.__current_account['transaction_detail'].append(transaction_detail)
             res, msg = self.__account.update_account(self.__current_account)
             if res:
@@ -196,36 +216,47 @@ class atm(object):
 
     @login
     def transfer_accounts(self, account_b, amount):
+        '''
+        转账方法
+        :param account_b: 另一方账户
+        :param amount: 金额
+        :return: 成功返回True，否则返回False 以及消息
+        '''
+        # 判断是否登录
         if self.__current_account:
+            # 判断余额是否够
             if self.__current_account['cash'] >= amount and self.__current_account['balance'] >= amount:
+                # 余额和提现余额相应减少
                 self.__current_account['cash'] -= amount
                 self.__current_account['balance'] -= amount
+                # 生成当前账户转账支出记录
                 transaction_detail = {
                     "date" : time.time(),
                     "description" : '转账支出',
                     "amount" : amount
                 }
+                # 更新当前账户
                 self.__current_account['transaction_detail'].append(transaction_detail)
                 res, msg = self.__account.update_account(self.__current_account)
                 if res:
-                    #print(res)
-                    #msg = '提现成功'
+                    # 另一个账户流程同还款流程
                     if account_b['arrearage'] > 0:
                         if account_b['arrearage'] > amount:
                             account_b['arrearage'] -= amount
                         else:
-                            fall = amount - account_b['arrearage']
+                            #fall = amount - account_b['arrearage']
                             account_b['arrearage'] = 0
-                            account_b['balance'] += fall
-                    else:
-                        account_b['balance'] += amount
+                            #account_b['balance'] += fall
 
+                    account_b['balance'] += amount
+                    # 另个账户生成转账收入记录
                     transaction_detail = {
                             "date" : time.time(),
                             "description" : '转账收入',
                             "amount" : amount
                         }
                     account_b['transaction_detail'].append(transaction_detail)
+                    # 更新另个账户信息
                     res, msg = self.__account.update_account(account_b)
                     if res:
                         msg = '转账成功'
@@ -242,4 +273,8 @@ class atm(object):
 
     @admin_login
     def admin_auth(self):
-        return True
+        '''
+        admin登录验证方法，用于atm_admin登录验证
+        :return: True
+        '''
+        return self.__admin_login

@@ -10,31 +10,31 @@ class account(object):
         # with open(self.__account_file, 'r') as f:
         #     self.__accounts = json.load(f)
         self.__accounts = self.__read_accounts()
-        self.__cardid_re = re.compile(r'^\d{19}$')
-        self.account_info = {
-            "cardid":"123456789", # 卡号
-            "password":"123.com", # 密码
-            "name":"张晓宇", # 持卡人姓名
-            "tel":"13800138000", # 持卡人电话
-            "mail":"61411916@qq.com", # 持卡人邮件，可以考虑邮件发送账单
-            "address":"北京市通州区", # 持卡人地址
-            "max_balance":15000, # 最高可用余额
-            "balance":15000, # 当前余额
-            "cash":7500,# 提现余额
-            "arrearage":0, # 欠款，用来计算利息
-            "bill":{# 账单
-                "new_balance":0, # 本期应还金额
-                "balance_bf":0, # 上期账单金额
-                "payment":0, # 上期还款金额
-                "new_charges":0, # 本期账单金额
-                "interest":0, # 循环利息
-            },
-            "transaction_detail": [
-            ],
-            "status":"正常", #账户状态正常、锁定、冻结
-            "error_count" : 0 #密码输入错误次数
-
-        }
+        #self.__cardid_re = re.compile(r'^\d{19}$')
+        #self.account_info = {
+        #     "cardid":"123456789", # 卡号
+        #     "password":"123.com", # 密码
+        #     "name":"张晓宇", # 持卡人姓名
+        #     "tel":"13800138000", # 持卡人电话
+        #     "mail":"61411916@qq.com", # 持卡人邮件，可以考虑邮件发送账单
+        #     "address":"北京市通州区", # 持卡人地址
+        #     "max_balance":15000, # 最高可用余额
+        #     "balance":15000, # 当前余额
+        #     "cash":7500,# 提现余额
+        #     "arrearage":0, # 欠款，用来计算利息
+        #     "bill":{# 账单
+        #         "new_balance":0, # 本期应还金额
+        #         "balance_bf":0, # 上期账单金额
+        #         "payment":0, # 上期还款金额
+        #         "new_charges":0, # 本期账单金额
+        #         "interest":0, # 循环利息
+        #     },
+        #     "transaction_detail": [
+        #     ],
+        #     "status":"正常", #账户状态正常、锁定、冻结
+        #     "error_count" : 0 #密码输入错误次数
+        #
+        # }
 
     def insert_account(self, cardid, name, tel, mail, address, max_balance = 0):
         '''

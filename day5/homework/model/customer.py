@@ -78,7 +78,7 @@ class customer(object):
             "cart": []
         }
         self.__customers.append(customer_info)
-        if self.__save_accounts():
+        if self.__save_customers():
             msg = '创建用户成功'
             return True, msg
         else:

@@ -19,37 +19,10 @@ import conf
 import libs.mylib as mylib
 if __name__ == '__main__':
     ac = account()
-    # res, msg = ac.insert_account('123456780', '张晓宇', '13800138000', '61411916@qq.com', '北京市通州区')
-    # print(res)
-    # print(msg)
-    # cardid = '1234567891234567890'
-    # res = ac.check_cardid(cardid)
-    # print(res)
-    # res,msg = ac.find_by_id('12345678011')
-    # print(res)
-    # print(msg)
-    # res = ac.find_accounts_by_cardid('78467')
-    # res = ac.find_accounts_by_name('张晓宇')
-    # for i in res:
-    #
-    #     print(output.myfind(i.get('name'), '张晓宇'))
-    # res = ac.find_accounts_by_cardid('2345')
-    # for i in res:
-    #
-    #     print(output.myfind(i.get('cardid'), '2345'))
-
-    # res = ac.del_account('123456789')
-    # print(res)
-
-    # atm = atm()
-    # res = atm.pay_api('sss', 500)
-    # print(res)
     atm = atm()
-    import re
-    amount_re = re.compile('^\d+[.]{0,1}\d+$')
+    # import re
+    # amount_re = re.compile('^\d+[.]{0,1}\d+$')
     logger = mylib.mylog(conf.ATM_LOG)
-
-
 
     def print_menu(menu_list):
         '''
@@ -256,14 +229,18 @@ if __name__ == '__main__':
         while flag:
             account = atm.get_crurrent()
             # 获取用户输入的旧密码
-            old_password = input('原密码(输入r返回上级菜单): ').strip()
+            # old_password = input('原密码(输入r返回上级菜单): ').strip()
+            # old_password = mylib.validate_input('\d', 'dafdsf', is_pass=True)
+            old_password = mylib.validate_input(r'^.{6,15}$', '原密码: ', '输入提示: 输入r返回上级菜单', is_pass=True)
             # 判断用户输入的是否是r，如果是r退出循环
             if old_password == 'r':
                 flag = False
                 continue
             # 获取用户输入的新密码及确认密码
-            new_password = input('新密码: ').strip()
-            confirm_password = input('确认密码: ').strip()
+            # new_password = input('新密码: ').strip()
+            new_password = mylib.validate_input(r'^.{6,15}$', '密码: ', '输入提示: 密码长度介于6~15个字符，输入r返回上级菜单', is_pass=True)
+            # confirm_password = input('确认密码: ').strip()
+            confirm_password = mylib.validate_input(r'^.{6,15}$', '确认密码: ', '输入提示: 密码长度介于6~15个字符，输入r返回上级菜单', is_pass=True)
             old_password = mylib.jiami(old_password)
             # 判断旧密码是否正确
             if old_password == account['password']:
