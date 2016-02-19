@@ -1,0 +1,83 @@
+[
+    {
+        "name": "张晓宇",
+        "error_count": 0,
+        "arrearage_sum": 0,
+        "bill": {
+            "payment_date": 1457539200.0,
+            "balance_bf": 0,
+            "payment": 0,
+            "new_charges": 6549.0,
+            "bill_date": 1455292800.0,
+            "interest": 0,
+            "new_balance": 6549.0
+        },
+        "max_balance": 15000.0,
+        "cardid": "123456780",
+        "cash": 7200.0,
+        "status": "正常",
+        "mail": "a@b.com",
+        "tel": "13800138000",
+        "arrearage": 6349.0,
+        "address": "北京市通州区",
+        "transaction_detail": [
+            {
+                "description": "65商城购物",
+                "amount": 6399.0,
+                "date": 1455282759.6769118
+            },
+            {
+                "description": "65商城购物",
+                "amount": 150.0,
+                "date": 1455282900.6769118
+            },
+            {
+                "description": "提现",
+                "amount": 100.0,
+                "date": 1455369665.6791031
+            },
+            {
+                "description": "提现",
+                "amount": 100.0,
+                "date": 1455369774.0927207
+            },
+            {
+                "description": "还款",
+                "amount": 200.0,
+                "date": 1455369922.8409848
+            },
+            {
+                "description": "转账支出",
+                "amount": 100.0,
+                "date": 1455370108.9645739
+            }
+        ],
+        "password": "bb43a2c4081bec02fca7b72f38e63021",
+        "is_arrearage": false,
+        "balance": 8151.0
+    },
+    {
+        "name": "65年哥",
+        "error_count": 0,
+        "arrearage_sum": 0,
+        "bill": {},
+        "max_balance": 30000.0,
+        "cardid": "123456789",
+        "cash": 7500.0,
+        "status": "正常",
+        "mail": "a@b.c",
+        "tel": "13800138000",
+        "arrearage": 0,
+        "address": "北京",
+        "transaction_detail": [
+            {
+                "description": "转账收入",
+                "amount": 100.0,
+                "date": 1455370108.9716609
+            }
+        ],
+        "password": "cbff36039c3d0212b3e34c23dcde1456",
+        "is_arrearage": false,
+        "balance": 15100.0
+    }
+]

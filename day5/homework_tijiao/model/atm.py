@@ -27,16 +27,12 @@ class atm(object):
             if self.__current_account: # 判断是否已经登录
                 return funce(self, *args, **kwargs)
             while True: # 如果没有登录执行循环
-                #accounts = self.__account.get_accounts()
                 cardid = mylib.validate_input(r'^\d{9}$','卡号（输入quit退出认证）: ', back_str = 'quit')
                 if cardid == 'quit':
                     msg = '认证失败'
-                    # return False, msg
                     break
                 password = getpass.getpass('密码: ').strip()
-                #password = input('密码: ').strip()
                 res,msg = self.__account.find_by_id(cardid)
-
                 if not res:
                     input('卡号或密码错误！！请重新输入，按任意键继续。')
                     continue
@@ -66,15 +62,11 @@ class atm(object):
         '''
         import getpass
         def wrapper(self,*args, **kwargs):
-            # if self.__current_account: # 判断是否已经登录
-            #     return funce(self, *args, **kwargs)
             if self.__admin_login:
                 return funce(self, *args, **kwargs)
             while True: # 如果没有登录执行循环
                 username = input('用户名（输入quit退出）：').strip()
                 if username == 'quit':
-                    msg = '认证失败'
-                    # return False, msg
                     break
                 password = getpass.getpass('密码: ').strip()
                 if username != conf.ADMIN_USER:

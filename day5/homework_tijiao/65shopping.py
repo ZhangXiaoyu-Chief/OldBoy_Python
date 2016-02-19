@@ -231,7 +231,6 @@ if __name__ == '__main__':
                     # 如果选择的是商品序号，说明选定该商品
                     # 获取选定的商品
                     chose_goods = res_list[int(chose) - 1]
-                    # print(chose_goods)
                     do_flag = True
                     while do_flag:
                         # 显示商品信息
@@ -263,8 +262,6 @@ if __name__ == '__main__':
         :return: 返回total总金额
         '''
         total = 0 # 初始化购物总金额
-
-        #print(goods.get_shopping_cart())
         print('%s %s    %s%s    %s%s\n%s' %(mylib.myljust('序号',8),mylib.myljust('商品编号',8), mylib.myljust('商品名称',50), mylib.myrjust('单价',8), mylib.myrjust('个数',8), mylib.myrjust('小计',8), '-'*100))
         cart_list = shopping.get_cart()# 获取购物车列表
         if len(cart_list) != 0: # 判断购物车是否为空
@@ -286,7 +283,6 @@ if __name__ == '__main__':
         '''
         while True:
             total = show_shopping_cart() # 调用打印购物车函数，并返回购物车总金额
-            #print(total)
             chose = input("请选择您的操作：").strip() # 获取用户输入操作选项
             if chose == 'e': # 判断用户输入
                 # 选择e，清空购物车
@@ -305,13 +301,11 @@ if __name__ == '__main__':
                         input('清空购物车已经取消，按任意键继续')
                 else:
                     input('购物车是空的，快去血拼吧，按任意键继续')
-
             elif chose == 'p':
                 # 选择p，支付
                 if shopping.get_crurrent_customer():
                     if total != 0:
                         res = atm.pay_api('65商城购物', total)
-
                         if res:
                             shopping.empty_cart()
                             logger.info('用户%s成功支付%s' %(shopping.get_crurrent_customer()['username'], total))
@@ -321,10 +315,8 @@ if __name__ == '__main__':
                             input('支付失败，按任意键继续')
                     else:
                         input('您的购物车还是空空如也，快去血拼吧！，按任意键继续')
-
                 else:
                     input('您还没有登录，请先登录')
-                pass
             elif chose == 'r':
                 # 选择r退出购物车循环，返回上一级菜单
                 break
@@ -337,7 +329,6 @@ if __name__ == '__main__':
                     gname = cart_list[int(del_chose) - 1]['name']
                     confirm = mylib.validate_input('^[y]$', '请确认删除1个%s(y/n): ' %gname, back_str = 'n')
                     if confirm == 'y':
-                        #print(cart_list)
                         gid = cart_list[int(del_chose) - 1]['id']
                         res, msg = shopping.del_goods_from_cart(gid)
                         if shopping.get_crurrent_customer():
@@ -361,17 +352,13 @@ if __name__ == '__main__':
                 flag = False
                 continue
             # 获取用户输入的旧密码
-            # old_password = input('原密码(输入r返回上级菜单): ').strip()
-            # old_password = mylib.validate_input('\d', 'dafdsf', is_pass=True)
             old_password = mylib.validate_input(r'^.{6,15}$', '原密码: ', '输入提示: 输入r返回上级菜单', is_pass=True)
             # 判断用户输入的是否是r，如果是r退出循环
             if old_password == 'r':
                 flag = False
                 continue
             # 获取用户输入的新密码及确认密码
-            # new_password = input('新密码: ').strip()
             new_password = mylib.validate_input(r'^.{6,15}$', '密码: ', '输入提示: 密码长度介于6~15个字符，输入r返回上级菜单', is_pass=True)
-            # confirm_password = input('确认密码: ').strip()
             confirm_password = mylib.validate_input(r'^.{6,15}$', '确认密码: ', '输入提示: 密码长度介于6~15个字符，输入r返回上级菜单', is_pass=True)
             old_password = mylib.jiami(old_password)
             # 判断旧密码是否正确

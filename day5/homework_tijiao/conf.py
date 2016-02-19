@@ -6,7 +6,6 @@ MAX_PER_PAGE = 5
 
 # 银行相关
 ATM_LOG = 'log/atm.log'
-# 账户相关
 ACCOUNT_FILE = 'dbs/account.db'
 MAX_BALANCE = 15000.0
 DEFAULT_PASSWORD = '123.com'

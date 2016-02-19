@@ -1,0 +1,20 @@
+[
+    {
+        "name": "张晓宇",
+        "tel": "13800138000",
+        "cart": [],
+        "password": "cbff36039c3d0212b3e34c23dcde1456",
+        "address": "北京市通州区",
+        "username": "zhangxiaoyu",
+        "mail": "61411916@qq.com"
+    },
+    {
+        "name": "65年哥",
+        "tel": "13000000000",
+        "cart": [],
+        "password": "cbff36039c3d0212b3e34c23dcde1456",
+        "address": "北京市通州区",
+        "username": "petterzhang",
+        "mail": "a@b.com"
+    }
+]

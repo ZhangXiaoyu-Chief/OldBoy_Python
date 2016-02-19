@@ -9,7 +9,7 @@ Email: 61411916@qq.com
 
 Version: 1.0
 
-Description:
+Description: ATM后台主程序
 
 Help:
 '''
@@ -22,16 +22,9 @@ import libs.mylib as mylib
 if __name__ == '__main__':
     ac = account()
     atm = atm()
-    # logging.config.fileConfig("atm_logger.conf")
     logger = mylib.mylog(conf.ATM_LOG)
-    # handler = logging.FileHandler(filename='atm.log',encoding = "UTF-8")
-    # logger.addHandler(handler)
-    # logging.basicConfig(level=logging.DEBUG, format = u'%(asctime)s [%(levelname)s]: %(message)s', datefmt='%Y-%m-%d %H:%M:%S', filename='atm.log', filemode='a', encoding = "UTF-8")
 
     def print_welcome():
-        # menu = ['查看详细信息', '查看账单', '提现', '同行转账', '查看消费流水', '修改密码', '退出']
-        #account = atm.get_crurrent()
-        #print(account)
         welcome_info = '''
 **********************************
 * %s *
@@ -58,7 +51,6 @@ if __name__ == '__main__':
         :param account: 账户对象
         :return: 无
         '''
-
         account_info = '''
 用户详细信息
 -----------------------------------------------------
@@ -161,12 +153,9 @@ if __name__ == '__main__':
         :return: 无
         '''
         new_max_balance = mylib.validate_input('^\d+[.]{0,1}\d+$', '请输入新的用户额度: ') # 获取用户输入的新的可用额度
-        if new_max_balance == 'r':
-            flag = False
-        else:
+        if new_max_balance != 'r':
             # 修改用户可用额度，并更新
             account['max_balance'] = float(new_max_balance)
-            flag = False
             res, msg = ac.update_account(account)
             if res:
                 input('%s，卡号为%s的用户额度已经调整为%s，按任意键继续' %(msg, account['cardid'], account['max_balance']))

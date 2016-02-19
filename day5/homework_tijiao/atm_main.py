@@ -20,8 +20,6 @@ import libs.mylib as mylib
 if __name__ == '__main__':
     ac = account()
     atm = atm()
-    # import re
-    # amount_re = re.compile('^\d+[.]{0,1}\d+$')
     logger = mylib.mylog(conf.ATM_LOG)
 
     def print_menu(menu_list):
@@ -41,7 +39,6 @@ if __name__ == '__main__':
         :return: 无
         '''
         account = atm.get_crurrent() # 获取当前用户所有信息
-        #print(account)
         welcome_info = '''
 **********************************
 * %s *
@@ -50,10 +47,6 @@ if __name__ == '__main__':
 * %s *
 **********************************''' %(mylib.myljust('欢迎来到65银行', 30), mylib.myljust('Version: 1.0', 30), mylib.myljust('%s 您好' %account['name'], 30), mylib.myljust('当前余额: %s' %account['balance'], 30))
         print(welcome_info)
-        #items = list(enumerate(menu))
-        #print(range(len(items), 2))
-        # for i in range(0, len(list(items)), 2):
-        #     print('%s、 %s %s、 %s' %(items[i][0], mylib.myljust(items[i][1], 20), items[i+1][0], mylib.myljust(items[i+1][1], 20)))
 
     def show_account_info():
         '''
@@ -126,7 +119,6 @@ if __name__ == '__main__':
         while flag:
             # 获取转账的另一方的账号
             cardid_b = mylib.validate_input(r'^\d{9}$','请输入对方卡号: ', '输入提示: 卡号是9位数字，输入r返回上级菜单')
-            #account_b = ac.find_by_id(cardid_b)
             # 判断输入的是否为r
             if cardid_b == 'r':
                 # 输入的如果是r退出循环
@@ -162,7 +154,6 @@ if __name__ == '__main__':
         flag = True
         while flag:
             # 获取提现金额
-            #cash = input('操作提示：\n  取现金额必须是100的整数倍\n  输入r返回上级菜单\n请输入提现金额: ').strip()
             cash = mylib.validate_input(r'^\d+[.]{0,1}\d+$','请输入提现金额: ', '输入提示：\n  取现金额必须是100的整数倍\n  金额不能大于余额\n  输入r返回主菜单')
             # 如果输入的不是r
             if cash != 'r':
@@ -213,7 +204,6 @@ if __name__ == '__main__':
                     input("已经是第1页了，按任意键继续")
                 else:
                     page = page - 1
-
             elif chose == 'r':
                 # 选择r，退出循环返回主菜单
                 flag = False
@@ -230,17 +220,13 @@ if __name__ == '__main__':
         while flag:
             account = atm.get_crurrent()
             # 获取用户输入的旧密码
-            # old_password = input('原密码(输入r返回上级菜单): ').strip()
-            # old_password = mylib.validate_input('\d', 'dafdsf', is_pass=True)
             old_password = mylib.validate_input(r'^.{6,15}$', '原密码: ', '输入提示: 输入r返回上级菜单', is_pass=True)
             # 判断用户输入的是否是r，如果是r退出循环
             if old_password == 'r':
                 flag = False
                 continue
             # 获取用户输入的新密码及确认密码
-            # new_password = input('新密码: ').strip()
             new_password = mylib.validate_input(r'^.{6,15}$', '密码: ', '输入提示: 密码长度介于6~15个字符，输入r返回上级菜单', is_pass=True)
-            # confirm_password = input('确认密码: ').strip()
             confirm_password = mylib.validate_input(r'^.{6,15}$', '确认密码: ', '输入提示: 密码长度介于6~15个字符，输入r返回上级菜单', is_pass=True)
             old_password = mylib.jiami(old_password)
             # 判断旧密码是否正确
@@ -263,14 +249,12 @@ if __name__ == '__main__':
             else:
                 input('原密码错误，按任意键继续')
 
-
     if atm.auth():
         flag = True
         logger.info('atm_main：%s登录系统' %atm.get_crurrent()['cardid'])
         while flag:
             print_welcome()
             chose = print_menu(['查看详细信息', '查看账单', '提现', '还款', '同行转账', '查看消费流水', '修改密码', '退出'])
-
             if chose == '1':
                 show_account_info()
             elif chose == '2':
