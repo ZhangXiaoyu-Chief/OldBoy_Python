@@ -3,11 +3,12 @@
 from conf import conf
 from model import role
 
-def print_main(role_info):
+def print_main(leading_role):
     pass
+    role_info = leading_role.get_info()
     main_map = '''
 返回主菜单(r)  存档(s)   查看背包(p)
-%s: 生命 %s   声望 %s   现银 %s   银票 %s   欠账 %s   level %s %s %s
+%s: 生命 %s   声望 %s   现银 %s   银票 %s   欠账 %s   level %s %s %s   穿越天数 %s
 ------------------------------------------------------------------------
                               北市(2)
                         |                    |
@@ -22,12 +23,12 @@ def print_main(role_info):
            妓院(6)      |                    |     出城(8)
                         |                    |
                              南市(7)
-    ''' %(role_info['name'], role_info['hp'], role_info['rp'], role_info['cash'], role_info['deposit'], role_info['debt'], role_info['level'], role_info['level'][0], role_info['level'][1], role_info['level'][2])
+    ''' %(role_info[0], role_info[1], role_info[2], role_info[3], role_info[4], role_info[5], role_info[6], role_info[7], role_info[8], role_info[9])
     print(main_map)
 
-def new_game():
+def new_game(role_info):
     print('new_game')
-    print_main()
+    print_main(role_info)
 
 
 
@@ -52,7 +53,8 @@ def print_main_menu():
 
 def run():
     role_1 = role.leading_role(conf.LEADING_ROLE_INIT_DATA)
-    print(role_1)
+    print(role_1.get_name)
+
     role_1.say('testing')
     main_menu_do = {"1":new_game, "2":reload_game, "3":print_game_info, "4":exit_game}
 
@@ -61,4 +63,4 @@ def run():
         print_main_menu()
         chose = input('\n>> ')
         if chose in main_menu_do.keys():
-            main_menu_do[chose]()
+            main_menu_do[chose](role_1)

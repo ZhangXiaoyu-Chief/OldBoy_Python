@@ -37,7 +37,10 @@ class leading_role(role):
 
     def get_name(self):
         return self.__name
-
+    def get_info(self):
+        print('ss')
+        role_info = tuple(self.__name, self.__hp, self.__rp, self.__cash, self.__deposit, self.__debt, self.__level[0], self.__level[1], self.__level[2], self.__ndays)
+        return role_info
 
 
 
