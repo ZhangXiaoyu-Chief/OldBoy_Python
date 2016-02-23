@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding:utf-8
-import conf
+from conf import conf
 from libs import mylib
 
 class role(object):
@@ -64,6 +64,11 @@ class leading_role(role):
             self.goods_list.append(tmp_goods)
         self.goods_count += count
         self.cash -= price
+
+    def go_one_day(self):
+        self.ndays += 1
+        if self.deposit >= 0:
+            self.deposit = self.deposit * conf.INTERESTS
 
 
 

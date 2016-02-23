@@ -57,6 +57,9 @@ NEWS_LIST = [
     {'msg' : '官府发出告示，禁止民间私斗', 'id' : 1 , 'impact' : -3.0},
     {'msg' : '最近武馆，大家纷纷去报名', 'id' : 1 , 'impact' : 2.5},
 ]
+
+INTERESTS = 0.05
+# interests
 # 姓名name
 # 性别sex
 # 现金cach

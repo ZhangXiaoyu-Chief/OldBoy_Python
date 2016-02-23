@@ -56,17 +56,32 @@ def new_game():
         if chose == 'r':
             flag = False
 
-def buy_goods(me, seller, goods_list, prices):
+def buy_goods(me, seller, goods, price):
     import re
-    count = seller.say('你要多少').strip()
+
 
     while True:
+        count = seller.say('你要多少(返回r)').strip()
+
+        if count == 'r':
+            return False
         me.say(count)
         if re.match('^\d+$', count):
             max_count = me.get_goods_count()
             cash = me.get_cash()
-            if int(count) <= cash:
-                if count <= max_count:
+            total = price * int(count)
+            if int(total) <= cash:
+                if int(count) <= max_count:
+                    seller.say('好嘞，客官，这是您的%s个%s' %(count, goods['name']))
+                    me.buy_goods(goods['name'], int(count), total)
+                    return True
+                else:
+                    seller.say('客官，您的背包好像没那么多地儿啊')
+                    me.say('对哦，我再考虑一下')
+            else:
+                seller.say('客官，您好像没那么多银子')
+                me.say('对哦，我再考虑一下')
+
 
 
 
@@ -112,20 +127,30 @@ def market(me):
             chose_goods = goods_list[int(chose) - 1]
             print(chose_goods)
             me.say('%s' %chose_goods['name'])
+            chose_do = seller.say('%s？您是买(1)还是卖(2)还是不要(0)' %chose_goods['name']).strip()
             while True:
-                chose_do = seller.say('%s？您是买(1)还是卖(2)还是不要(0)' %chose_goods['name']).strip()
+
                 if chose_do in chose_do_menu.keys():
-                    chose_do_menu[chose_do](me, seller, goods_list, prices)
+                    if(chose_do_menu[chose_do](me, seller, chose_goods, prices[int(chose) - 1])):
+                        seller.say('客官您还看点啥')
+                        break
+                    else:
+                        me.say('不不，还是不要%s了'  %chose_goods['name'])
+
+                        seller.say('那您要啥？')
+                        break
                 elif chose_do == '0':
                     me.say('不要')
                     seller.say('不要您说什么，拿我消遣')
                     break
                 else:
                     me.say(chose_do)
-                    seller.say('客官，我听不懂你说什么，Can you speak chinese？')
+                    chose_do = seller.say('客官，我听不懂你说什么，Can you speak chinese？您是买(1)还是卖(2)还是不要(0)')
 
         elif chose == '0':
             seller.say("客官，欢迎您下次再来")
+            me.go_one_day()
+            print(me.goods_list)
             break
         else:
             me.say(chose)
