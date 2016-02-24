@@ -51,6 +51,9 @@ def new_game():
     # input('木婉清脸上害羞的红了起来')
     # wanqing.say('嗯，...')
     # input('于是我出了姑娘的屋子，来到街上')
+    main()
+def main():
+    global me
     flag = True
     while flag:
         play_main()
@@ -137,20 +140,21 @@ def hospital( *args):
             me.say('此处不留爷，自有留爷处')
 
 
-def deposit(zhanghui):
+def deposit(zhanggui):
     global me
     import re
     while True:
-        money = zhanggui.say('您要开多少的银票>> ')
+        money = zhanggui.say('您要开多少的银票>> ').strip()
         me.say(money)
         if re.match('^\d+$', money):
-            if me.get_cash() >= money:
-                zhanggui.say('客官，这是您%s两的银票，您收好了，欢迎您再来')
+            if me.get_cash() >= int(money):
+                zhanggui.say('客官，这是您%s两的银票，您收好了，欢迎您再来' %money)
                 return True
             else:
-                zhanggui.say('客官，我听不懂你说什么，Can you speak chinese？我问您要开多少的银票>> ')
+                zhanggui.say('客官，您的现银好像不够吧')
+                me.say('是哦，我在想想')
         else:
-            zhanggui.say('客官，我听不懂你说什么，Can you speak chinese？我问您要开多少的银票>> ')
+            zhanggui.say('客官，我听不懂你说什么，Can you speak chinese？')
 def take_cash(zhanggui):
     pass
 
@@ -158,7 +162,7 @@ def bank(*args):
     global me
     import re
     zhanggui = role.role('钱庄掌柜')
-    chose = zhanggui.say('客官，您是开银票(1)还是兑换银票(2)(退出0)>> ')
+    chose = zhanggui.say('客官，您是开银票(1)还是兑换银票(2)(退出0)>> ').strip()
     chose_do = {"1" : deposit, "2" : take_cash}
     flag = True
     flag2 = True
@@ -223,7 +227,7 @@ def market( market_id):
             chose_goods = goods_list[int(chose) - 1]
             print(chose_goods)
             me.say('%s' %chose_goods['name'])
-            chose_do = seller.say('%s？您是买(1)还是卖(2)还是不要(0)' %chose_goods['name']).strip()
+            chose_do = seller.say('%s？您是买(1)还是卖(2)(返回0) >>' %chose_goods['name']).strip()
             while True:
                 if chose_do in chose_do_menu.keys():
                     if(chose_do_menu[chose_do](seller, chose_goods, prices[int(chose) - 1])):
@@ -240,7 +244,7 @@ def market( market_id):
                     break
                 else:
                     me.say(chose_do)
-                    chose_do = seller.say('客官，我听不懂你说什么，Can you speak chinese？您是买(1)还是卖(2)还是不要(0)')
+                    chose_do = seller.say('客官，我听不懂你说什么，Can you speak chinese？您是买(1)还是卖(2)(返回0) >> ').strip()
         elif chose == '0':
             if is_do:
                 seller.say("客官，欢迎您下次再来")
