@@ -10,18 +10,7 @@ class role(object):
     def say(self, msg):
         return input('%s: %s' %(self.name, msg))
 
-# LEADING_ROLE_INIT_DATA = {
-#     name:"李磊",
-#     cash:1000,
-#     deposit:0,
-#     debt:0,
-#     hp:100,
-#     rp:0,
-#     level:[0,0,0],
-#     ndays:0,
-#     goods_list:[],
-#     max_goods_list:100
-# }
+
 class leading_role(role):
     def __init__(self, leading_role_info):
         super(leading_role, self).__init__(leading_role_info['name'])
@@ -38,11 +27,13 @@ class leading_role(role):
         self.goods_total_count = 0
         self.one_day_cash = 0
 
+
+
     def get_name(self):
         return self.name
     def get_info(self):
         # print('ss')
-        role_info = (self.name, self.hp, self.rp, self.cash, self.deposit, self.debt, self.goods_total_count, self.ndays)
+        role_info = (self.name, self.hp, self.rp, self.cash, self.deposit, self.goods_total_count, self.ndays)
         return role_info
     def think(self, msg):
         input(mylib.color(msg, 32))
@@ -112,6 +103,33 @@ class leading_role(role):
     def get_hp(self):
         return self.hp
 
+    def depo(self, money):
+        self.deposit += money
+        self.cash -= money
+
+    def take_cash(self, money):
+        self.cash += money
+        self.deposit -= money
+
+    def get_deposit(self):
+        return self.deposit
+
+class wanqing(role):
+    def __init__(self, name):
+        super(wanqing, self).__init__(name)
+        self.love = 0
+
+    def get_love(self):
+        return self.love
+
+    def get_name(self):
+        return self.name
+
+    def add_love(self, name):
+        import random
+        love = random.randrange(1, 5)
+        self.love += love
+        input('%s对%s爱慕之情+%s' %(self.name, name, love))
 
 class seller(role):
     def __init__(self, name):
@@ -168,5 +186,3 @@ class seller(role):
         #print('---世界消息---')
         # input(news['msg'])
         return news['msg']
-
-

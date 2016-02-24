@@ -13,7 +13,7 @@ def play_main():
 
     main_map = '''
 返回主菜单(r)  存档(s)   查看背包(p)
-%s: 生命 %s   声望 %s   现银 %s   银票 %s   欠账 %s   包裹 %s   穿越天数 %s
+%s: 生命 %s   声望 %s   现银 %s   银票 %s   包裹 %s   穿越天数 %s   木婉清的爱慕之情 %s
 ---------------------------------------------------------------------------------
                               北市(2)
                         |                    |
@@ -28,12 +28,24 @@ def play_main():
            医馆(6)      |                    |     丽春院(8)
                         |                    |
                              南市(7)
-    ''' %(role_info[0], role_info[1], role_info[2], role_info[3], role_info[4], role_info[5], role_info[6], role_info[7])
+    ''' %(role_info[0], role_info[1], role_info[2], role_info[3], role_info[4], role_info[5], role_info[6], wanqing.get_love())
     print(main_map)
+
+def save_game(*args):
+    global me
+    global wanqing
+    import shelve
+    sw = shelve.open('save/save.pkl')
+    sw['me'] = me
+    sw['wanqing'] = wanqing
+    sw.close()
 
 def new_game():
     global me
+    global wanqing
+
     me = role.leading_role(conf.LEADING_ROLE_INIT_DATA)
+    wanqing = role.wanqing('木婉清')
     name = input('请输入玩家的姓名: ').strip()
     if name:
         me.name = name
@@ -58,7 +70,7 @@ def main():
     while flag:
         play_main()
         chose = input('>> ').strip()
-        main_menu_do = {"1" : bank, "2" : market, "4" : market, "5" : market, "6" : hospital, "7" : market}
+        main_menu_do = {"1" : bank, "2" : market, "3" : home, "4" : market, "5" : market, "6" : hospital, "7" : market, "s" : save_game}
         if chose in main_menu_do.keys():
             main_menu_do[chose](chose)
         if chose == 'r':
@@ -149,14 +161,31 @@ def deposit(zhanggui):
         if re.match('^\d+$', money):
             if me.get_cash() >= int(money):
                 zhanggui.say('客官，这是您%s两的银票，您收好了，欢迎您再来' %money)
+                #print(me.deposit)
+                me.depo(int(money))
                 return True
             else:
                 zhanggui.say('客官，您的现银好像不够吧')
-                me.say('是哦，我在想想')
+                me.say('是哦，我再想想')
         else:
             zhanggui.say('客官，我听不懂你说什么，Can you speak chinese？')
 def take_cash(zhanggui):
-    pass
+    global me
+    import re
+    while True:
+        money = zhanggui.say('您要兑换多少现银>> ').strip()
+        me.say(money)
+        if re.match('^\d+$', money):
+            if me.get_deposit() >= int(money):
+                zhanggui.say('客官，这是您%s两的银子，您收好了，欢迎您再来' %money)
+                #print(me.deposit)
+                me.take_cash(int(money))
+                return True
+            else:
+                zhanggui.say('客官，您的银票好像不够吧')
+                me.say('是哦，我再想想')
+        else:
+            zhanggui.say('客官，我听不懂你说什么，Can you speak chinese？')
 
 def bank(*args):
     global me
@@ -258,58 +287,33 @@ def market( market_id):
             me.say(chose)
             seller.say('客官，Can you speak chinese？')
 
-
-
-
-# def random_news(prices):
-#     import random
-#     news_list = conf.NEWS_LIST
-#     # int rd = rand32() % GOODS_LIST_MAX;
-#     #
-# 	# system( "cls" );
-#     #
-# 	# puts( "-北京新闻播报-\n" );
-#     #
-# 	# //随机选择新闻
-# 	# int news_id = rlist[rd] * 4 + rand32() % 4;
-#     rd = random.randrange(0, len(prices))
-#     news_id = rd * 4 + random.randrange(0, 4)
-#     # print(len(news_list))
-#     #news = news_list[random.randrange(0, 35585 ) % len(news_list)]
-#     news = news_list[news_id]
-#     # if( news_list[news_id].impact > 0 ){
-#     #
-# 	# 	plist[rd] = ( int )( plist[rd] * news_list[news_id].impact );
-# 	# }
-# 	# else if( news_list[news_id].impact < 0 ){
-#     #
-# 	# 	plist[rd] = ( int )( plist[rd] / ( -news_list[news_id].impact ) );
-# 	# }
-#
-#     if news['impact'] > 0:
-#         # print(prices[news['id']])
-#         prices[news['id']] = int(prices[news['id']] * news['impact'])
-#         # print(prices[news['id']])
-#     else:
-#         # print(prices[news['id']])
-#         prices[news['id']] = int(prices[news['id']] / (-news['impact']))
-#         # print(prices[news['id']])
-#     #print('---世界消息---')
-#     # input(news['msg'])
-#     return news['msg']
-
-
-
+def home(*args):
+    global me
+    global wanqing
+    wanqing.say('%s哥哥，你回来了，人家想死你了' %me.get_info()[0])
+    me.say('%s妹妹，我也想你啊，我这不是回来看你了吗' %wanqing.get_name())
+    wanqing.say('嗯嗯，这次回来你要好好陪陪人家')
+    me.say('好的')
+    input('于是%s，今天没有出外谋生，赔了%s一天' %(me.get_info()[0], wanqing.get_name()))
+    wanqing.add_love(me.get_info()[0])
+    me.go_one_day()
 
 
 def reload_game():
-    pass
+    global me
+    global wanqing
+    import shelve
+    sr = shelve.open('save/save.pkl')
+    me = sr['me']
+    wanqing = sr['wanqing']
+
+    sr.close()
+    main()
 def exit_game():
     pass
 def print_game_info():
     pass
-def exit_game():
-    pass
+
 
 def print_main_menu():
     #main_menu = {1:"新的游戏", 2:"旧的记忆", 3:"制作人员", 4:"退出游戏"}
@@ -318,6 +322,7 @@ def print_main_menu():
     #print(enumerate(main_menu))
     for menu in enumerate(main_menu):
         print(menu[0]+1, menu[1])
+
 
 
 def run():
