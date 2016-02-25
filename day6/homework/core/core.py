@@ -146,7 +146,7 @@ def hospital( *args):
     me.say('大夫，我不太舒服')
     doctor.say('来来来，我给你号号脉')
     input('过了一盏茶的功夫')
-    if me.get_hp() == 100:
+    if me.get_hp() == conf.MAX_HP:
         doctor.say('这位客官，我看你脉象平稳，不像得了什么病，您是来消遣老夫的吗？')
     else:
         doctor.say('这位客官，你没什么大碍，只是有些肾亏，我给你开几服药调养调养就好了')
