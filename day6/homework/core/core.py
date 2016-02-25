@@ -10,26 +10,36 @@ wanqing = None
 def play_main():
     global me
     role_info = me.get_info()
-
     main_map = '''
 返回主菜单(r)  存档(s)   查看背包(p)
-%s: 生命 %s   声望 %s   现银 %s   银票 %s   包裹 %s   穿越天数 %s   木婉清的爱慕之情 %s
----------------------------------------------------------------------------------
+%s: 生命 %s/%s   声望 %s/%s   现银 %s   银票 %s  背包 %s/%s   穿越天数 %s   爱情 %s
+---------------------------------------------------------------------------------------
                               北市(2)
                         |                    |
             钱庄(1)     |                    |      木婉清的家(3)
                         |                    |
     --------------------+                    +---------------------
 
-西市(4)                           我                            东市(5)
+西市(4)                           %s                         东市(5)
 
     --------------------+                    +---------------------
                         |                    |
            医馆(6)      |                    |     丽春院(8)
                         |                    |
                              南市(7)
-    ''' %(role_info[0], role_info[1], role_info[2], role_info[3], role_info[4], role_info[5], role_info[6], wanqing.get_love())
+    ''' %(role_info[0], role_info[1], conf.MAX_HP, role_info[2], conf.MAX_RP, role_info[3], role_info[4], role_info[5], role_info[6],role_info[7], wanqing.get_love(), role_info[0])
     print(main_map)
+def show_goods_list(*args):
+    global me
+    #print(me.get_goods_list())
+    goods_list = me.get_goods_list()
+    if goods_list:
+        for num , line in enumerate(goods_list, 1):
+            print('%s %s %s' %(num, line['name'], line['count']))
+    else:
+        print('背包里空空如也')
+    input('按任意键返回主界面')
+
 
 def save_game(*args):
     global me
@@ -70,7 +80,7 @@ def main():
     while flag:
         play_main()
         chose = input('>> ').strip()
-        main_menu_do = {"1" : bank, "2" : market, "3" : home, "4" : market, "5" : market, "6" : hospital, "7" : market, "s" : save_game}
+        main_menu_do = {"1" : bank, "2" : market, "3" : home, "4" : market, "5" : market, "6" : hospital, "7" : market, "8": lichun, "s" : save_game, "p" : show_goods_list}
         if chose in main_menu_do.keys():
             main_menu_do[chose](chose)
         if chose == 'r':
@@ -80,7 +90,7 @@ def buy_goods(seller, goods, price):
     global me
     import re
     while True:
-        count = seller.say('你要多少(返回r)').strip()
+        count = seller.say('你要多少(返回r)>>').strip()
         if count == 'r':
             return False
         me.say(count)
@@ -281,7 +291,7 @@ def market( market_id):
                 seller.say('啥都不干进来干吗，去去去')
                 me.say('此处不留爷，自有留爷处')
             me.go_one_day()
-            print(me.goods_list)
+            #print(me.goods_list)
             break
         else:
             me.say(chose)
@@ -290,13 +300,31 @@ def market( market_id):
 def home(*args):
     global me
     global wanqing
-    wanqing.say('%s哥哥，你回来了，人家想死你了' %me.get_info()[0])
+    wanqing.say('%s哥哥，你回来了，人家一个人在家好无聊啊，每人陪我玩' %me.get_info()[0])
     me.say('%s妹妹，我也想你啊，我这不是回来看你了吗' %wanqing.get_name())
-    wanqing.say('嗯嗯，这次回来你要好好陪陪人家')
+    wanqing.say('嗯嗯，这次回来你要好好陪人家玩')
     me.say('好的')
     input('于是%s，今天没有出外谋生，赔了%s一天' %(me.get_info()[0], wanqing.get_name()))
     wanqing.add_love(me.get_info()[0])
     me.go_one_day()
+
+def lichun(*args):
+    global me
+    laobao = role.role('老鸨')
+    if me.get_cash() <= conf.PROSTITUTE_PRICE:
+        laobao.say('去去去，我们这里招呼要饭的')
+        me.say('此处不留爷，自有留爷处')
+    else:
+        laobao.say('这位爷，进里面玩玩啊')
+        me.say('把你们这里最漂亮的姑娘找来，大爷我有的是银子')
+        laobao.say('这位爷，里面请，春花、秋月、如烟下来招呼这位大爷')
+        ruyan = role.role('如烟')
+        ruyan.say('大爷~~，里面请，奴家好好服侍您')
+        me.say('是吗？？哈哈哈')
+        add_rp = me.add_rp()
+        input('一场风花雪月之后，%s的声望+%s' %(me.get_info()[0], add_rp))
+        me.pay(conf.PROSTITUTE_PRICE)
+        me.go_one_day()
 
 
 def reload_game():

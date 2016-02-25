@@ -15,17 +15,15 @@ class leading_role(role):
     def __init__(self, leading_role_info):
         super(leading_role, self).__init__(leading_role_info['name'])
         #self.name = leading_role_info['name']
-        self.cash = leading_role_info['cash']
-        self.deposit = leading_role_info['deposit']
-        self.debt = leading_role_info['debt']
-        self.hp = leading_role_info['hp']
-        self.rp = leading_role_info['rp']
-        self.level = leading_role_info['level']
-        self.ndays = leading_role_info['ndays']
-        self.goods_list = leading_role_info['goods_list']
-        self.max_goods_list = leading_role_info['max_goods_list']
-        self.goods_total_count = 0
-        self.one_day_cash = 0
+        self.__cash = leading_role_info['cash']
+        self.__deposit = leading_role_info['deposit']
+        self.__hp = leading_role_info['hp']
+        self.__rp = leading_role_info['rp']
+        self.__ndays = leading_role_info['ndays']
+        self.__goods_list = leading_role_info['goods_list']
+        self.__max_goods_list = leading_role_info['max_goods_list']
+        self.__goods_total_count = 0
+        self.__one_day_cash = 0
 
 
 
@@ -33,25 +31,28 @@ class leading_role(role):
         return self.name
     def get_info(self):
         # print('ss')
-        role_info = (self.name, self.hp, self.rp, self.cash, self.deposit, self.goods_total_count, self.ndays)
+        role_info = (self.name, self.__hp, self.__rp, self.__cash, self.__deposit, self.__goods_total_count, self.__max_goods_list, self.__ndays)
         return role_info
     def think(self, msg):
         input(mylib.color(msg, 32))
 
+    def get_goods_list(self):
+        return self.__goods_list
+
     def get_free_count(self):
-        return self.max_goods_list - self.goods_total_count
+        return self.__max_goods_list - self.__goods_total_count
 
     def find_goods_count(self, goods_name):
-        for item in self.goods_list:
+        for item in self.__goods_list:
             if item['name'] == goods_name:
                 return item['count']
         pass
     def get_cash(self):
-        return self.cash
+        return self.__cash
 
     def buy_goods(self, goods_name, count, price):
         pass
-        for goods in self.goods_list:
+        for goods in self.__goods_list:
             if goods['name'] == goods_name:
                 goods['count'] += count
                 break
@@ -59,68 +60,79 @@ class leading_role(role):
             tmp_goods = {}
             tmp_goods['name'] = goods_name
             tmp_goods['count'] = count
-            self.goods_list.append(tmp_goods)
-        self.goods_total_count += count
-        self.one_day_cash -= price
-        self.cash -= price
+            self.__goods_list.append(tmp_goods)
+        self.__goods_total_count += count
+        self.__one_day_cash -= price
+        self.__cash -= price
     def sale_goods(self, goods_name, count, price):
-        for goods in self.goods_list:
+        for goods in self.__goods_list:
             if goods['name'] == goods_name:
                 if goods['count'] == count:
-                    self.goods_list.remove(goods)
+                    self.__goods_list.remove(goods)
 
                 else:
                     goods['count'] -= count
             break
-        self.goods_total_count -= count
-        self.one_day_cash += price
-        self.cash += price
+        self.__goods_total_count -= count
+        self.__one_day_cash += price
+        self.__cash += price
 
 
     def go_one_day(self):
         import random
-        self.ndays += 1
-        if self.deposit >= 0:
-            deposit = self.deposit + int(self.deposit * conf.INTERESTS)
-            self.deposit = deposit
+        self.__ndays += 1
+        if self.__deposit >= 0:
+            deposit = self.__deposit + int(self.__deposit * conf.INTERESTS)
+            self.__deposit = deposit
         hp_del = random.randrange(1, 4)
-        self.hp -= hp_del
-        input('一天过去了，%s的现银 %s，hp -%s' % (self.name, self.one_day_cash, hp_del))
+        self.__hp -= hp_del
+        cash = self.__one_day_cash if self.__one_day_cash <= 0 else '+%s' %self.__one_day_cash
+        input('一天过去了，%s的现银 %s' % (self.name, cash))
 
-        self.one_day_cash = 0
+        self.__one_day_cash = 0
 
 
     def pay(self, money):
-        if self.cash > money:
-            self.cash -= money
+        if self.__cash > money:
+            self.__cash -= money
+            self.__one_day_cash -= money
 
     def add_hp(self, hp):
-        if self.hp + hp > 100:
-            self.hp = 100
+        if self.__hp + hp > conf.MAX_HP:
+            self.__hp = conf.MAX_HP
         else:
-            self.hp += hp
+            self.__hp += hp
+
+    def add_rp(self):
+        import random
+        rp = random.randrange(1, 5)
+        if self.__rp + rp > conf.MAX_RP:
+            self.__rp = conf.MAX_RP
+        else:
+            self.__rp += rp
+        return rp
 
     def get_hp(self):
-        return self.hp
+        return self.__hp
 
     def depo(self, money):
-        self.deposit += money
-        self.cash -= money
+        self.__deposit += money
+        self.__cash -= money
 
     def take_cash(self, money):
-        self.cash += money
-        self.deposit -= money
+        self.__cash += money
+        self.__deposit -= money
 
     def get_deposit(self):
-        return self.deposit
+        return self.__deposit
 
 class wanqing(role):
     def __init__(self, name):
         super(wanqing, self).__init__(name)
-        self.love = 0
+        self.__love = 0
 
     def get_love(self):
-        return self.love
+        return self.__love
 
     def get_name(self):
         return self.name
@@ -128,7 +140,7 @@ class wanqing(role):
     def add_love(self, name):
         import random
         love = random.randrange(1, 5)
-        self.love += love
+        self.__love += love
         input('%s对%s爱慕之情+%s' %(self.name, name, love))
 
 class seller(role):
@@ -168,11 +180,11 @@ class seller(role):
         news = news_list[news_id]
         # if( news_list[news_id].impact > 0 ){
         #
-        # 	plist[rd] = ( int )( plist[rd] * news_list[news_id].impact );
+        #   plist[rd] = ( int )( plist[rd] * news_list[news_id].impact );
         # }
         # else if( news_list[news_id].impact < 0 ){
         #
-        # 	plist[rd] = ( int )( plist[rd] / ( -news_list[news_id].impact ) );
+        #   plist[rd] = ( int )( plist[rd] / ( -news_list[news_id].impact ) );
         # }
 
         if news['impact'] > 0:

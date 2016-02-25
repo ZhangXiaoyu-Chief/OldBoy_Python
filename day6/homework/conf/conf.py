@@ -59,6 +59,13 @@ NEWS_LIST = [
 ]
 
 INTERESTS = 0.05
+
+MAX_HP = 100
+MAX_RP = 100
+MAX_DAY = 60
+
+
+PROSTITUTE_PRICE = 500
 # interests
 # 姓名name
 # 性别sex
