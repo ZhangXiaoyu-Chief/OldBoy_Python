@@ -135,3 +135,6 @@ def mylog(log_file_name):
     root_logger.addHandler(handler)
     root_logger.setLevel(logging.INFO)
     return root_logger
+
+def b2s(b_str, code = 'utf8'):
+    return str(b_str, 'utf8')
