@@ -8,7 +8,7 @@ class account(object):
         self.__account_file = conf.ACCOUNT_FILE
         self.__accounts = self.__read_accounts()
 
-    def insert_account(self, cardid, name, tel, mail, address, max_balance = 0):
+    def insert_account(self, ):
         '''
         创建用户类
         :param cardid: 卡号
