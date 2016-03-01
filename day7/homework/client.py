@@ -43,7 +43,7 @@ while True:
         received_size += len(data)
         print(data)
         #data = str(data.decode())
-        res += str(data.decode())
+        res += str(mylib.b2s(data))
     else:
         print(res)
         print('---recv done-----')
