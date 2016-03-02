@@ -141,3 +141,30 @@ def b2s(b_str, code = 'utf8'):
 
 def s2b(s_str, code = 'utf8'):
     return bytes(s_str, code)
+
+
+def get_file_md5(filename):
+    import os
+    import hashlib
+    if not os.path.isfile(filename):
+        return None
+    myhash = hashlib.md5()
+    f = open(filename,'rb')
+    while True:
+        b = f.read(8096)
+        if not b :
+            break
+        myhash.update(b)
+    f.close()
+    return myhash.hexdigest()
+
+def get_dir_size_for_linux(filename):
+    import os
+    size=0
+    for (root,dirs,files) in os.walk(dir):
+        for name in files:
+            try:
+                size += getsize(join(root,name))
+            except:
+                continue
+    return size
