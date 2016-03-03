@@ -17,7 +17,6 @@ class users(object):
         import codecs
         try:
             with codecs.open(self.__users_file, 'r', 'utf-8') as f:
-                print(self.__users_file)
                 users = json.load(f)
             return users
         except Exception:

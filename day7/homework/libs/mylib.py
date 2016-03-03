@@ -161,7 +161,7 @@ def get_file_md5(filename):
 def get_dir_size_for_linux(filename):
     import os
     size=0
-    for (root,dirs,files) in os.walk(dir):
+    for (root,dirs,files) in os.walk(filename):
         for name in files:
             try:
                 size += getsize(join(root,name))
