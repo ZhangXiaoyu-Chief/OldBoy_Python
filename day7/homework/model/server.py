@@ -256,14 +256,16 @@ class Myserver(socketserver.BaseRequestHandler):
         # 将当前目录告诉客户端
         self.request.sendall(mylib.s2b(self.__current_path))
 
-    def runcmd(self, client_cmd):
+    def ls(self, client_cmd):
+        self.__runcmd("%s -al %s" %(client_cmd[0], self.__current_path))
+
+    def __runcmd(self, cmd):
         while True:
-            cmd = client_cmd[1]
             cmd_call = subprocess.Popen(cmd,shell=True, stdout=subprocess.PIPE)
             cmd_result = cmd_call.stdout.read()
             ack_msg = mylib.s2b("CMD_RESULT_SIZE|%s" %len(cmd_result))
             self.request.send(ack_msg)
-            client_ack = conn.recv(50)
+            client_ack = self.request.recv(50)
             if client_ack.decode() == 'CLIENT_READY_TO_RECV':
                 self.request.send(cmd_result)
 

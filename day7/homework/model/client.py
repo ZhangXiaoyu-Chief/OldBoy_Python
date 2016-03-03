@@ -254,8 +254,7 @@ class ftpclient(object):
             self.__runcmd(user_input[0])
 
     def __runcmd(self, cmd):
-        self.__sk.sendall(mylib.s2b('runcmd|%s' %cmd))
-
+        self.__sk.sendall(mylib.s2b(cmd))
         server_ack_msg = self.__sk.recv(100)
         cmd_res_msg = str(server_ack_msg.decode()).split("|")
         print(cmd_res_msg)
