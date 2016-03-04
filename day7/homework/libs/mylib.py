@@ -177,10 +177,9 @@ def process_bar(start, end, width = 50):
     tag = "{}{}".format(front_tag, end_tag)
     str_tag = "{:<7} [{}] {:,}\r".format(str_num, tag, end)
     import sys
-    import time
     sys.stdout.write(str_tag)
     sys.stdout.flush()
-    time.sleep(0.1)
+    #time.sleep(0.1)
     if len(str_tag) == width:
         sys.stdout.write('\n')
         sys.stdout.flush()

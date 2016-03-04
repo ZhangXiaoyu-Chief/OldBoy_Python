@@ -222,10 +222,6 @@ class Myserver(socketserver.BaseRequestHandler):
             # 其他情况说明文件或目录不存在
             self.request.sendall(mylib.s2b('目录或文件%s不存在' %filename))
 
-
-    def ls(self, cliend_cmd):
-        pass
-
     def move(self, cliend_cmd):
         '''
         移动文件或重命名文件方法
@@ -265,14 +261,13 @@ class Myserver(socketserver.BaseRequestHandler):
         :param cmd: 命令
         :return:
         '''
-        while True:
-            cmd_call = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
-            cmd_result = cmd_call.stdout.read()
-            ack_msg = mylib.s2b("CMD_RESULT_SIZE|%s" %len(cmd_result))
-            self.request.send(ack_msg)
-            client_ack = self.request.recv(50)
-            if client_ack.decode() == 'CLIENT_READY_TO_RECV':
-                self.request.send(cmd_result)
+        cmd_call = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+        cmd_result = cmd_call.stdout.read()
+        ack_msg = mylib.s2b("CMD_RESULT_SIZE|%s" %len(cmd_result))
+        self.request.send(ack_msg)
+        client_ack = self.request.recv(50)
+        if client_ack.decode() == 'CLIENT_READY_TO_RECV':
+            self.request.send(cmd_result)
 
 class myftp():
     def __init__(self):
