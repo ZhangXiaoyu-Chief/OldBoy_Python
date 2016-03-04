@@ -168,3 +168,19 @@ def get_dir_size_for_linux(filename):
             except:
                 continue
     return size
+
+def process_bar(start, end, width = 50):
+    str_num = "{:.2f}".format(start / end * 100)
+    front = int(start * width / end)
+    front_tag = "#" * front
+    end_tag = " " * (width - front)
+    tag = "{}{}".format(front_tag, end_tag)
+    str_tag = "{:<7} [{}] {:,}\r".format(str_num, tag, end)
+    import sys
+    import time
+    sys.stdout.write(str_tag)
+    sys.stdout.flush()
+    time.sleep(0.1)
+    if len(str_tag) == width:
+        sys.stdout.write('\n')
+        sys.stdout.flush()

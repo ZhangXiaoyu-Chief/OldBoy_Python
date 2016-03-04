@@ -93,8 +93,9 @@ class ftpclient(object):
                     recv_size += len(data)
                     f.write(data)
                     count = (int(conf.JINDO_MAX * recv_size / file_size) - count_jindu)
-                    sys.stdout.write('#' * int(count))
-                    sys.stdout.flush()
+                    # sys.stdout.write('#' * int(count))
+                    # sys.stdout.flush()
+                    mylib.process_bar(recv_size, file_size)
                     count_jindu = int(conf.JINDO_MAX * recv_size / file_size)
                 f.close()
                 print('')
@@ -250,10 +251,20 @@ class ftpclient(object):
             print('命令输入错误或要查询的命令不存在')
 
     def ls(self, user_input):
+        '''
+        查看目录内容方法
+        :param user_input: 用户命令
+        :return: 无
+        '''
         if len(user_input) == 1:
             self.__runcmd(user_input[0])
 
     def __runcmd(self, cmd):
+        '''
+        执行原生shell命令方法
+        :param cmd: shell命令
+        :return: 无
+        '''
         self.__sk.sendall(mylib.s2b(cmd))
         server_ack_msg = self.__sk.recv(100)
         cmd_res_msg = str(server_ack_msg.decode()).split("|")
@@ -269,7 +280,3 @@ class ftpclient(object):
             res += str(data.decode())
         else:
             print(str(res))
-
-if __name__ == "__main__":
-    f = ftpclient()
-    f.start()

@@ -50,7 +50,7 @@ class Myserver(socketserver.BaseRequestHandler):
         :param client_cmd: 分割后的命令
         :return: 无
         '''
-        print(client_cmd)
+        #print(client_cmd)
         import os
         # 拼接目录和文件名
         filename = self.__current_path + client_cmd[1]
@@ -260,8 +260,13 @@ class Myserver(socketserver.BaseRequestHandler):
         self.__runcmd("%s -al %s" %(client_cmd[0], self.__current_path))
 
     def __runcmd(self, cmd):
+        '''
+        执行原生shell命令方法
+        :param cmd: 命令
+        :return:
+        '''
         while True:
-            cmd_call = subprocess.Popen(cmd,shell=True, stdout=subprocess.PIPE)
+            cmd_call = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
             cmd_result = cmd_call.stdout.read()
             ack_msg = mylib.s2b("CMD_RESULT_SIZE|%s" %len(cmd_result))
             self.request.send(ack_msg)
