@@ -92,6 +92,7 @@ class Myserver(socketserver.BaseRequestHandler):
         import os
         import shutil
         # 拼接要上传的文件名
+        print(client_cmd)
         filename = self.__current_path + os.path.split(client_cmd[1])[1]
         file_size = int(client_cmd[2])
         #filename = os.path.split(filename)[1]
@@ -253,6 +254,11 @@ class Myserver(socketserver.BaseRequestHandler):
         self.request.sendall(mylib.s2b(self.__current_path))
 
     def ls(self, client_cmd):
+        '''
+        查看目录内容方法
+        :param client_cmd: 用户命令
+        :return:
+        '''
         self.__runcmd("%s -al %s" %(client_cmd[0], self.__current_path))
 
     def __runcmd(self, cmd):

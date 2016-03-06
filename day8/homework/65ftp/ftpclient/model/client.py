@@ -1,21 +1,17 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # coding:utf-8
-'''
-Created on: 
-
-@author: 张晓宇
-
-Email: 61411916@qq.com
-
-Version: 1.0
-
-Description:
-
-Help:
-'''
-import socket
+import socketserver
 from libs import mylib
+import subprocess
 from conf import conf
+from model.users import users,user
+from libs import mylib
+
+
+import os,sys
+import socket
+import json
+
 
 class ftpclient(object):
     def __init__(self):
@@ -24,9 +20,10 @@ class ftpclient(object):
         :return: 无
         '''
         self.__current_user = "guest"
+        self.__current_path = ''
         self.__code_list = conf.CODE_LIST
         self.__sk = socket.socket()
-        self.__conn = self.__sk.connect(conf.IP_PORT)
+        self.__conn = self.__sk.connect((conf.SERVER_IP, conf.PORT))
         self.__is_login = False # 保存登录状态
         self.__help_info = {
             "get" : "用于下载文件，格式：get path/to/filename，说明：path/to/格式要求同cd命令",
@@ -44,9 +41,9 @@ class ftpclient(object):
         启动客户端方法
         :return: 无
         '''
-        print(mylib.b2s(self.__sk.recv(100))) # 显示欢迎信息
+
         while True: # 循环获取用户输入的而命令，如果输入quit退出循环，并退出客户端
-            user_input = input('%s >> ' %(self.__current_user)).strip()
+            user_input = input('%s:/%s>> ' %(self.__current_user, self.__current_path)).strip()
             if len(user_input) == 0: continue
             user_input = user_input.split() # 分割用户输入的命令
             if user_input[0] == 'quit': # 判断用户输入的命令，quit表示退出
@@ -55,7 +52,7 @@ class ftpclient(object):
                 func = getattr(self, user_input[0]) # 获取方法
                 func(user_input) # 执行方法
             else:
-                print(self.__code_list['302'])
+                print(self.__code_list['401'])
 
 
     def get(self, user_input):
@@ -74,14 +71,25 @@ class ftpclient(object):
         username = input('username: ') # 获取用户名
         password = input('password: ') # 获取密码
         self.__sk.sendall(mylib.s2b('auth|%s|%s' % (username, mylib.jiami(password)))) # 调用服务端的认证方法，验证用户名密码
-        res = mylib.b2s(self.__sk.recv(100)) # 获取验证结果
+        res = mylib.b2s(self.__sk.recv(200)) # 获取验证结果
         print(res)
         if res == 'ok': # 如果验证成功，修改当前用户名和登录状态
             self.__current_user = username
             self.__is_login = True
 
     def cd(self, user_input):
-        pass
+        if len(user_input) == 2:
+            self.__sk.send(mylib.s2b('cd|{"path" : "%s"}' %user_input[1]))
+            res = json.loads(mylib.b2s(self.__sk.recv(200)))
+            print(res)
+            print(type(res))
+            if res['code'] == '500':
+                self.__current_path = res['path']
+            else:
+                print(self.__code_list[code])
+        else:
+            print(self.__code_list['401'])
+
 
     def rm(self, user_input):
         pass
