@@ -97,6 +97,7 @@ class ftpclient(object):
                 print('')
                 print('正在验证下载的文件...')
                 new_md5 = mylib.get_file_md5(tmp_filename)
+                print(new_md5, md5)
                 if new_md5 == md5:
                     import shutil
                     shutil.move(tmp_filename, os.path.join(dst_path, filename))
