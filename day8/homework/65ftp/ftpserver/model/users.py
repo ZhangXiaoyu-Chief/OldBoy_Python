@@ -21,7 +21,7 @@ class user(object):
 
 class users(object):
     def __init__(self):
-        self.__users_file = conf.USERS_FILE
+        self.__users_file = conf.USER_FILE
         self.__users = self.__read_users()
 
 
@@ -35,16 +35,18 @@ class users(object):
             with codecs.open(self.__users_file, 'r', 'utf-8') as f:
                 users = json.load(f)
             return users
-        except Exception:
+        except Exception as e:
+            print(e)
             return []
 
     def get_users(self):
         return self.__users
 
     def get_user(self, username):
-        for user in self.__users:
-            if user['username'] == username:
-                res_user = user(user['username'], user['password'], user['quota'])
+        print(self.__users)
+        for one_user in self.__users:
+            if one_user['username'] == username:
+                res_user = user(one_user['username'], one_user['password'], one_user['quota'])
                 return res_user
         else:
             return None

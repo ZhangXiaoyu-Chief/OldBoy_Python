@@ -77,8 +77,8 @@ class ftpclient(object):
             Confirm = mylib.b2s(self.__sk.recv(100)).split('|')
             if Confirm[0] == 'ready':
                 file_size = json.loads(Confirm[1])['filesize']
+                md5 = json.loads(Confirm[1])['md5']
                 recv_size = tmp_file_size
-
                 while file_size != recv_size:
                     try:
                         f = open(tmp_filename, 'ab')
@@ -86,11 +86,22 @@ class ftpclient(object):
                         recv_size += len(data)
                         f.write(data)
                         mylib.process_bar(recv_size, file_size)
+                        print(recv_size, file_size)
                     except socket.error as e:
                         print(self.__code_list['306'])
+                        f.close()
+                        break
                     except IOError as e:
                         print(self.__code_list['305'])
                 f.close()
+                print('')
+                print('正在验证下载的文件...')
+                new_md5 = mylib.get_file_md5(tmp_filename)
+                if new_md5 == md5:
+                    import shutil
+                    shutil.move(tmp_filename, os.path.join(dst_path, filename))
+                else:
+                    os.remove(tmp_filename)
             else:
                 print(self.__code_list[Confirm[1]])
         else:
@@ -108,10 +119,10 @@ class ftpclient(object):
         '''
         username = input('username: ') # 获取用户名
         password = input('password: ') # 获取密码
-        self.__sk.sendall(mylib.s2b('auth|%s|%s' % (username, mylib.jiami(password)))) # 调用服务端的认证方法，验证用户名密码
+        self.__sk.sendall(mylib.s2b(r'auth|{"username":"%s", "password":"%s"}' % (username, mylib.jiami(password)))) # 调用服务端的认证方法，验证用户名密码
         res = mylib.b2s(self.__sk.recv(200)) # 获取验证结果
-        print(res)
-        if res == 'ok': # 如果验证成功，修改当前用户名和登录状态
+        print(self.__code_list[res])
+        if res == '200': # 如果验证成功，修改当前用户名和登录状态
             self.__current_user = username
             self.__is_login = True
 
@@ -138,7 +149,11 @@ class ftpclient(object):
 
 
     def pwd(self, user_input):
-        pass
+        if len(user_input) == 1:
+            res = mylib.s2b(self.__sk.recv(200))
+            print(res)
+        else:
+            print(self.__code_list['401'])
 
     def help(self, user_input):
         '''

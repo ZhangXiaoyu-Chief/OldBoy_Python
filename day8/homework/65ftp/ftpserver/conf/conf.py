@@ -15,6 +15,8 @@ CODE_LIST = {
     '302': "File doesn't exist",
     '303': "Path doesn't exist",
     '304': "Destination path doesn't exist",
+    '305': "IO error",
+    '306': "Socket error",
     '401': "Invalid instruction!",
     '500': "Invalid execute successful",
     '501': "Invalid execute fail",
@@ -24,7 +26,7 @@ SERVER_IP = '0.0.0.0'
 
 PORT = 9999
 
-USER_FILE = 'dbs/user.db'
+USER_FILE = 'dbs/users.db'
 
 LOGS = 'logs/65ftp_server.log'
 
