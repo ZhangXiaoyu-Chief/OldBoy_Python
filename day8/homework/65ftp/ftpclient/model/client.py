@@ -25,6 +25,7 @@ class ftpclient(object):
         self.__sk = socket.socket()
         self.__conn = self.__sk.connect((conf.SERVER_IP, conf.PORT))
         self.__is_login = False # 保存登录状态
+        self.__tmp_path = conf.TMP_PATH
         self.__help_info = {
             "get" : "用于下载文件，格式：get path/to/filename，说明：path/to/格式要求同cd命令",
             "put" : "用于上传文件，格式：put path/to/filename，说明：path/to/格式要求同cd命令",
@@ -43,7 +44,7 @@ class ftpclient(object):
         '''
 
         while True: # 循环获取用户输入的而命令，如果输入quit退出循环，并退出客户端
-            user_input = input('%s:/%s>> ' %(self.__current_user, self.__current_path)).strip()
+            user_input = input(r'%s:%s>> ' %(self.__current_user, self.__current_path)).strip()
             if len(user_input) == 0: continue
             user_input = user_input.split() # 分割用户输入的命令
             if user_input[0] == 'quit': # 判断用户输入的命令，quit表示退出
@@ -54,9 +55,46 @@ class ftpclient(object):
             else:
                 print(self.__code_list['401'])
 
-
     def get(self, user_input):
-        pass
+        import os
+
+        if len(user_input) == 2:
+            dst_path = '.'
+        elif len(user_input) == 3:
+            dst_path = user_input[2]
+        else:
+            print(self.__code_list['401'])
+            return None
+        if os.path.isdir(dst_path):
+            filename = user_input[1]
+            tmp_filename = os.path.join(self.__tmp_path,'%s.ftp' %os.path.split(filename)[1])
+            print(tmp_filename)
+            if os.path.isfile(tmp_filename): # 判断临时文件是否存在（也就是是否需要续传）
+                tmp_file_size = os.path.getsize(tmp_filename) # 获取临时文件的大小
+            else:
+                tmp_file_size = 0
+            self.__sk.send(mylib.s2b(r'get|{"filename":"%s", "sendsize": %s}' %(filename, tmp_file_size)))
+            Confirm = mylib.b2s(self.__sk.recv(100)).split('|')
+            if Confirm[0] == 'ready':
+                file_size = json.loads(Confirm[1])['filesize']
+                recv_size = tmp_file_size
+
+                while file_size != recv_size:
+                    try:
+                        f = open(tmp_filename, 'ab')
+                        data = self.__sk.recv(conf.FILE_PER_SIZE)
+                        recv_size += len(data)
+                        f.write(data)
+                        mylib.process_bar(recv_size, file_size)
+                    except socket.error as e:
+                        print(self.__code_list['306'])
+                    except IOError as e:
+                        print(self.__code_list['305'])
+                f.close()
+            else:
+                print(self.__code_list[Confirm[1]])
+        else:
+            print(self.__code_list['304'])
 
 
     def put(self, user_input):
@@ -86,7 +124,8 @@ class ftpclient(object):
             if res['code'] == '500':
                 self.__current_path = res['path']
             else:
-                print(self.__code_list[code])
+                print(self.__code_list[res['code']])
+
         else:
             print(self.__code_list['401'])
 

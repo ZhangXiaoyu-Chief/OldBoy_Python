@@ -12,7 +12,7 @@ class Myftphandle(socketserver.BaseRequestHandler):
         import os
         self.__loger = mylib.mylog(conf.LOGS, isstream = True)
         self.__current_user = user('guest', '', conf.DEFAULT_QUOTA)
-        self.__home_path =  os.path.abspath(os.path.join(conf.HOME_PATH,self.__current_user.get_username()))
+        self.__home_path =  os.path.abspath(os.path.join(conf.HOME_PATH,self.__current_user.get_username())).replace('\\', '/')
         self.__current_path = self.__home_path
         self.__code_list = conf.CODE_LIST
         self.__loger.info('Client %s:%s is connect the server' %self.client_address)
@@ -49,12 +49,39 @@ class Myftphandle(socketserver.BaseRequestHandler):
         print(os.path.isdir(tmp_path))
         print(self.__check_path(tmp_path))
         if os.path.isdir(tmp_path) and self.__check_path(tmp_path):
-            self.__current_path = tmp_path
+            self.__current_path = tmp_path.replace('\\', '/')
             response_code = '500'
         else:
             response_code = '501'
         self.request.send(mylib.s2b('{"code":"%s", "path":"%s"}' %(response_code, self.__current_path.replace(self.__home_path, ""))))
 
+    def get(self, instructions):
+        import os
+        import json
+        res = json.loads(instructions[1])
+        print(res)
+        filename = os.path.join(self.__current_path, res['filename']).replace('\\', '/')
+        print(filename)
+        if os.path.isfile(filename):
+            md5 = mylib.get_file_md5(filename)
+            file_size = os.path.getsize(filename)
+            self.request.send(mylib.s2b('ready|{"filesize":%s, "md5": "%s"}' %(file_size, md5)))
+            f = open(filename, 'rb')
+            send_size = res['sendsize']
+            f.seek(send_size)
+            while file_size != send_size:
+                # 传输读取文件内容并传输，如果剩余大小每次传输的大小，则传输固定大小，如果剩余的大小
+                if file_size - send_size > conf.FILE_PER_SIZE:
+                    data = f.read(conf.FILE_PER_SIZE)
+                    send_size += conf.FILE_PER_SIZE
+                else:
+                    data = f.read(file_size - send_size)
+                    send_size += (file_size - send_size)
+                self.request.sendall(data)
+                print(file_size, send_size)
+            f.close()
+        else:
+            self.request.send(mylib.s2b('fail|303'))
     def __check_path(self, path):
         import os
         if path.startswith(os.path.abspath(self.__home_path)):
