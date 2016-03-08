@@ -131,7 +131,7 @@ class Myftphandle(socketserver.BaseRequestHandler):
         import subprocess
         res = subprocess.Popen('du -s %s' %self.__home_path, shell = True, stdout = subprocess.PIPE)
         print(mylib.get_dir_size_for_linux(self.__home_path))
-        import
+
         #free_size = int(self.__current_user.get_quota() * 1024 * 1024  - mylib.get_dir_size_for_linux(self.__home_path))
 
         # 判断剩余空间是否够，如果够告诉客户端can，如果不够告诉客户端not
