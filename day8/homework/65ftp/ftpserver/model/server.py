@@ -210,6 +210,7 @@ class Myftphandle(socketserver.BaseRequestHandler):
         :param cmd: 命令
         :return:
         '''
+        import subprocess
         cmd_call = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
         cmd_result = cmd_call.stdout.read()
         ack_msg = mylib.s2b("CMD_RESULT_SIZE|%s" %len(cmd_result))
