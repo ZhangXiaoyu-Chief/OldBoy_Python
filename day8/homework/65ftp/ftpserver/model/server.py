@@ -43,7 +43,6 @@ class Myftphandle(socketserver.BaseRequestHandler):
         if hasattr(self, function_str):
             func = getattr(self, function_str)
             self.__loger.info('recv instruction %s from client [%s]!' %(instructions, self.client_address))
-            print(instructions)
             func(instructions)
         else:
             self.__loger.error('%s: %s from client [%s]!' %(self.__code_list, instructions, self.client_address))
