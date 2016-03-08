@@ -19,10 +19,10 @@ class ftpclient(object):
         初始化客户端方法
         :return: 无
         '''
-        self.__current_user = "guest"
-        self.__current_path = ''
-        self.__code_list = conf.CODE_LIST
-        self.__sk = socket.socket()
+        self.__current_user = "guest" # 定义默认用户，默认用户为guest
+        self.__current_path = '' # 定义当前目录，默认是空，也即是家目录
+        self.__code_list = conf.CODE_LIST # 定义错误码列表
+        self.__sk = socket.socket() # 定义socket对象
         self.__conn = self.__sk.connect((conf.SERVER_IP, conf.PORT))
         self.__is_login = False # 保存登录状态
         self.__tmp_path = conf.TMP_PATH
@@ -33,15 +33,14 @@ class ftpclient(object):
             "ls" : "用于显示当前目录下文件或文件详细信息，格式：ls",
             "cd" : "用于切换服务端目录，格式：cd path/to/，说明只能使用相对目录，‘.’表示当前目录，‘..’表示父目录",
             "rm" : "用于删除文件或目录，格式：rm path/to[/filename]，说明：path/to/格式要求同cd命令",
-            "move" : "用于移动或重命名文件，格式：move path/to[/old_filename] move path/to[/new_filename]，说明：path/to/格式要求同cd命令"
-        }
+        } # 帮助信息
         self.__version_info = '''
 --------------------------------------------------------------------------------------------
 欢迎使用65ftp
 version 2.0
 版本记录：
 1、优化了代码
-2、修改了rm、move命令的目录算法，尤其是修改了目录是否合法的算法，使命令更符合原生linux使用习惯
+2、修改了rm、cd命令的目录算法，尤其是修改了目录是否合法的算法，使命令更符合原生linux使用习惯
 3、修改了家目录已使用大小的算法，使用原生du -s获取已经使用的大小
 4、修复了上传的bug
 5、服务端和客户端分离，成为两个独立的目录，并使用不通的配置文件
@@ -50,7 +49,7 @@ version 2.0
 8、取消了pwd命令，当前目录直接显示在命令提示符上
 9、get命令增加了可以保存到其他目录的功能
 --------------------------------------------------------------------------------------------
-        '''
+        ''' # 版本信息
 
     def start(self):
         '''
@@ -71,37 +70,40 @@ version 2.0
                 print(self.__code_list['401'])
 
     def get(self, user_input):
+        '''
+        客户端下载方法
+        :param user_input: 用户输入的指令
+        :return: 无
+        '''
         import os
-
-        if len(user_input) == 2:
+        if len(user_input) == 2: # 如果是get xxx，则表示下载到当前目录
             dst_path = '.'
-        elif len(user_input) == 3:
+        elif len(user_input) == 3: # 如果是 get xxx xxx，则表示要下载到其他目录
             dst_path = user_input[2]
         else:
             print(self.__code_list['401'])
             return None
-        if os.path.isdir(dst_path):
-            filename = user_input[1]
-            tmp_filename = os.path.join(self.__tmp_path,'%s.ftp' %os.path.split(filename)[1])
-            print(tmp_filename)
+        if os.path.isdir(dst_path): # 判断目标文件是否存在
+            filename = user_input[1] # 获取下载的文件名
+            tmp_filename = os.path.join(self.__tmp_path,'%s.ftp' %os.path.split(filename)[1]) # 定义临时文件
             if os.path.isfile(tmp_filename): # 判断临时文件是否存在（也就是是否需要续传）
                 tmp_file_size = os.path.getsize(tmp_filename) # 获取临时文件的大小
             else:
                 tmp_file_size = 0
-            self.__sk.send(mylib.s2b(r'get|{"filename":"%s", "sendsize": %s}' %(filename, tmp_file_size)))
-            Confirm = mylib.b2s(self.__sk.recv(100)).split('|')
-            if Confirm[0] == 'ready':
-                file_size = json.loads(Confirm[1])['filesize']
-                md5 = json.loads(Confirm[1])['md5']
+            self.__sk.send(mylib.s2b(r'get|{"filename":"%s", "sendsize": %s}' %(filename, tmp_file_size))) # 向服务端发送下载指令接文件名和已近下载的大小
+            Confirm = mylib.b2s(self.__sk.recv(100)).split('|') # 获取服务器反馈
+            if Confirm[0] == 'ready': # 如果是ready则准备下载文件
+                file_size = json.loads(Confirm[1])['filesize'] # 获取文件大小
+                md5 = json.loads(Confirm[1])['md5'] # 获取md5
                 recv_size = tmp_file_size
                 f = open(tmp_filename, 'ab')
                 while file_size != recv_size:
+                    # 只要已下载大小不等于文件大小则循环接受数据
                     try:
                         data = self.__sk.recv(conf.FILE_PER_SIZE)
                         recv_size += len(data)
                         f.write(data)
                         mylib.process_bar(recv_size, file_size)
-                        print(recv_size, file_size)
                     except socket.error as e:
                         print(self.__code_list['306'])
                         f.close()
@@ -110,10 +112,9 @@ version 2.0
                         print(self.__code_list['305'])
                 f.close()
                 print('')
-                print('正在验证下载的文件...')
+                print('Validating...')
                 new_md5 = mylib.get_file_md5(tmp_filename)
-                print(new_md5, md5)
-                if new_md5 == md5:
+                if new_md5 == md5: # 验证md5，如果验证通过修改成正式文件名，如果没验证过去删除临时文件
                     import shutil
                     shutil.move(tmp_filename, os.path.join(dst_path, filename))
                 else:
@@ -125,28 +126,30 @@ version 2.0
 
 
     def put(self, user_input):
+        '''
+        客户端上传方法
+        :param user_input: 指令
+        :return:
+        '''
+        import json
         if len(user_input) == 2:
             file_name = user_input[1]
-
             if not os.path.isfile(file_name):
                 print(self.__code_list['302'])
                 return None
-
-
-            # self.__sk.send(mylib.s2b('checkspacesize'))
-            # free_size = mylib.b2s(self.__sk.recv(200))
-            # print(free_size)
-            free_size = 500 * 1024 * 1024
+            res = json.loads(self.__sk.sendall(mylib.s2b('checkspacesize')))
+            free_size = int(res['freesize']) * 1024 * 1024 # 获取剩余空间大小
             file_size = os.path.getsize(file_name)
-            if free_size > file_size:
-                md5 = mylib.get_file_md5(file_name)
-                self.__sk.send(mylib.s2b(r'put|{"filename":"%s", "file_size":%s, "md5":"%s"}' %(os.path.split(file_name)[1], file_size, md5)))
-                res = mylib.b2s(self.__sk.recv(200)).split('|')
+            if free_size > file_size: # 判断剩余空间是否够，够就下载，不够就直接返回
+                md5 = mylib.get_file_md5(file_name) # 获取上传文件的md5
+                self.__sk.send(mylib.s2b(r'put|{"filename":"%s", "file_size":%s, "md5":"%s"}' %(os.path.split(file_name)[1], file_size, md5))) # 发送上传指令，并通知服务端文件名，文件大小和md5
+                res = mylib.b2s(self.__sk.recv(200)).split('|') # 获取服务端确认信息
                 if res[0] == 'ready':
-                    send_size = json.loads(res[1])['recv_size']
+                    send_size = json.loads(res[1])['recv_size'] # 获取已经上传的大小
                     f = open(file_name, 'rb')
-                    f.seek(send_size)
+                    f.seek(send_size) # 设定文件的其实位置为已上传的大小
                     while file_size != send_size:
+                        # 只要文件大小不等于上传的大小则循环读文件并上传数据
                         if file_size - send_size > conf.FILE_PER_SIZE:
                             data = f.read(conf.FILE_PER_SIZE)
                             send_size += conf.FILE_PER_SIZE
@@ -194,17 +197,6 @@ version 2.0
         else:
             print(self.__code_list['401'])
 
-    def move(self, user_input):
-        pass
-
-
-    def pwd(self, user_input):
-        if len(user_input) == 1:
-            res = mylib.s2b(self.__sk.recv(200))
-            print(res)
-        else:
-            print(self.__code_list['401'])
-
     def ls(self, user_input):
         '''
         查看目录内容方法
@@ -212,7 +204,7 @@ version 2.0
         :return: 无
         '''
         if len(user_input) == 1:
-            self.__runcmd(user_input[0])
+            self.__runcmd(user_input[0]) # 调用self.__runcmd执行原生linux命令
         else:
             print(self.__code_list['401'])
 
@@ -253,11 +245,14 @@ version 2.0
             print(self.__code_list['401'])
 
     def rm(self, user_input):
+        '''
+        删除文件方法
+        :param user_input:
+        :return:
+        '''
         if len(user_input) == 2:
-            self.__sk.send(mylib.s2b('rm|{"path" : "%s"}' %user_input[1]))
-            res = json.loads(mylib.b2s(self.__sk.recv(200)))
-            print(res)
-            print(type(res))
+            self.__sk.send(mylib.s2b('rm|{"path" : "%s"}' %user_input[1])) # 向服务端发送删除指令
+            res = json.loads(mylib.b2s(self.__sk.recv(200))) # 获取执行结果（错误码）
             print(self.__code_list[res['code']])
         else:
             print(self.__code_list['401'])
