@@ -256,3 +256,8 @@ version 2.0
             print(self.__code_list[res['code']])
         else:
             print(self.__code_list['401'])
+
+
+    def exit(self, user_input):
+        self.__sk.close()
+        exit(0)
