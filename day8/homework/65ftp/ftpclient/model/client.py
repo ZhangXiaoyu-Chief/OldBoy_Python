@@ -114,6 +114,7 @@ class ftpclient(object):
             file_name = user_input[1]
 
             if not os.path.isfile(file_name):
+                print(self.__code_list['302'])
                 return None
 
 

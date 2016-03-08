@@ -164,6 +164,7 @@ class Myftphandle(socketserver.BaseRequestHandler):
             self.request.sendall(mylib.s2b('309'))
             self.__loger.info('%s %s' %(self.__code_list['309'], tmp_file_name))
         print(md5, new_md5)
+        self.__loger.info('End validate md5 [%s]' %tmp_file_name)
 
 
 
