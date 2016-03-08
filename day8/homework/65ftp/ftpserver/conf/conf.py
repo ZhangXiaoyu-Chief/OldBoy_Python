@@ -17,6 +17,9 @@ CODE_LIST = {
     '304': "Destination path doesn't exist",
     '305': "IO error",
     '306': "Socket error",
+    '307': "Insufficient space",
+    "308": "Validate successful",
+    "309": "Validate fail",
     '401': "Invalid instruction!",
     '500': "Invalid execute successful",
     '501': "Invalid execute fail",
@@ -24,7 +27,7 @@ CODE_LIST = {
 
 SERVER_IP = '0.0.0.0'
 
-PORT = 9999
+PORT = 9998
 
 USER_FILE = 'dbs/users.db'
 

@@ -79,9 +79,9 @@ class ftpclient(object):
                 file_size = json.loads(Confirm[1])['filesize']
                 md5 = json.loads(Confirm[1])['md5']
                 recv_size = tmp_file_size
+                f = open(tmp_filename, 'ab')
                 while file_size != recv_size:
                     try:
-                        f = open(tmp_filename, 'ab')
                         data = self.__sk.recv(conf.FILE_PER_SIZE)
                         recv_size += len(data)
                         f.write(data)
@@ -111,13 +111,40 @@ class ftpclient(object):
 
     def put(self, user_input):
         if len(user_input) == 2:
-            if not os.path.isfile(user_input[1]):
+            file_name = user_input[1]
+
+            if not os.path.isfile(file_name):
                 return None
-            self.__sk.send(mylib.s2b('checkspacesize'))
-            free_size = mylib.b2s(self.__sk.recv(200))
-            print(free_size)
+
+
+            # self.__sk.send(mylib.s2b('checkspacesize'))
+            # free_size = mylib.b2s(self.__sk.recv(200))
+            # print(free_size)
+            free_size = 500 * 1024 * 1024
+            file_size = os.path.getsize(file_name)
+            if free_size > file_size:
+                md5 = mylib.get_file_md5(file_name)
+                self.__sk.send(mylib.s2b(r'put|{"filename":"%s", "file_size":%s, "md5":"%s"}' %(os.path.split(file_name)[1], file_size, md5)))
+                res = mylib.b2s(self.__sk.recv(200)).split('|')
+                if res[0] == 'ready':
+                    send_size = json.loads(res[1])['recv_size']
+                    f = open(file_name, 'rb')
+                    f.seek(send_size)
+                    while file_size != send_size:
+                        if file_size - send_size > conf.FILE_PER_SIZE:
+                            data = f.read(conf.FILE_PER_SIZE)
+                            send_size += conf.FILE_PER_SIZE
+                        else:
+                            data = f.read(file_size - send_size)
+                            send_size += (file_size - send_size)
+                        self.__sk.send(data)
+                        mylib.process_bar(send_size, file_size)
+                    print(mylib.b2s(self.__sk.recv(200)))
+                    print("")
+            else:
+                print(self.__code_list['307'])
         else:
-            pass
+            print(self.__code_list['304'])
 
     def auth(self, user_input):
         '''

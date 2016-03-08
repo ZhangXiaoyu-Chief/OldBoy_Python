@@ -34,6 +34,7 @@ class Myftphandle(socketserver.BaseRequestHandler):
         if hasattr(self, function_str):
             func = getattr(self, function_str)
             self.__loger.info('recv instruction %s from client [%s]!' %(instructions, self.client_address))
+            print(instructions)
             func(instructions)
         else:
             self.__loger.error('%s: %s from client [%s]!' %(self.__code_list, instructions, self.client_address))
@@ -82,8 +83,8 @@ class Myftphandle(socketserver.BaseRequestHandler):
 
                 try:
                     self.request.send(data)
-                except socket.error:
-                    self.__loger.info('Begin send file  %s to client [%s]' %(filename, self.client_address))
+                except socket.error as e:
+                    self.__loger.error('%s when send file %s to client [%s]' %(e, filename, self.client_address))
                     break
                 print(file_size, send_size)
             f.close()
@@ -116,9 +117,56 @@ class Myftphandle(socketserver.BaseRequestHandler):
             self.request.sendall(mylib.s2b('201'))
             self.__loger.error('%s from [%s]' %(self.__code_list['201'], self.client_address))
 
-    def put(self):
+    def put(self, instructions):
         import os
         import json
+        #res = self.request.recv(200)
+        #print(res)
+        print(type(json.loads(instructions[1])))
+        print(json.loads(instructions[1]))
+        res = json.loads(instructions[1])
+        file_name = os.path.join(self.__current_path, res['filename'])
+        md5 = res['md5']
+        tmp_file_name = os.path.join(self.__current_path, '%s.ftp' %res['filename'])
+        if os.path.isfile(tmp_file_name):
+            tmp_file_size = os.path.getsize(tmp_file_name)
+        else:
+            tmp_file_size = 0
+        self.request.send(mylib.s2b(r'ready|{"recv_size":%s}' %tmp_file_size))
+        recv_size = tmp_file_size
+        file_size = res['file_size']
+        f = open(tmp_file_name, 'ab')
+        self.__loger.info('Begin recv file  %s from client [%s]' %(file_name, self.client_address))
+        while recv_size != file_size:
+            try:
+                data = self.request.recv(conf.FILE_PER_SIZE)
+                recv_size += len(data)
+                f.write(data)
+                mylib.process_bar(recv_size, file_size)
+                #print(recv_size, file_size)
+            except socket.error as e:
+                print(self.__code_list['306'])
+                f.close()
+                break
+            except IOError as e:
+                print(self.__code_list['305'])
+        f.close()
+        self.__loger.info('End recv file  %s from client [%s]' %(file_name, self.client_address))
+        new_md5 = mylib.get_file_md5(tmp_file_name)
+        self.__loger.info('Begin validate md5 [%s]' %tmp_file_name)
+        if new_md5 == md5:
+            import shutil
+            shutil.move(tmp_file_name, file_name)
+            self.request.sendall(mylib.s2b('308'))
+            self.__loger.info('%s %s' %(self.__code_list['308'], tmp_file_name))
+        else:
+            os.remove(tmp_file_name)
+            self.request.sendall(mylib.s2b('309'))
+            self.__loger.info('%s %s' %(self.__code_list['309'], tmp_file_name))
+        print(md5, new_md5)
+
+
+
 
     def checkspacesize(self, instructions):
         '''
