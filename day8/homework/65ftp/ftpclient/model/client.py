@@ -184,13 +184,16 @@ version 2.0
             print(self.__code_list['401'])
 
     def cd(self, user_input):
+        '''
+        切换服务端目录方法
+        :param user_input: 用户指令
+        :return: 无
+        '''
         if len(user_input) == 2:
-            self.__sk.send(mylib.s2b('cd|{"path" : "%s"}' %user_input[1]))
-            res = json.loads(mylib.b2s(self.__sk.recv(200)))
-            print(res)
-            print(type(res))
+            self.__sk.send(mylib.s2b('cd|{"path" : "%s"}' %user_input[1])) # 发送cd指令
+            res = json.loads(mylib.b2s(self.__sk.recv(200))) # 获取服务端反馈
             if res['code'] == '500':
-                self.__current_path = res['path']
+                self.__current_path = res['path'] # 修改当前目录等于返回来的目录
             else:
                 print(self.__code_list[res['code']])
 

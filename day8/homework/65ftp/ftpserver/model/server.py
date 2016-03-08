@@ -62,7 +62,7 @@ class Myftphandle(socketserver.BaseRequestHandler):
             response_code = '500'
         else:
             response_code = '303'
-        self.request.send(mylib.s2b('{"code":"%s", "path":"%s"}' %(response_code, self.__current_path.replace(self.__home_path, ""))))
+        self.request.send(mylib.s2b('{"code":"%s", "path":"%s"}' %(response_code, self.__current_path.replace(self.__home_path, "")))) # 返回当前目录
 
     def get(self, instructions):
         '''
