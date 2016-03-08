@@ -206,7 +206,31 @@ class ftpclient(object):
             print('命令输入错误或要查询的命令不存在')
 
     def ls(self, user_input):
-        pass
+        '''
+        查看目录内容方法
+        :param user_input: 用户命令
+        :return: 无
+        '''
+        if len(user_input) == 1:
+            self.__runcmd(user_input[0])
 
     def __runcmd(self, cmd):
-        pass
+        '''
+        执行原生shell命令方法
+        :param cmd: shell命令
+        :return: 无
+        '''
+        self.__sk.sendall(mylib.s2b(cmd))
+        server_ack_msg = self.__sk.recv(100)
+        cmd_res_msg = str(server_ack_msg.decode()).split("|")
+        if cmd_res_msg[0] == "CMD_RESULT_SIZE":
+            cmd_res_size = int(cmd_res_msg[1])
+            self.__sk.send(b"CLIENT_READY_TO_RECV")
+        res = ''
+        received_size = 0
+        while received_size < cmd_res_size:
+            data = self.__sk.recv(500)
+            received_size += len(data)
+            res += str(data.decode())
+        else:
+            print(str(res))

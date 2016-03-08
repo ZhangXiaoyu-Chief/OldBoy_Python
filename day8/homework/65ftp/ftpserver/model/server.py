@@ -196,6 +196,30 @@ class Myftphandle(socketserver.BaseRequestHandler):
         else:
             return False
 
+    def ls(self, client_cmd):
+        '''
+        查看目录内容方法
+        :param client_cmd: 用户命令
+        :return:
+        '''
+        self.__runcmd("%s -al %s" %(client_cmd[0], self.__current_path))
+
+    def __runcmd(self, cmd):
+        '''
+        执行原生shell命令方法
+        :param cmd: 命令
+        :return:
+        '''
+        cmd_call = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
+        cmd_result = cmd_call.stdout.read()
+        ack_msg = mylib.s2b("CMD_RESULT_SIZE|%s" %len(cmd_result))
+        self.request.send(ack_msg)
+        client_ack = self.request.recv(50)
+        if client_ack.decode() == 'CLIENT_READY_TO_RECV':
+            self.request.send(cmd_result)
+
+
+
 
 class myftp():
     def __init__(self):
