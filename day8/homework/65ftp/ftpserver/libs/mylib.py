@@ -130,7 +130,6 @@ def mylog(log_file_name, isstream = True):
     file_handler = logging.FileHandler(log_file_name, "a", encoding = "UTF-8")
     stream_handler = logging.StreamHandler()
     formatter = logging.Formatter("%(asctime)s [%(levelname)s]: %(message)s", '%Y-%m-%d %H:%M:%S')
-
     file_handler.setFormatter(formatter)
     stream_handler.setFormatter(formatter)
     root_logger = logging.getLogger()

@@ -110,7 +110,14 @@ class ftpclient(object):
 
 
     def put(self, user_input):
-        pass
+        if len(user_input) == 2:
+            if not os.path.isfile(user_input[1]):
+                return None
+            self.__sk.send(mylib.s2b('checkspacesize'))
+            free_size = mylib.b2s(self.__sk.recv(200))
+            print(free_size)
+        else:
+            pass
 
     def auth(self, user_input):
         '''

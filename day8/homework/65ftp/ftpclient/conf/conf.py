@@ -20,6 +20,8 @@ CODE_LIST = {
     '305': "IO error",
     '306': "Socket error",
     '401': "Invalid instruction!",
+    '500': "Invalid execute successful",
+    '501': "Invalid execute fail",
 }
 
 SERVER_IP = '127.0.0.1'

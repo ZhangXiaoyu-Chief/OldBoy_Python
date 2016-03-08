@@ -53,7 +53,7 @@ class Myftphandle(socketserver.BaseRequestHandler):
             self.__current_path = tmp_path.replace('\\', '/')
             response_code = '500'
         else:
-            response_code = '501'
+            response_code = '303'
         self.request.send(mylib.s2b('{"code":"%s", "path":"%s"}' %(response_code, self.__current_path.replace(self.__home_path, ""))))
 
     def get(self, instructions):
@@ -115,6 +115,28 @@ class Myftphandle(socketserver.BaseRequestHandler):
         else:
             self.request.sendall(mylib.s2b('201'))
             self.__loger.error('%s from [%s]' %(self.__code_list['201'], self.client_address))
+
+    def put(self):
+        import os
+        import json
+
+    def checkspacesize(self, instructions):
+        '''
+        检查剩余空间是否可以上传文件方法
+        :param client_cmd: 用户命令
+        :return: 无
+        '''
+        #file_size = int(client_cmd[0]) # 获取文件大小
+        # 获取剩余空间大小
+        import subprocess
+        res = subprocess.Popen('du -s %s' %self.__home_path, shell = True, stdout = subprocess.PIPE)
+        print(mylib.get_dir_size_for_linux(self.__home_path))
+        import
+        #free_size = int(self.__current_user.get_quota() * 1024 * 1024  - mylib.get_dir_size_for_linux(self.__home_path))
+
+        # 判断剩余空间是否够，如果够告诉客户端can，如果不够告诉客户端not
+        free_size = self.__current_user.get_quota() * 1024 * 1024 - int(mylib.b2s(res).split()[0])
+        self.request.send(mylib.s2b(r'{"freesize":"%s"}' %free_size))
 
 
     def __check_path(self, path):
