@@ -137,7 +137,7 @@ version 2.0
                 print(self.__code_list['302'])
                 return None
             self.__sk.sendall(mylib.s2b('checkspacesize'))
-            res = json.loads(self.__sk.recv(100))
+            res = json.loads(mylib.b2s(self.__sk.recv(100)))
             free_size = int(res['freesize']) * 1024 * 1024 # 获取剩余空间大小
             file_size = os.path.getsize(file_name)
             if free_size > file_size: # 判断剩余空间是否够，够就下载，不够就直接返回
