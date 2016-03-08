@@ -129,8 +129,9 @@ class Myftphandle(socketserver.BaseRequestHandler):
         #file_size = int(client_cmd[0]) # 获取文件大小
         # 获取剩余空间大小
         import subprocess
-        res = subprocess.Popen('du -s %s' %self.__home_path, shell = True, stdout = subprocess.PIPE)
-        print(mylib.get_dir_size_for_linux(self.__home_path))
+        cmd_call = subprocess.Popen('du -s %s' %self.__home_path, shell = True, stdout = subprocess.PIPE)
+        res = cmd_call.stdout.read()
+        #print(mylib.get_dir_size_for_linux(self.__home_path))
 
         #free_size = int(self.__current_user.get_quota() * 1024 * 1024  - mylib.get_dir_size_for_linux(self.__home_path))
 
