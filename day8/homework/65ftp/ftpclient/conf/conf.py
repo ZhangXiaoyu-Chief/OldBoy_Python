@@ -22,6 +22,7 @@ CODE_LIST = {
     '307': "Insufficient space",
     "308": "Validate successful",
     "309": "Validate fail",
+    "310": "Path or file doesn't exixt",
     '401': "Invalid instruction!",
     '500': "Invalid execute successful",
     '501': "Invalid execute fail",

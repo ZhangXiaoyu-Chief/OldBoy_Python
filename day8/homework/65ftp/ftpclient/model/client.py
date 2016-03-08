@@ -27,22 +27,37 @@ class ftpclient(object):
         self.__is_login = False # 保存登录状态
         self.__tmp_path = conf.TMP_PATH
         self.__help_info = {
-            "get" : "用于下载文件，格式：get path/to/filename，说明：path/to/格式要求同cd命令",
+            "get" : "用于下载文件，格式：get path/to/filename [dst/path/to/]，说明：path/to/格式要求同cd命令, dst/path/to/为目标目录，暂时只能使用相对目录",
             "put" : "用于上传文件，格式：put path/to/filename，说明：path/to/格式要求同cd命令",
             "auth" : "用户认证，格式：auth，然后根据提示输入用户名及密码",
-            "pwd" : "用于显示当前目录，格式：pwd",
             "ls" : "用于显示当前目录下文件或文件详细信息，格式：ls",
-            "cd" : "用于切换服务端目录，格式：cd path/to/，说明~或/表示用户家目录，但是不能/path/to/或 ~/path/to/，‘.’表示当前目录，‘..’表示父目录",
+            "cd" : "用于切换服务端目录，格式：cd path/to/，说明只能使用相对目录，‘.’表示当前目录，‘..’表示父目录",
             "rm" : "用于删除文件或目录，格式：rm path/to[/filename]，说明：path/to/格式要求同cd命令",
             "move" : "用于移动或重命名文件，格式：move path/to[/old_filename] move path/to[/new_filename]，说明：path/to/格式要求同cd命令"
         }
+        self.__version_info = '''
+--------------------------------------------------------------------------------------------
+欢迎使用65ftp
+version 2.0
+版本记录：
+1、优化了代码
+2、修改了rm、move命令的目录算法，尤其是修改了目录是否合法的算法，使命令更符合原生linux使用习惯
+3、修改了家目录已使用大小的算法，使用原生du -s获取已经使用的大小
+4、修复了上传的bug
+5、服务端和客户端分离，成为两个独立的目录，并使用不通的配置文件
+6、使用错误码列表的方式统一了报错信息
+7、服务端增加日志输出
+8、取消了pwd命令，当前目录直接显示在命令提示符上
+9、get命令增加了可以保存到其他目录的功能
+--------------------------------------------------------------------------------------------
+        '''
 
     def start(self):
         '''
         启动客户端方法
         :return: 无
         '''
-
+        print('欢迎使用65ftp，version: 2.0\n 输入help查看帮助信息')
         while True: # 循环获取用户输入的而命令，如果输入quit退出循环，并退出客户端
             user_input = input(r'%s:%s>> ' %(self.__current_user, self.__current_path)).strip()
             if len(user_input) == 0: continue
@@ -145,7 +160,7 @@ class ftpclient(object):
             else:
                 print(self.__code_list['307'])
         else:
-            print(self.__code_list['304'])
+            print(self.__code_list['401'])
 
     def auth(self, user_input):
         '''
@@ -153,14 +168,17 @@ class ftpclient(object):
         :param user_input: 用户输入命令
         :return:
         '''
-        username = input('username: ') # 获取用户名
-        password = input('password: ') # 获取密码
-        self.__sk.sendall(mylib.s2b(r'auth|{"username":"%s", "password":"%s"}' % (username, mylib.jiami(password)))) # 调用服务端的认证方法，验证用户名密码
-        res = mylib.b2s(self.__sk.recv(200)) # 获取验证结果
-        print(self.__code_list[res])
-        if res == '200': # 如果验证成功，修改当前用户名和登录状态
-            self.__current_user = username
-            self.__is_login = True
+        if len(user_input) ==1:
+            username = input('username: ') # 获取用户名
+            password = input('password: ') # 获取密码
+            self.__sk.sendall(mylib.s2b(r'auth|{"username":"%s", "password":"%s"}' % (username, mylib.jiami(password)))) # 调用服务端的认证方法，验证用户名密码
+            res = mylib.b2s(self.__sk.recv(200)) # 获取验证结果
+            print(self.__code_list[res])
+            if res == '200': # 如果验证成功，修改当前用户名和登录状态
+                self.__current_user = username
+                self.__is_login = True
+        else:
+            print(self.__code_list['401'])
 
     def cd(self, user_input):
         if len(user_input) == 2:
@@ -176,10 +194,6 @@ class ftpclient(object):
         else:
             print(self.__code_list['401'])
 
-
-    def rm(self, user_input):
-        pass
-
     def move(self, user_input):
         pass
 
@@ -191,20 +205,6 @@ class ftpclient(object):
         else:
             print(self.__code_list['401'])
 
-    def help(self, user_input):
-        '''
-        显示帮助方法
-        :param user_input: 用户命令
-        :return:
-        '''
-        if len(user_input) == 1:
-            for key,item in self.__help_info.items():
-                print("%s:  %s" %(key.rjust(8), item))
-        elif len(user_input) == 2 and self.__help_info.get(user_input[1]):
-            print("%s:  %s" %(user_input[1].rjust(8), self.__help_info.get(user_input[1])))
-        else:
-            print('命令输入错误或要查询的命令不存在')
-
     def ls(self, user_input):
         '''
         查看目录内容方法
@@ -213,6 +213,8 @@ class ftpclient(object):
         '''
         if len(user_input) == 1:
             self.__runcmd(user_input[0])
+        else:
+            print(self.__code_list['401'])
 
     def __runcmd(self, cmd):
         '''
@@ -234,3 +236,28 @@ class ftpclient(object):
             res += str(data.decode())
         else:
             print(str(res))
+
+    def help(self, user_input):
+        '''
+        显示帮助方法
+        :param user_input: 用户命令
+        :return:
+        '''
+        if len(user_input) == 1:
+            print(self.__version_info)
+            for key,item in self.__help_info.items():
+                print("%s:  %s" %(key.rjust(8), item))
+        elif len(user_input) == 2 and self.__help_info.get(user_input[1]):
+            print("%s:  %s" %(user_input[1].rjust(8), self.__help_info.get(user_input[1])))
+        else:
+            print(self.__code_list['401'])
+
+    def rm(self, user_input):
+        if len(user_input) == 2:
+            self.__sk.send(mylib.s2b('rm|{"path" : "%s"}' %user_input[1]))
+            res = json.loads(mylib.b2s(self.__sk.recv(200)))
+            print(res)
+            print(type(res))
+            print(self.__code_list[res['code']])
+        else:
+            print(self.__code_list['401'])

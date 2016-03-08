@@ -166,6 +166,37 @@ class Myftphandle(socketserver.BaseRequestHandler):
         print(md5, new_md5)
         self.__loger.info('End validate md5 [%s]' %tmp_file_name)
 
+    def rm(self, instructions):
+        '''
+        删除文件方法
+        :param cliend_cmd: 用户命令
+        :return: 无
+        '''
+        import json
+        import os
+        import shutil
+        res = json.loads(instructions[1])
+        print(res)
+        filename = os.path.join(self.__current_path, res['path'])
+        #filename = self.__current_path + cliend_cmd[1] # 获取要删除的文件
+        print(filename)
+        print(self.__check_path(filename))
+        if self.__check_path(filename):
+            if os.path.isdir(filename):# 如果是目录递归删除目录
+                shutil.rmtree(filename)
+                #self.request.sendall(mylib.s2b('500'))
+                response_code = '500'
+            elif os.path.isfile(filename): # 如果是文件，只删除文件
+                os.remove(filename)
+                #self.request.sendall(mylib.s2b('500'))
+                response_code = '500'
+        else:
+            # 其他情况说明文件或目录不存在
+            #self.request.sendall(mylib.s2b('310'))
+            response_code = '310'
+
+        self.request.send(mylib.s2b('{"code":"%s"}' %response_code))
+
 
 
 
@@ -191,6 +222,8 @@ class Myftphandle(socketserver.BaseRequestHandler):
 
     def __check_path(self, path):
         import os
+        print(self.__home_path)
+        print(path)
         if path.startswith(os.path.abspath(self.__home_path)):
             return True
         else:
