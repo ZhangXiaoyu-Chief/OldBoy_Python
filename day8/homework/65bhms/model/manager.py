@@ -90,6 +90,7 @@ def put_file(host, cmd):
     #     msg = 'error|[%s] : put file %s is fail [%s]' %(host['hostname'], cmd[0], error_info )
     #return msg
 
+
 def callback(msg):
     level,msg = msg.split('|')
     import logging
