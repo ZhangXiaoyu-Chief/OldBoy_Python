@@ -128,7 +128,7 @@ version 2.0
         '''
         客户端上传方法
         :param user_input: 指令
-        :return:
+        :return: 无
         '''
         import json
         if len(user_input) == 2:
@@ -196,7 +196,6 @@ version 2.0
                 self.__current_path = res['path'] # 修改当前目录等于返回来的目录
             else:
                 print(self.__code_list[res['code']])
-
         else:
             print(self.__code_list['401'])
 
@@ -236,7 +235,7 @@ version 2.0
         '''
         显示帮助方法
         :param user_input: 用户命令
-        :return:
+        :return: 无
         '''
         if len(user_input) == 1:
             print(self.__version_info)
@@ -250,8 +249,8 @@ version 2.0
     def rm(self, user_input):
         '''
         删除文件方法
-        :param user_input:
-        :return:
+        :param user_input: 用户命令
+        :return: 无
         '''
         if len(user_input) == 2:
             self.__sk.send(mylib.s2b('rm|{"path" : "%s"}' %user_input[1])) # 向服务端发送删除指令
@@ -259,7 +258,6 @@ version 2.0
             print(self.__code_list[res['code']])
         else:
             print(self.__code_list['401'])
-
 
     def exit(self, user_input):
         self.__sk.close()
