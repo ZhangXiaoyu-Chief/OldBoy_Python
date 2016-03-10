@@ -1,0 +1,112 @@
+
+2016-03-09 19:07:05 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-09 19:07:05 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 19:07:05 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 19:08:11 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-09 19:08:11 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 19:08:11 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 19:08:34 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-09 19:08:34 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 19:08:34 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 19:11:52 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-09 19:11:52 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 19:11:52 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 19:13:06 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 19:13:06 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-09 19:13:06 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-09 19:18:45 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 19:18:45 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-09 19:18:45 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-09 19:19:57 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-09 19:19:57 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 19:19:57 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 20:06:10 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 20:06:10 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-09 20:06:10 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-09 21:56:18 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-09 21:56:18 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 21:56:18 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 21:56:24 [INFO]: [123.59.44.38] : [asdfa] is fail
+2016-03-09 21:56:24 [INFO]: [123.59.66.174] : [asdfa] is fail
+2016-03-09 21:56:24 [INFO]: [123.59.66.174] : [asdfa] is fail
+2016-03-09 23:22:02 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 23:23:45 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-09 23:23:45 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-09 23:23:45 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-10 01:09:38 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-10 01:09:38 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-10 01:09:38 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-10 01:25:33 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-10 01:25:33 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-10 01:25:33 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-10 01:59:43 [INFO]: [123.59.66.174] : [['/etc/hostss']] is successful
+2016-03-10 01:59:43 [INFO]: [123.59.44.38] : [['/etc/hostss']] is successful
+2016-03-10 01:59:43 [INFO]: [123.59.44.38] : [['/etc/hostss']] is successful
+2016-03-10 02:00:25 [INFO]: [123.59.66.174] : [['/etc/hostss']] is successful
+2016-03-10 02:00:25 [INFO]: [123.59.44.38] : [['/etc/hostss']] is successful
+2016-03-10 02:00:25 [INFO]: [123.59.44.38] : [['/etc/hostss']] is successful
+2016-03-10 02:07:23 [INFO]: [123.59.66.174] : [cat /etc/hosts] is successful
+2016-03-10 02:07:23 [INFO]: [123.59.44.38] : [cat /etc/hosts] is successful
+2016-03-10 02:07:23 [INFO]: [123.59.44.38] : [cat /etc/hosts] is successful
+2016-03-10 02:07:40 [INFO]: [123.59.44.38] : [['/etc/hosts']] is successful
+2016-03-10 02:10:25 [INFO]: [123.59.44.38] : [['/etc/hosts']] is successful
+2016-03-10 02:12:39 [INFO]: [123.59.44.38] : [['/etc/hosts', '/home/zhangxiaoyu/hosts']] is successful
+2016-03-10 02:16:02 [INFO]: [123.59.44.38] : [['/etc/hosts', '/home/zhangxiaoyu/hosts']] is successful
+2016-03-10 02:16:53 [INFO]: [123.59.44.38] : [['/etc/hosts', '/home/zhangxiaoyu/hosts']] is successful
+2016-03-10 02:50:18 [INFO]: [123.59.44.38] : [['/etc/hosts', '/home/zhangxiaoyu/20160310025017']] is successful
+2016-03-10 03:03:06 [INFO]: [123.59.44.38] : [['/etc/hostsd', '/home/zhangxiaoyu/20160310030306']] is successful
+2016-03-10 03:05:18 [ERROR]: [123.59.44.38] : [['/etc/hostsd', '/home/zhangxiaoyu/20160310030517']] is successful
+2016-03-10 03:11:24 [ERROR]: [123.59.44.38] : get file /etc/hostsd is fail Source file or dirctory /etc/hostsd is not exit!
+2016-03-10 03:13:16 [INFO]: [123.59.44.38] : get file /etc/hosts to /home/zhangxiaoyu/20160310031315/123.59.44.38/hosts is successful
+2016-03-10 21:14:42 [ERROR]: [123.59.44.38] : [/tmp/test.txt] is fail [bash: /tmp/test.txt: Permission denied
+]
+2016-03-10 21:14:42 [ERROR]: [123.59.66.174] : [/tmp/test.txt] is fail [bash: /tmp/test.txt: Permission denied
+]
+2016-03-10 21:14:42 [ERROR]: [123.59.66.174] : [/tmp/test.txt] is fail [bash: /tmp/test.txt: Permission denied
+]
+2016-03-10 21:15:42 [ERROR]: [123.59.66.174] : [~/test.txt] is fail [bash: /home/ubuntu/test.txt: Permission denied
+]
+2016-03-10 21:15:42 [ERROR]: [123.59.44.38] : [~/test.txt] is fail [bash: /home/ubuntu/test.txt: Permission denied
+]
+2016-03-10 21:15:42 [ERROR]: [123.59.44.38] : [~/test.txt] is fail [bash: /home/ubuntu/test.txt: Permission denied
+]
+2016-03-10 21:16:28 [INFO]: [123.59.66.174] : [cat ~/test.txt] is successful
+2016-03-10 21:16:28 [INFO]: [123.59.44.38] : [cat ~/test.txt] is successful
+2016-03-10 21:16:28 [INFO]: [123.59.44.38] : [cat ~/test.txt] is successful
+2016-03-10 21:16:41 [INFO]: [123.59.44.38] : [cat /tmp/test.txt] is successful
+2016-03-10 21:16:41 [INFO]: [123.59.66.174] : [cat /tmp/test.txt] is successful
+2016-03-10 21:16:41 [INFO]: [123.59.66.174] : [cat /tmp/test.txt] is successful
+2016-03-10 21:30:44 [ERROR]: [123.59.44.38] : put file test.txt is fail []
+2016-03-10 21:32:35 [ERROR]: [123.59.44.38] : put file test.txt is fail [[Errno 2] No such file]
+2016-03-10 21:34:20 [ERROR]: [123.59.44.38] : put file test.txt is fail [[Errno 2] No such file]
+2016-03-10 21:34:39 [ERROR]: [123.59.44.38] : put file test.txt is fail [[Errno 2] No such file]
+2016-03-10 21:40:40 [ERROR]: [123.59.44.38] : get file /home/ubuntu/test.txt is fail [not enough arguments for format string]
+2016-03-10 21:40:40 [ERROR]: [123.59.66.174] : get file /home/ubuntu/test.txt is fail [not enough arguments for format string]
+2016-03-10 21:40:40 [ERROR]: [123.59.66.174] : get file /home/ubuntu/test.txt is fail [not enough arguments for format string]
+2016-03-10 21:41:33 [ERROR]: [123.59.44.38] : get file /etc/hosts is fail [not enough arguments for format string]
+2016-03-10 21:41:33 [ERROR]: [123.59.66.174] : get file /etc/hosts is fail [not enough arguments for format string]
+2016-03-10 21:41:33 [ERROR]: [123.59.66.174] : get file /etc/hosts is fail [not enough arguments for format string]
+2016-03-10 21:45:43 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160310214542/123.59.44.38/hosts is successful
+2016-03-10 21:45:43 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160310214542/123.59.66.174/hosts is successful
+2016-03-10 21:45:43 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160310214542/123.59.66.174/hosts is successful
+2016-03-10 21:46:18 [INFO]: [123.59.66.174] : get file /home/ubuntu/test.txt to ./20160310214617/123.59.66.174/test.txt is successful
+2016-03-10 21:46:18 [INFO]: [123.59.44.38] : get file /home/ubuntu/test.txt to ./20160310214617/123.59.44.38/test.txt is successful
+2016-03-10 21:46:18 [INFO]: [123.59.44.38] : get file /home/ubuntu/test.txt to ./20160310214617/123.59.44.38/test.txt is successful
+2016-03-10 21:47:41 [ERROR]: [123.59.44.38] : get file 20160310214617/123.59.44.38/test.txt is fail []
+2016-03-10 21:47:41 [ERROR]: [123.59.66.174] : get file 20160310214617/123.59.44.38/test.txt is fail []
+2016-03-10 21:47:41 [ERROR]: [123.59.66.174] : get file 20160310214617/123.59.44.38/test.txt is fail []
+2016-03-10 21:48:21 [ERROR]: [123.59.44.38] : put file 20160310214617/123.59.44.38/test.txt is fail [not enough arguments for format string]
+2016-03-10 21:48:22 [ERROR]: [123.59.66.174] : put file 20160310214617/123.59.44.38/test.txt is fail [not enough arguments for format string]
+2016-03-10 21:48:22 [ERROR]: [123.59.66.174] : put file 20160310214617/123.59.44.38/test.txt is fail [not enough arguments for format string]
+2016-03-10 21:51:53 [INFO]: [123.59.66.174] : put file 20160310214617/123.59.44.38/test.txt to /tmp/test.txt is successful
+2016-03-10 21:51:54 [INFO]: [123.59.44.38] : put file 20160310214617/123.59.44.38/test.txt to /tmp/test.txt is successful
+2016-03-10 21:51:54 [INFO]: [123.59.44.38] : put file 20160310214617/123.59.44.38/test.txt to /tmp/test.txt is successful
+2016-03-10 21:52:34 [INFO]: [123.59.66.174] : put file 20160310214617/123.59.44.38/test.txt to /tmp/test.txt is successful
+2016-03-10 21:52:34 [INFO]: [123.59.44.38] : put file 20160310214617/123.59.44.38/test.txt to /tmp/test.txt is successful
+2016-03-10 21:52:34 [INFO]: [123.59.44.38] : put file 20160310214617/123.59.44.38/test.txt to /tmp/test.txt is successful
+2016-03-10 21:52:55 [INFO]: [123.59.44.38] : put file 20160310214617/123.59.44.38/test.txt to /tmp/test.txt is successful
+2016-03-10 21:52:55 [INFO]: [123.59.66.174] : put file 20160310214617/123.59.44.38/test.txt to /tmp/test.txt is successful
+2016-03-10 21:52:55 [INFO]: [123.59.66.174] : put file 20160310214617/123.59.44.38/test.txt to /tmp/test.txt is successful
+2016-03-10 21:53:27 [INFO]: [123.59.44.38] : [cat /tmp/test.txt] is successful
+2016-03-10 21:53:27 [INFO]: [123.59.66.174] : [cat /tmp/test.txt] is successful
+2016-03-10 21:53:27 [INFO]: [123.59.66.174] : [cat /tmp/test.txt] is successful
