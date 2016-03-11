@@ -19,7 +19,7 @@ def run_cmd(host, cmd):
     stderr_msg = stderr.read().decode()
 
     print("[%s] : [%s]" %(host['hostname'], cmd))
-    if stdout_msg: # 如果标准错误输出内容为空说明执行成功
+    if not stderr_msg: # 如果标准错误输出内容为空说明执行成功
         print(stdout_msg)
         msg = 'info|[%s] : [%s] is successful' %(host['hostname'], cmd)
         return msg
