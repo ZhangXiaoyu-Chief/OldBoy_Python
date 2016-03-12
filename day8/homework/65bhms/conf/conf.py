@@ -19,8 +19,8 @@ HOSTS = {
     "web1":{
         "hostname":"123.59.44.38",
         "username":"ubuntu",
-        "password":"!Jesus@smart8345",
         "port":22,
+        "password":"!Jesus@smart8345",
         "pkey":os.path.join(BASE_DIR, 'id_rsa'),
     },
     "web2":

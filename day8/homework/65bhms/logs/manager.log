@@ -110,3 +110,20 @@
 2016-03-10 21:53:27 [INFO]: [123.59.44.38] : [cat /tmp/test.txt] is successful
 2016-03-10 21:53:27 [INFO]: [123.59.66.174] : [cat /tmp/test.txt] is successful
 2016-03-10 21:53:27 [INFO]: [123.59.66.174] : [cat /tmp/test.txt] is successful
+2016-03-11 00:43:35 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-11 00:43:35 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-11 00:43:35 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-11 00:50:11 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160311005010/123.59.66.174/hosts is successful
+2016-03-11 00:50:11 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160311005010/123.59.44.38/hosts is successful
+2016-03-11 00:50:11 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160311005010/123.59.44.38/hosts is successful
+2016-03-11 00:52:27 [INFO]: [123.59.44.38] : put file /etc/hosts to /home/ubuntu/hosts is successful
+2016-03-11 01:24:12 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-11 01:24:59 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-11 01:25:01 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-11 01:25:01 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-11 01:48:29 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-11 01:49:22 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160311014920/123.59.44.38/hosts is successful
+2016-03-11 02:01:57 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-11 02:02:15 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-11 02:02:15 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-11 02:02:15 [INFO]: [123.59.66.174] : [df -h] is successful
