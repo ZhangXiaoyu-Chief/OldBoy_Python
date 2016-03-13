@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 # coding:utf-8
 from model import myParamiko
+'''
+文件操作相关模块
+'''
 def get(host, option):
     '''
     下载文件函数
     :param host: 主机信息
     :param option: 相关参数
-    :return:
+    :return: 日志消息
     '''
     #print(option)
     import os
@@ -16,10 +19,10 @@ def get(host, option):
     try:
         src_file = option['src'] # 获取源文件
         dst_path = option['dst'] # 获取目标目录
-        if not os.path.isdir(dst_path):
-            raise myParamiko.dst_error(dst_path)
-        dst_path = os.path.join(dst_path, time.strftime("%Y%m%d%H%M%S", time.localtime()))
-        if not os.path.isdir(dst_path):
+        if not os.path.isdir(dst_path): # 判断目标目录是否存在
+            raise myParamiko.dst_error(dst_path) # 抛出目标不存在异常
+        dst_path = os.path.join(dst_path, time.strftime("%Y%m%d%H%M%S", time.localtime())) # 生成带日期时间的目录，解决文件名重复问题
+        if not os.path.isdir(dst_path): # 判断是否存在，解决多个进程创建同一个目录是的报错
             os.mkdir(dst_path)
         print("[%s] get file: [%s]" %(host['hostname'], src_file))
         stdin, stdout, stderr = ssh.exec_command('ls -l %s' %src_file)# 通过执行远端ls -l来判断远端源文件是否存在
@@ -34,20 +37,24 @@ def get(host, option):
             print(success_info)
             msg = 'info|[%s] : %s' %(host['hostname'], success_info)
         else:
-            raise myParamiko.src_error(src_file)
+            raise myParamiko.src_error(src_file) # 抛出源文件不存在异常
     except KeyError as e:
+        # options['src']的key错误，说明指令文件相关指令错误
         error_info = 'option error'
         print(error_info)
         msg = 'error|[%s] : get file %s is fail [%s]' %(host['hostname'], src_file, error_info )
     except (myParamiko.src_error,myParamiko.dst_error) as e:
+        # 这两是自定异常，用来捕获爆出的源文件或目录不存在的异常
         error_info = e
         print(error_info)
         msg = 'error|[%s] : get file %s is fail [%s]' %(host['hostname'], src_file, error_info )
     except IOError as e:
+        # 捕获文件操作异常，比如没有权限等
         error_info = e
         print(error_info)
         msg = 'error|[%s] : get file %s is fail [%s]' %(host['hostname'], src_file, error_info )
     except Exception as e:
+        # 捕获其他异常
         error_info = e
         print(error_info)
         msg = 'error|[%s] : get file %s is fail [%s]' %(host['hostname'], src_file, error_info )
@@ -57,18 +64,17 @@ def put(host, options):
     '''
     上传文件函数
     :param host: 远程主机函数
-    :param arg: 参数列表
+    :param options: 参数列表
     :return: 日志信息
     '''
     import os
-
     # from conf import conf
     # ssh = get_ssh(host)
     try:
         src_file = options['src']
         dst_path = options['dst']
-        if not os.path.isfile(src_file):
-            raise myParamiko.src_error(src_file)
+        if not os.path.isfile(src_file): # 判断要上传的文件是否存在
+            raise myParamiko.src_error(src_file) # 抛出源文件异常
         print("[%s] get file: [%s]" %(host['hostname'], src_file))
         dst_file = os.path.join(dst_path, os.path.split(src_file)[1]) # 组装完整目标文件名
         sftp, tran = myParamiko.get_sftp(host)
