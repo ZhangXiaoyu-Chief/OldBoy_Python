@@ -1,0 +1,647 @@
+2016-03-13 09:33:28 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 09:33:28 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 09:33:28 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 09:34:11 [INFO]: [123.59.44.38] : [ifconfig] is successful
+2016-03-13 09:36:03 [INFO]: [123.59.44.38] : [ifconfig] is successful
+2016-03-13 09:36:54 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 09:36:54 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 09:36:54 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 09:37:49 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 09:37:49 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 09:37:49 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 09:38:18 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 09:38:18 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 09:38:18 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 09:48:50 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 09:48:50 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 09:48:50 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:03:29 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:03:29 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:03:29 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:29:53 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:29:53 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:29:53 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:31:00 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:31:00 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:31:00 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:31:00 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:31:00 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:31:00 [INFO]: Authentication (password) successful!
+2016-03-13 10:31:00 [INFO]: Authentication (password) successful!
+2016-03-13 10:32:08 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:32:08 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:32:08 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:32:08 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:32:08 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:32:08 [INFO]: Authentication (password) successful!
+2016-03-13 10:32:08 [INFO]: Authentication (password) successful!
+2016-03-13 10:33:17 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:33:17 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:33:17 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:33:18 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:33:18 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:33:18 [INFO]: Authentication (password) successful!
+2016-03-13 10:33:18 [INFO]: Authentication (password) successful!
+2016-03-13 10:34:40 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:34:40 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:34:40 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:34:40 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:34:40 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:34:40 [INFO]: Authentication (password) successful!
+2016-03-13 10:34:40 [INFO]: Authentication (password) successful!
+2016-03-13 10:37:25 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:37:25 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:37:25 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:38:42 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:38:42 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:38:42 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:38:42 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:38:42 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:38:42 [INFO]: Authentication (password) successful!
+2016-03-13 10:38:42 [INFO]: Authentication (password) successful!
+2016-03-13 10:39:14 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:39:14 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:39:14 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:39:55 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:39:55 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:39:55 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:39:55 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:39:55 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:39:55 [INFO]: Authentication (password) successful!
+2016-03-13 10:39:55 [INFO]: Authentication (password) successful!
+2016-03-13 10:41:22 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:41:22 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:41:22 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:41:22 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:41:22 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:41:22 [INFO]: Authentication (password) successful!
+2016-03-13 10:41:22 [INFO]: Authentication (password) successful!
+2016-03-13 10:41:37 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:41:37 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:41:37 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:41:37 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:41:37 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 10:41:37 [INFO]: Authentication (password) successful!
+2016-03-13 10:41:37 [INFO]: Authentication (password) successful!
+2016-03-13 10:41:53 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 10:41:53 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:41:53 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 10:53:01 [INFO]: [123.59.44.38] : get file /etc/hosts to ./123.59.44.38/hosts is successful
+2016-03-13 11:23:41 [ERROR]: [123.59.44.38] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 11:25:01 [ERROR]: [123.59.44.38] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 11:28:31 [ERROR]: [123.59.44.38] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 11:29:44 [ERROR]: [123.59.44.38] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 11:31:31 [ERROR]: [123.59.44.38] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 11:32:19 [ERROR]: [123.59.44.38] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 11:33:19 [ERROR]: [123.59.44.38] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 12:56:10 [ERROR]: [123.59.66.174] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 12:56:10 [ERROR]: [123.59.44.38] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 12:56:10 [ERROR]: [123.59.44.38] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 13:05:10 [ERROR]: [123.59.44.38] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 13:05:10 [ERROR]: [123.59.66.174] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 13:05:10 [ERROR]: [123.59.66.174] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 13:12:00 [ERROR]: [123.59.44.38] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 13:12:01 [ERROR]: [123.59.66.174] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 13:12:01 [ERROR]: [123.59.66.174] : get file /etc/asdfa is fail ['Source file or dirctory /etc/asdfa is not exit!']
+2016-03-13 13:12:01 [ERROR]: Function is not exit!
+2016-03-13 13:12:01 [ERROR]: Function is not exit!
+2016-03-13 13:12:01 [ERROR]: Function is not exit!
+2016-03-13 13:16:43 [ERROR]: File dsfa is not exit!
+2016-03-13 13:18:31 [ERROR]: File dsfa is not exit!
+2016-03-13 13:18:35 [ERROR]: [123.59.66.174] : get file /etc/hosts is fail []
+2016-03-13 13:18:35 [ERROR]: [123.59.44.38] : get file /etc/hosts is fail []
+2016-03-13 13:18:35 [ERROR]: [123.59.44.38] : get file /etc/hosts is fail []
+2016-03-13 13:18:35 [ERROR]: Function is not exit!
+2016-03-13 13:18:35 [ERROR]: Function is not exit!
+2016-03-13 13:18:35 [ERROR]: Function is not exit!
+2016-03-13 13:20:50 [ERROR]: [123.59.44.38] : get file /etc/hosts is fail [[Errno 17] File exists: './20160313132050']
+2016-03-13 13:20:51 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313132050/123.59.66.174/hosts is successful
+2016-03-13 13:20:51 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313132050/123.59.66.174/hosts is successful
+2016-03-13 13:20:51 [ERROR]: Function is not exit!
+2016-03-13 13:20:51 [ERROR]: Function is not exit!
+2016-03-13 13:20:51 [ERROR]: Function is not exit!
+2016-03-13 13:22:43 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313132242/123.59.44.38/hosts is successful
+2016-03-13 13:22:43 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313132242/123.59.66.174/hosts is successful
+2016-03-13 13:22:43 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313132242/123.59.66.174/hosts is successful
+2016-03-13 13:22:43 [ERROR]: Function is not exit!
+2016-03-13 13:22:43 [ERROR]: Function is not exit!
+2016-03-13 13:22:43 [ERROR]: Function is not exit!
+2016-03-13 13:44:05 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313134404/123.59.44.38/hosts is successful
+2016-03-13 13:44:05 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313134404/123.59.66.174/hosts is successful
+2016-03-13 13:44:05 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313134404/123.59.66.174/hosts is successful
+2016-03-13 13:44:06 [ERROR]: Function is not exit!
+2016-03-13 13:44:06 [ERROR]: Function is not exit!
+2016-03-13 13:44:06 [ERROR]: Function is not exit!
+2016-03-13 13:44:20 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313134419/123.59.44.38/hosts is successful
+2016-03-13 13:44:20 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313134419/123.59.66.174/hosts is successful
+2016-03-13 13:44:20 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313134419/123.59.66.174/hosts is successful
+2016-03-13 13:44:20 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:44:20 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:44:20 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:44:20 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:44:20 [INFO]: Authentication (password) successful!
+2016-03-13 13:44:20 [INFO]: Authentication (password) successful!
+2016-03-13 13:44:20 [INFO]: Authentication (password) successful!
+2016-03-13 13:44:20 [INFO]: Authentication (password) successful!
+2016-03-13 13:44:21 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:44:21 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:44:21 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:44:21 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:44:21 [ERROR]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is fail [[Errno 2] No such file or directory: '/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py']
+2016-03-13 13:44:21 [ERROR]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is fail [[Errno 2] No such file or directory: '/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py']
+2016-03-13 13:44:21 [ERROR]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is fail [[Errno 2] No such file or directory: '/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py']
+2016-03-13 13:44:21 [ERROR]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is fail [[Errno 2] No such file or directory: '/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py']
+2016-03-13 13:44:21 [ERROR]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is fail [[Errno 2] No such file or directory: '/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py']
+2016-03-13 13:44:21 [ERROR]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is fail [[Errno 2] No such file or directory: '/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py']
+2016-03-13 13:44:21 [ERROR]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is fail [[Errno 2] No such file or directory: '/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py']
+2016-03-13 13:44:55 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313134454/123.59.44.38/hosts is successful
+2016-03-13 13:44:55 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313134454/123.59.66.174/hosts is successful
+2016-03-13 13:44:55 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313134454/123.59.66.174/hosts is successful
+2016-03-13 13:45:58 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313134557/123.59.44.38/hosts is successful
+2016-03-13 13:45:58 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313134557/123.59.66.174/hosts is successful
+2016-03-13 13:45:58 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313134557/123.59.66.174/hosts is successful
+2016-03-13 13:45:58 [ERROR]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is fail ['Source file or dirctory /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is not exit!']
+2016-03-13 13:45:58 [ERROR]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is fail ['Source file or dirctory /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is not exit!']
+2016-03-13 13:45:58 [ERROR]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is fail ['Source file or dirctory /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is not exit!']
+2016-03-13 13:45:58 [ERROR]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is fail ['Source file or dirctory /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is not exit!']
+2016-03-13 13:45:58 [ERROR]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is fail ['Source file or dirctory /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is not exit!']
+2016-03-13 13:45:58 [ERROR]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is fail ['Source file or dirctory /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is not exit!']
+2016-03-13 13:45:58 [ERROR]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is fail ['Source file or dirctory /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/sehngxiao1.py is not exit!']
+2016-03-13 13:50:44 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135043/123.59.44.38/hosts is successful
+2016-03-13 13:50:44 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135043/123.59.66.174/hosts is successful
+2016-03-13 13:50:44 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135043/123.59.66.174/hosts is successful
+2016-03-13 13:50:44 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:50:44 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:50:44 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:50:44 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:50:44 [INFO]: Authentication (password) successful!
+2016-03-13 13:50:44 [INFO]: Authentication (password) successful!
+2016-03-13 13:50:44 [INFO]: Authentication (password) successful!
+2016-03-13 13:50:44 [INFO]: Authentication (password) successful!
+2016-03-13 13:50:44 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:50:44 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:50:44 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:50:44 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:50:44 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:50:44 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:50:44 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:50:44 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:50:44 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:50:44 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:50:44 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:51:48 [ERROR]: Module is not exit!
+2016-03-13 13:52:51 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 13:52:51 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 13:52:51 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 13:52:51 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:51 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:51 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:51 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:51 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:51 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:51 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:51 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:51 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:51 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:51 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:51 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:51 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:51 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:52 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:52:52 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:52:52 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:52:52 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:52:52 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135251/123.59.44.38/hosts is successful
+2016-03-13 13:52:52 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135251/123.59.44.38/hosts is successful
+2016-03-13 13:52:52 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135251/123.59.44.38/hosts is successful
+2016-03-13 13:52:52 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135251/123.59.66.174/hosts is successful
+2016-03-13 13:52:52 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135251/123.59.66.174/hosts is successful
+2016-03-13 13:52:52 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135251/123.59.66.174/hosts is successful
+2016-03-13 13:52:52 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135251/123.59.66.174/hosts is successful
+2016-03-13 13:52:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:52:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:52:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:52:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:52:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:52:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:52:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:52:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:52:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:52:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:52:53 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:52:53 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:52:53 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:52:53 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:52:53 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:52:53 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:52:53 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:52:53 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:52:53 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:52:53 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:52:53 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:54:23 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 13:54:23 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 13:54:23 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 13:54:23 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:23 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:23 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:23 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:24 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:24 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:24 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:24 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:24 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:24 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:24 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:24 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:24 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:24 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:24 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:24 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:24 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:54:24 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:54:25 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:54:25 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:54:25 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135424/123.59.44.38/hosts is successful
+2016-03-13 13:54:25 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135424/123.59.44.38/hosts is successful
+2016-03-13 13:54:25 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135424/123.59.44.38/hosts is successful
+2016-03-13 13:54:25 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135424/123.59.66.174/hosts is successful
+2016-03-13 13:54:25 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135424/123.59.66.174/hosts is successful
+2016-03-13 13:54:25 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135424/123.59.66.174/hosts is successful
+2016-03-13 13:54:25 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135424/123.59.66.174/hosts is successful
+2016-03-13 13:54:25 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:25 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:25 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:25 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:25 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:25 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:25 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:25 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:54:25 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:25 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:25 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:25 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:25 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:25 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:25 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:25 [INFO]: Authentication (password) successful!
+2016-03-13 13:54:25 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:54:25 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:54:25 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:54:25 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:54:25 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:54:25 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:54:25 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:54:25 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:54:25 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:54:25 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:54:25 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:54:25 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:54:25 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:54:25 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:54:25 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:54:25 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:54:25 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:54:25 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:54:25 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:12 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 13:56:12 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 13:56:12 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 13:56:12 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:12 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:12 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:12 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:12 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:12 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:12 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:12 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:12 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:12 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:12 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:12 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:13 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:13 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:13 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:13 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:13 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:13 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:13 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:13 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:13 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135612/123.59.44.38/hosts is successful
+2016-03-13 13:56:13 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135612/123.59.44.38/hosts is successful
+2016-03-13 13:56:13 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135612/123.59.44.38/hosts is successful
+2016-03-13 13:56:13 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135612/123.59.66.174/hosts is successful
+2016-03-13 13:56:13 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135612/123.59.66.174/hosts is successful
+2016-03-13 13:56:13 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135612/123.59.66.174/hosts is successful
+2016-03-13 13:56:13 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135612/123.59.66.174/hosts is successful
+2016-03-13 13:56:13 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:13 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:13 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:13 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:13 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:13 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:13 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:13 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:13 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:13 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:13 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:13 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:13 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:13 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:13 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:13 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:14 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:14 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:14 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:14 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:14 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:14 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:14 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:14 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:14 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:14 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:14 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:14 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:14 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:14 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:14 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:14 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:14 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:14 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:14 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:56 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 13:56:56 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 13:56:56 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 13:56:57 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:57 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:57 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:57 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:57 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:57 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:57 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:57 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:57 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:57 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:57 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:57 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:57 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:57 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:58 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:58 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:58 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:58 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:58 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135657/123.59.44.38/hosts is successful
+2016-03-13 13:56:58 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135657/123.59.44.38/hosts is successful
+2016-03-13 13:56:58 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135657/123.59.44.38/hosts is successful
+2016-03-13 13:56:58 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:58 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:58 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135657/123.59.66.174/hosts is successful
+2016-03-13 13:56:58 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135657/123.59.66.174/hosts is successful
+2016-03-13 13:56:58 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135657/123.59.66.174/hosts is successful
+2016-03-13 13:56:58 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135657/123.59.66.174/hosts is successful
+2016-03-13 13:56:58 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:58 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:58 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:58 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:58 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:58 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:58 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:58 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:56:58 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:58 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:58 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:58 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:58 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:58 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:58 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:58 [INFO]: Authentication (password) successful!
+2016-03-13 13:56:59 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:59 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:59 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:59 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:59 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:59 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:59 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:59 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:56:59 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:59 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:59 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:59 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:59 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:59 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:59 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:59 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:59 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:59 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:56:59 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:58:52 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 13:58:52 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 13:58:52 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 13:58:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:52 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:52 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:58:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:58:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:58:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:58:53 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135852/123.59.44.38/hosts is successful
+2016-03-13 13:58:53 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135852/123.59.44.38/hosts is successful
+2016-03-13 13:58:53 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313135852/123.59.44.38/hosts is successful
+2016-03-13 13:58:53 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135852/123.59.66.174/hosts is successful
+2016-03-13 13:58:53 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135852/123.59.66.174/hosts is successful
+2016-03-13 13:58:53 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135852/123.59.66.174/hosts is successful
+2016-03-13 13:58:53 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313135852/123.59.66.174/hosts is successful
+2016-03-13 13:58:53 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:53 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:53 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:53 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:53 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:53 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:53 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:53 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 13:58:53 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:53 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:53 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:53 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:53 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:53 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:53 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:53 [INFO]: Authentication (password) successful!
+2016-03-13 13:58:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:58:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:58:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:58:53 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:58:54 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:58:54 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:58:54 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:58:54 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 13:58:54 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:58:54 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:58:54 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:58:54 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:58:54 [INFO]: [123.59.44.38] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:58:54 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:58:54 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:58:54 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:58:54 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:58:54 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 13:58:54 [INFO]: [123.59.66.174] : put file /home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py to /home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:20:22 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 14:20:22 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 14:20:22 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 14:20:22 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:22 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:22 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:22 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:23 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:23 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:23 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:23 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:23 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:23 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:23 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:23 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:23 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:23 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:23 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:23 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:23 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:20:23 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:20:24 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:20:24 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:20:24 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313142023/123.59.44.38/hosts is successful
+2016-03-13 14:20:24 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313142023/123.59.44.38/hosts is successful
+2016-03-13 14:20:24 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313142023/123.59.44.38/hosts is successful
+2016-03-13 14:20:24 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313142023/123.59.66.174/hosts is successful
+2016-03-13 14:20:24 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313142023/123.59.66.174/hosts is successful
+2016-03-13 14:20:24 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313142023/123.59.66.174/hosts is successful
+2016-03-13 14:20:24 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313142023/123.59.66.174/hosts is successful
+2016-03-13 14:20:24 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:24 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:24 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:24 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:24 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:24 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:24 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:24 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:20:24 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:24 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:24 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:24 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:24 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:24 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:24 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:24 [INFO]: Authentication (password) successful!
+2016-03-13 14:20:24 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:20:24 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:20:24 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:20:24 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:20:24 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:20:24 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:20:24 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:20:24 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:20:24 [INFO]: [123.59.44.38] : put file 123.59.44.38 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:20:24 [INFO]: [123.59.44.38] : put file 123.59.44.38 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:20:24 [INFO]: [123.59.44.38] : put file 123.59.44.38 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:20:24 [INFO]: [123.59.44.38] : put file 123.59.44.38 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:20:24 [INFO]: [123.59.44.38] : put file 123.59.44.38 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:20:24 [INFO]: [123.59.66.174] : put file 123.59.66.174 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:20:24 [INFO]: [123.59.66.174] : put file 123.59.66.174 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:20:24 [INFO]: [123.59.66.174] : put file 123.59.66.174 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:20:24 [INFO]: [123.59.66.174] : put file 123.59.66.174 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:20:24 [INFO]: [123.59.66.174] : put file 123.59.66.174 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:20:24 [INFO]: [123.59.66.174] : put file 123.59.66.174 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:21:16 [INFO]: [123.59.44.38] : [df -h] is successful
+2016-03-13 14:21:16 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 14:21:16 [INFO]: [123.59.66.174] : [df -h] is successful
+2016-03-13 14:21:16 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:16 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:16 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:16 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:16 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:16 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:16 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:16 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:16 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:16 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:16 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:16 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:16 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:16 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:17 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:17 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:17 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:21:17 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:21:17 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313142116/123.59.44.38/hosts is successful
+2016-03-13 14:21:17 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313142116/123.59.44.38/hosts is successful
+2016-03-13 14:21:17 [INFO]: [123.59.44.38] : get file /etc/hosts to ./20160313142116/123.59.44.38/hosts is successful
+2016-03-13 14:21:17 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:21:17 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:21:17 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313142116/123.59.66.174/hosts is successful
+2016-03-13 14:21:17 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313142116/123.59.66.174/hosts is successful
+2016-03-13 14:21:17 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313142116/123.59.66.174/hosts is successful
+2016-03-13 14:21:17 [INFO]: [123.59.66.174] : get file /etc/hosts to ./20160313142116/123.59.66.174/hosts is successful
+2016-03-13 14:21:17 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:17 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:17 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:17 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:17 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:17 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:17 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:17 [INFO]: Connected (version 2.0, client OpenSSH_6.6.1p1)
+2016-03-13 14:21:17 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:17 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:17 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:17 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:17 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:17 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:17 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:17 [INFO]: Authentication (password) successful!
+2016-03-13 14:21:18 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:21:18 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:21:18 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:21:18 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:21:18 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:21:18 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:21:18 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:21:18 [INFO]: [chan 0] Opened sftp connection (server version 3)
+2016-03-13 14:21:18 [INFO]: [123.59.44.38] : put file 123.59.44.38 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:21:18 [INFO]: [123.59.44.38] : put file 123.59.44.38 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:21:18 [INFO]: [123.59.44.38] : put file 123.59.44.38 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:21:18 [INFO]: [123.59.44.38] : put file 123.59.44.38 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:21:18 [INFO]: [123.59.44.38] : put file 123.59.44.38 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:21:18 [INFO]: [123.59.66.174] : put file 123.59.66.174 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:21:18 [INFO]: [123.59.66.174] : put file 123.59.66.174 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:21:18 [INFO]: [123.59.66.174] : put file 123.59.66.174 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:21:18 [INFO]: [123.59.66.174] : put file 123.59.66.174 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:21:18 [INFO]: [123.59.66.174] : put file 123.59.66.174 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful
+2016-03-13 14:21:18 [INFO]: [123.59.66.174] : put file 123.59.66.174 to [/home/zhangxiaoyu/PycharmProjects/OldBoy_Python/day9/shengxiao1.py]/home/ubuntu/shengxiao1.py is successful

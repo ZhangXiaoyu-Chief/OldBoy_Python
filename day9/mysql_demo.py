@@ -20,3 +20,4 @@ if __name__ == '__main__':
     conn.commit()
     cur.close()
     conn.close()
+    from salt import master

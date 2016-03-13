@@ -1,10 +1,11 @@
 webserber:
-  file.put:
-    hosts:
-        - xxx.xxx.xxx.xxx
-        - xxx.xxx.xxx.xxx
-    source: dfasdfa/dsafa.conf
-    name: /dasfsadf/dsafa.conf
   cmd.run:
-    hosts: xxx.xxx.xxx.xxx
+    hosts:
+      - 123.59.44.38
+      - 123.59.66.174
     command: df -h
+
+
+xxx.xxx.xxx.xxx:
+  username: 123.59.44.38
+  password: dfasfdafda
