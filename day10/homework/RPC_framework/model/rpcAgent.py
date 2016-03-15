@@ -7,8 +7,7 @@ class rpcAgent(object):
     def __init__(self):
         self.__connection = pika.BlockingConnection(pika.ConnectionParameters(
         host = conf.RBMQ_HOST )) # 创建连接
-        self.__loger = mylib.mylog(conf.AGENT_LOG)
-
+        self.__log = mylib.mylog(conf.AGENT_LOG)
         self.__channel = self.__connection.channel() # 创建channel
         self.__channel.exchange_declare(exchange = 'rpc_ex',
                          type = 'fanout')
@@ -35,7 +34,7 @@ class rpcAgent(object):
 
     def __on_request(self, ch, method, props, body):
         commend = body.decode()
-        self.__loger.info('safa')
+        self.__log.info('run commend %s' %body.decode())
         response = self.__run_commend(commend)
         ch.basic_publish(exchange = '',
                          routing_key = props.reply_to,

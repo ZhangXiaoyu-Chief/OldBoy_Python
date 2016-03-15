@@ -128,15 +128,15 @@ def validate_input(re_str, title, hint = '', back_str = 'r', error_str = '输入
 def mylog(log_file_name, stream = True):
     import logging
     file_handler = logging.FileHandler(log_file_name, "a", encoding = "UTF-8")
-    stream_handler = logging.StreamHandler
+    stream_handler = logging.StreamHandler()
     formatter = logging.Formatter("%(asctime)s [%(levelname)s]: %(message)s", '%Y-%m-%d %H:%M:%S')
 
     file_handler.setFormatter(formatter)
-    stream_handler.setFormatter(formatter)
+    stream_handler.setFormatter( formatter )
     root_logger = logging.getLogger()
     root_logger.addHandler(file_handler)
     if stream:
-        root_logger.addHandler(stream)
+        root_logger.addHandler(stream_handler)
     root_logger.setLevel(logging.INFO)
     return root_logger
 
