@@ -1,0 +1,10 @@
+webserber:
+  file.put:
+    hosts:
+        - xxx.xxx.xxx.xxx
+        - xxx.xxx.xxx.xxx
+    source: dfasdfa/dsafa.conf
+    name: /dasfsadf/dsafa.conf
+  cmd.run:
+    hosts: xxx.xxx.xxx.xxx
+    command: df -h

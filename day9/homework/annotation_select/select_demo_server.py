@@ -50,7 +50,7 @@ while inputs: # 只要inputs列表不为空，就循环，inputs里面如果为�
         3、监控错误信息，接下来我们需要创建2个列表来包含输入和输出信息来传给select().
     同时返回新的select方法处理过的
     '''
-    readable, writable, exceptional = select.select(inputs, outputs, inputs) # 程序会阻塞在这里（我的理解是会会阻塞到监控状态发生变化，也就是readable,writeable,exceptional三个列表至少有一个列表有成员），这里的阻塞不是来自于socket对象，而是来自于select，模块，一旦列表发生变化，才会继续
+    readable, writable, exceptional = select.select(inputs, outputs, inputs,) # 程序会阻塞在这里（我的理解是会会阻塞到监控状态发生变化，也就是readable,writeable,exceptional三个列表至少有一个列表有成员），这里的阻塞不是来自于socket对象，而是来自于select，模块，一旦列表发生变化，才会继续
     # Handle inputs
     print(readable)
     print(writable)
@@ -111,10 +111,10 @@ while inputs: # 只要inputs列表不为空，就循环，inputs里面如果为�
         print('handling exceptional condition for', s.getpeername() ) # 获取异常消息
         # Stop listening for input on the connection
         inputs.remove(s) # 移出input列表，不在监控
-        if s in outputs:
+        if s in outputs: # 如果这个链接在outputs列表中，移出，不在监控
             outputs.remove(s)
-        s.close()
+        s.close() # 关闭连接
 
         # Remove message queue
-        del message_queues[s]
+        del message_queues[s] # 删除消息队列
     print('循环结束')
