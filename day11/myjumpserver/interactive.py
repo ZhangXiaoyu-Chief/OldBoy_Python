@@ -45,7 +45,11 @@ def posix_shell(chan):
         tty.setraw(sys.stdin.fileno())
         tty.setcbreak(sys.stdin.fileno())
         chan.settimeout(0.0)
-
+        cmd = ''
+        cmd2 =''
+        is_his = False
+        is_tab = False
+        is_hissend = False
         while True:
             r, w, e = select.select([chan, sys.stdin], [], [])
             if chan in r:
@@ -54,15 +58,30 @@ def posix_shell(chan):
                     if len(x) == 0:
                         sys.stdout.write('\r\n*** EOF\r\n')
                         break
+                    if is_tab:
+                        cmd += x
+                        is_tab = False
+
                     sys.stdout.write(x)
                     sys.stdout.flush()
                 except socket.timeout:
                     pass
             if sys.stdin in r:
                 x = sys.stdin.read(1)
+                if x not in ['\n', '\r', '\n\r', '\r\n']:
+
+                    if x == '\t':
+                        is_tab = True
+                    else:
+                        cmd += x
+                else:
+                    print('cmd is : %s' %cmd)
+                    cmd = ''
                 if len(x) == 0:
                     break
                 chan.send(x)
+                # if is_his:
+                #     chan.send('history |tail -1')
 
     finally:
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, oldtty)
