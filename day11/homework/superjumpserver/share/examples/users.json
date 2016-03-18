@@ -1,0 +1,8 @@
+[
+  {
+    "username" : "zhangxiaoyu",
+    "password" : "123.com",
+    "hostusers" : [{"username":"root", "hostname":"mysql"}],
+    "groups" : ["webgroup"]
+  }
+]

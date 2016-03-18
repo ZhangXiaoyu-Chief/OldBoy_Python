@@ -1,0 +1,16 @@
+[
+  {
+    "hostname" : "web1",
+    "ip_addr" : "192.168.0.250",
+    "port" : 22
+  },
+  {
+    "hostname" : "mysql",
+    "ip_addr" : "192.168.0.251",
+    "port" : 22
+  },
+  {
+    "hostname" : "test",
+    "ip_addr" : "127.0.0.1"
+  }
+]

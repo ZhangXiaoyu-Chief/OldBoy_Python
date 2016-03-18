@@ -1,0 +1,25 @@
+[
+  {
+    "username" : "root",
+    "password" : "123456",
+    "hostname" : "web1",
+    "auth_type" : "ssh-password"
+  },
+  {
+    "username" : "root",
+    "hostname" : "mysql",
+    "auth_type" : "ssh-key"
+  },
+  {
+    "username" : "root",
+    "password" : "123456",
+    "hostname" : "test",
+    "auth_type" : "ssh-key"
+  },
+  {
+    "username" : "zhangxiaoyu",
+    "password" : "123.com",
+    "hostname" : "test",
+    "auth_type" : "ssh-password"
+  }
+]

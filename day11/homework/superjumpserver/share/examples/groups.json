@@ -1,0 +1,10 @@
+[
+  {
+    "name" : "webgroup",
+    "hostusers" : [{"username":"root", "hostname":"web1"},{"username":"zhangxiaoyu","hostname":"test"}]
+  },
+  {
+    "name" : "dbgroup",
+    "hostusers" : [{"username":"root", "hostname":"mysql"}]
+  }
+]

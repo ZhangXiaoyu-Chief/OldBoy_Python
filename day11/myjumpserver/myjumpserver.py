@@ -77,6 +77,7 @@ try:
             client.connect(hostname, port, username, gss_auth=UseGSSAPI,
                            gss_kex=DoGSSAPIKeyExchange)
         except Exception:
+            print(hostname)
             password = getpass.getpass('Password for %s@%s: ' % (username, hostname))
             client.connect(hostname, port, username, password)
 
