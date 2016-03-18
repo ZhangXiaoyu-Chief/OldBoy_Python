@@ -154,7 +154,51 @@
               }
             ]
         2）批量导入，（通过-f选项制定文件目录）
-            $ python3 superjumpserver.py import_remoteusers -f share/examples/hostusers.json
+            $ python3 superjumpserver.py import_groups -f share/examples/groups.json
+        7、导入堡垒机用户列表（注意，是堡垒机用户）
+        1）准备远端主机用户组列表(json格式)，例如
+            [
+              {
+                "username" : "zhangxiaoyu", # 用户名
+                "password" : "123.com", # 密码
+                "hostusers" : [{"username":"root", "hostname":"mysql"}], # 未分组的远端主机用户列表，格式和组类似
+                "groups" : ["webgroup"] # 组列表，这里只是组名，要求和组一致
+              }
+            ]
+        2）批量导入，（通过-f选项制定文件目录）
+            $ python3 superjumpserver.py import_users -f share/examples/users.json
+        至此，初始化配置工作就完成了，下面就让我们畅快的使用吧
+    使用：
+        1、启动并登录进入主界面
+        $ python3 superjumpserver.py start
+        Username: zhangxiaoyu
+        Password:
+        ------------------ Welcome [%s] login SuperJumpserver ------------------
+        Ungrouped hosts: (1)
+           1.	 root@mysql(192.168.0.251)
+        Groups: (1)
+           2.	 webgroup
+        2、在主界面只需要菜单编号进行选择就可以了，可以直接选择未分组的主机或选择组在通过组下面的远程用户登录远程主机
+        ------------------ Welcome [%s] login SuperJumpserver ------------------
+        Ungrouped hosts: (1)
+           1.	 root@mysql(192.168.0.251)
+        Groups: (1)
+           2.	 webgroup
+        zhangxiaoyu (q)quit>> 2
+           1.	 root@web1(192.168.0.250)
+           2.	 zhangxiaoyu@test(127.0.0.1)
+        zhangxiaoyu (q)quit, (b)break>> 2
+        Connect remote host [127.0.0.1] as user [zhangxiaoyu]...
+        Connect success let's go [zhangxiaoyu]
+        Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 3.16.0-30-generic x86_64)
 
+         * Documentation:  https://help.ubuntu.com/
+
+        359 packages can be updated.
+        190 updates are security updates.
+
+        Last login: Fri Mar 18 08:37:55 2016 from 10.10.1.1
+        zhangxiaoyu@zhangxiaoyu-python:~$
+        说明：怎么样是不是很神奇，使用也非常简单，还在想什么，赶紧试试吧
 
 
