@@ -4,10 +4,16 @@
 from model import myParamiko
 def run(host, option):
     # print(host)
-    cmd = option['command']
+
     # print(cmd)
     try:
+        cmd = option['command']
         ssh = myParamiko.get_ssh(host)
+    except KeyError as e:
+        error_info = 'option error'
+        print(error_info)
+        msg = 'error|[%s] : is fail [%s]' %(host['hostname'], error_info )
+        return msg
     except Exception as e:
         msg = 'error|[%s] : [%s] is fail [%s]' %(host['hostname'], cmd, e)
         return msg
