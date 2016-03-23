@@ -33,7 +33,6 @@ class Foo(object): # Foo为类名，括号内的表示是这个类继承自哪�
         方法
         1、方法属于类（也就是在实例化的时候不会像对象的变量一样单独开辟内存空间）
         2、self表示类的对象本身，当我们通过对象名.方法()来调用的时候，解释器会自动将对象作为第一个参数传给方法，方法名.方法(对象名)
-        3、
         :return:
         '''
         # 方法体，方法体可以通过self.关键字调用对象的变量和方法
@@ -50,7 +49,7 @@ class Foo2(Foo):
     def __init__(self, arg, arg2):
         '''
         1、这里调用了父类的初始化方法，特别注意由于“__变量名”表示的私有方法，
-        2、这里尽管调用了父类的构造方法，__var3变量作为父类的私有方法，子类在没有重新定义之前依然没有这变量
+        2、这里尽管调用了父类的构造方法，__var3变量作为父类的私有方法，子类在没有重新定义之前依然没有这个变量，这点要特别注意
         :param arg:
         :param arg2:
         :return:
@@ -59,6 +58,74 @@ class Foo2(Foo):
         self.__var3 = arg2 # 由于__var3是父类的私有方法，尽管调用了父类的初始化方法，子类依然不会有，所以依然需要重新定义
 
 
+class Role(object):
+    def __init__(self, name):
+        self.name = name
+    def get_name(self):
+        return self.name
+class Teacher(Role):
+    def __init__(self, name, course):
+        '''
+        如果父类已经有一个方法，子类也有一个同名的方法，就会覆盖掉父类的方法，专业术语叫做重写
+        '''
+        super(Teacher, self).__init__(name) # 通过super这种语法可以调用父类的方法和变量，这里调用父类的构造方法，初始化name
+        self.course = course # 这个变量是父类所没有的
+    def say(self): # 定义父类的
+        print('My name is %s, i am a English teather' %self.name)
+
+class Foo(object):
+    def __init__(self, count):
+        self.__count = count
+    @property # 属性装饰器，通过他把一个方法装饰成属性
+    def count(self):
+        return self.__count
+    @count.setter
+    def count(self, value): # 这里除了self只能有一个参数
+        self.__count = value
+    @count.deleter
+    def count(self): # 这里除了self不能有其他参数
+        del self.__count
+
+class Foo(object):
+    __name = 'name' # 私有类变量
+    def __init__(self):
+        self.__age # 私有成员变量
+    def __funce(self): # 私有方法
+        pass
+
+class Foo(object):
+    def __del__(self):
+        print('del object')
+
+class Foo(object):
+    def __call__(self):
+        print('__call__ is exec')
+
+class Province(object):
+    country = 'China'
+
+    def __init__(self, name):
+        self.name = name
+
+    def func(self):
+        pass
+
+class Foo(object):
+    def __str__(self):
+        return 'Foo object'
+
+class Foo(object):
+    def __getitem__(self, key):
+        print('__getitem__',key)
+
+    def __setitem__(self, key, value):
+        print('__setitem__',key,value
+
+    def __delitem__(self, key):
+        print '__delitem__',key
 
 if __name__ == '__main__':
-    print(Foo.func1())
+    obj = Foo()
+    print(obj['ke'])
+
+
