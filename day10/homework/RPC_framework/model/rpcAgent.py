@@ -23,7 +23,7 @@ class rpcAgent(object):
         import subprocess
         p = subprocess.Popen(commend, shell=True, stdout=subprocess.PIPE)
         res = p.stdout.read()
-        print(res)
+        print(str(res, 'utf8'))
         return res
         #return 'eee'
 
