@@ -22,7 +22,7 @@ class rpcAgent(object):
         '''
         import subprocess
         p = subprocess.Popen(commend, shell=True, stdout=subprocess.PIPE)
-        return p.read()
+        return p.stdout.read()
         #return 'eee'
 
     def __on_request(self, ch, method, props, body):
