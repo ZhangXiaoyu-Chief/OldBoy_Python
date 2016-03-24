@@ -20,5 +20,4 @@ if __name__ == '__main__':
     if len(sys.argv) == 1:
         sys.stderr.write("Usage: %s [commend]\n" % sys.argv[0])
     else:
-        # print(' '.join(sys.argv[1:]))
         client.call(' '.join(sys.argv[1:]))
