@@ -32,12 +32,14 @@ class rpcClient(object):
         :param body:
         :return:
         '''
-        print(method)
-        print(props)
-        print(ch)
-        from libs import mylib
+        # print(method)
+        # print(props)
+        # print(ch)
+        # from libs import mylib
+        # print(type(body))
+        print()
         if self.__corr_id == props.correlation_id: # 判断收到的相应是否是我刚才发送请求的相应
-            print(str(body,encoding='gbk'))
+            print(str(eval(body), encoding='utf8'))
 
     def call(self, n):
         self.__response = None
