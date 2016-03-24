@@ -2,3 +2,5 @@
 # coding:utf-8
 RBMQ_HOST = '10.10.1.133'
 QUEUE = 'rpc_queue'
+
+AGENT_NAME = 'web1'

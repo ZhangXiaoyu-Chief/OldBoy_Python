@@ -24,10 +24,11 @@ class rpcAgent(object):
         p = subprocess.Popen(commend, shell=True, stdout=subprocess.PIPE)
         res = p.stdout.read()
         res = str(res, 'utf8')
+        #res = str(res, 'utf8')
         # res = ("jjj\n%s" %str(eval(res), 'utf8'))
         #print(str(res, 'utf8'))
         print(res)
-        return res
+        return '[%s]\n%s' %(conf.AGENT_NAME, res)
         #return 'eee'
 
     def __on_request(self, ch, method, props, body):

@@ -39,7 +39,8 @@ class rpcClient(object):
         # print(type(body))
         print()
         if self.__corr_id == props.correlation_id: # 判断收到的相应是否是我刚才发送请求的相应
-            print(str(eval(body), encoding='utf8'))
+            #print(str(eval(body), encoding='utf8'))
+            print(str(body, 'utf8'))
 
     def call(self, n):
         self.__response = None
