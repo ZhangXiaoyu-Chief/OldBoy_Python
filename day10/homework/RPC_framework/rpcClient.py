@@ -13,7 +13,12 @@ Description:
 
 Help:
 '''
+import sys
 from model import rpcClient
 if __name__ == '__main__':
     client = rpcClient.rpcClient()
-    client.call('df -h')
+    if len(sys.argv) == 1:
+        sys.stderr.write("Usage: %s [commend]\n" % sys.argv[0])
+    else:
+        # print(' '.join(sys.argv[1:]))
+        client.call(' '.join(sys.argv[1:]))

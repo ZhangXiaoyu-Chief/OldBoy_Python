@@ -2,10 +2,12 @@
 # coding:utf-8
 import pika
 from conf import conf
+from libs import mylib
 class rpcAgent(object):
     def __init__(self):
         self.__connection = pika.BlockingConnection(pika.ConnectionParameters(
         host = conf.RBMQ_HOST )) # 创建连接
+        self.__loger = mylib.mylog(conf.AGENT_LOG)
 
         self.__channel = self.__connection.channel() # 创建channel
         self.__channel.exchange_declare(exchange = 'rpc_ex',
@@ -33,6 +35,7 @@ class rpcAgent(object):
 
     def __on_request(self, ch, method, props, body):
         commend = body.decode()
+        self.__loger.info('safa')
         response = self.__run_commend(commend)
         ch.basic_publish(exchange = '',
                          routing_key = props.reply_to,
