@@ -48,8 +48,8 @@
 
 执行方法：进入程序目录后按照如下方法启动
     1、Linux：
-        1)Agent端：直接执行# python3 cpcAgent.py 或#./cpcAgent（需要给主程序文件添加可执行权限）
-        2)Client端：直接执行# python3 cpcClient.py [commend]或#./cpcClient.py（需要给主程序文件添加可执行权限）
+        1)Agent端（执行命令端）：直接执行# python3 cpcAgent.py 或#./cpcAgent（需要给主程序文件添加可执行权限）
+        2)Client端（发送命令端）：直接执行# python3 cpcClient.py [commend]或#./cpcClient.py（需要给主程序文件添加可执行权限）
     2、Windows：暂不支持Windows
         1)Agent端：直接执行# python3 cpcAgent.py
         2)Client端：直接执行# python cpcClient.py [commend]
@@ -82,4 +82,16 @@
     none            998M  148M  850M   15% /run/shm
     none            100M   84K  100M    1% /run/user
     /dev/sda1       180M   36M  131M   22% /boot
+
+    如果命令执行失败会返回错误信息类似如下
+    D:\x学习\pythonsrc\S12_src\OldBoy_Python\day10\homework\RPC_framework>pthon rpcClient.py daf
+    2016-03-25 09:48:41 [INFO]: Connecting to 10.10.1.133:5672
+    2016-03-25 09:48:41 [INFO]: Created channel=1
+    2016-03-25 09:48:41 [INFO]: excute commend daf
+    [web1]
+    /bin/sh: 1: daf: not found
+
+    [web1]
+    /bin/sh: 1: daf: not found
+
 
