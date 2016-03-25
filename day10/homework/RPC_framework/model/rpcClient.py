@@ -9,6 +9,10 @@ class rpcClient(object):
     定义一个RpcClient类
     '''
     def __init__(self):
+        '''
+        构造方法
+        :return:
+        '''
         self.__log = mylib.mylog(conf.CLIENT_LOG)
         self.__connection = pika.BlockingConnection(pika.ConnectionParameters(
                 host= conf.RBMQ_HOST)) # 创建连接

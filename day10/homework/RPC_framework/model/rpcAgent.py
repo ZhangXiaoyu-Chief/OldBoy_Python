@@ -5,6 +5,10 @@ from conf import conf
 from libs import mylib
 class rpcAgent(object):
     def __init__(self):
+        '''
+        构造方法
+        :return: 无
+        '''
         self.__connection = pika.BlockingConnection(pika.ConnectionParameters(
         host = conf.RBMQ_HOST )) # 创建连接
         self.__log = mylib.mylog(conf.AGENT_LOG)
@@ -21,9 +25,12 @@ class rpcAgent(object):
         :return: 返回命令执行的结果
         '''
         import subprocess
-        p = subprocess.Popen(commend, shell = True, stdout = subprocess.PIPE)
-        res = p.stdout.read() # 读取命令执行的结果
-        res = str(res, 'utf8')
+        try:
+            p = subprocess.Popen(commend, shell = True, stdout = subprocess.PIPE)
+            res = p.stdout.read() # 读取命令执行的结果
+            res = str(res, 'utf8')
+        except Exception as e:
+            res = e
         print(res)
         return '[%s]\n%s' %(conf.AGENT_NAME, res)
 
@@ -47,6 +54,10 @@ class rpcAgent(object):
         ch.basic_ack(delivery_tag = method.delivery_tag) # 通知消息消费完了
 
     def run(self):
+        '''
+        agent入口方法
+        :return:
+        '''
         self.__channel.queue_bind(exchange = conf.EXCHANGE,
                        queue = self.__queue_name) # 绑定queue和exchange
         self.__channel.basic_consume(self.__on_request, queue = self.__queue_name) # 接收消息
