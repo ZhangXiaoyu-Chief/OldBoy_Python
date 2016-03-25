@@ -26,8 +26,12 @@ class rpcAgent(object):
         '''
         import subprocess
         try:
-            p = subprocess.Popen(commend, shell = True, stdout = subprocess.PIPE)
-            res = p.stdout.read() # 读取命令执行的结果
+            p = subprocess.Popen(commend, shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+            error = p.stderr.read()
+            if not error:
+                res = p.stdout.read() # 读取命令执行的结果
+            else:
+                res = error
             res = str(res, 'utf8')
         except Exception as e:
             res = e
