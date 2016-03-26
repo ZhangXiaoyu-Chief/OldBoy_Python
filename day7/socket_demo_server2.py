@@ -25,7 +25,6 @@ if __name__ == '__main__':
     while True:
         print('server is waiting ...')
         conn, addr = sk.accept()
-
         client_data = conn.recv(1024)
         print(str(client_data, 'utf8'))
         conn.send(bytes('你是猪吗', 'utf8'))
