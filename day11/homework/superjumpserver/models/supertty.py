@@ -19,7 +19,7 @@ class myTty(object):
             client = paramiko.SSHClient()
             client.load_system_host_keys()
             client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-            if rsa_key_file and os.path.isfile(rsa_key_file)
+            if rsa_key_file and os.path.isfile(rsa_key_file):
                 client.connect(ip, port = port, username = password, key_filename = rsa_key_file, look_for_keys = False)
                 return client
             else:
