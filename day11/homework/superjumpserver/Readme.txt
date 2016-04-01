@@ -22,17 +22,17 @@
 │   └── __init__.py
 ├── models # 模型（模块）目录
 │   ├── auditlog.py # 日志模块
-│   ├── dbconn.py # 数据库俩接模块
+│   ├── dbconn.py # 数据库连接模块
 │   ├── dbmodels.py # 数据库模型
 │   ├── __init__.py
 │   ├── interactive.py #
 │   └── supertty.py # 虚拟终端tty模块
 ├── share # 公共目录
 │   └── examples # 批量导入模板文件目录
-│       ├── groups.json
-│       ├── hosts.json
-│       ├── hostusers.json
-│       └── users.json
+│       ├── groups.json # 组
+│       ├── hosts.json # 主机
+│       ├── hostusers.json # 主机用户
+│       └── users.json # 堡垒机用户
 ├── superjumpserver.py # 程序主文件
 └── views # 命令行参数调用函数目录
     └── views.py
@@ -56,7 +56,7 @@
     }
     # 数据库连接字典
     DBS = {"test" : "mysql+pymysql://root:123.com@localhost:3306/superjumpserver_test", # 测试环境数据库
-           "real" : "mysql+pymysql://root:123.com@localhost:3306/superjumpserver_test", # 正式环境数据库
+           "real" : "mysql+pymysql://root:123.com@localhost:3306/superjumpserver", # 正式环境数据库
            }
     # 根据实际需要切换数据库
     DB = DBS['test']
@@ -68,7 +68,7 @@
     3、sqlalchemy支持的数据库MySQL等（本实例为MySQL）
 
 执行方法：进入程序目录后按照如下方法启动
-    1、Linux：直接执行# python3 superjumpserver.py [commend [otpions]] 或#./superjumpserver.py[commend [otpions]]（需要给主程序文件添加可执行权限）
+    1、Linux：直接执行# python3 superjumpserver.py [commend [otpions]] 或#./superjumpserver.py [commend [otpions]]（需要给主程序文件添加可执行权限）
     2、Windows：暂不支持Windows
 
 使用方法：
@@ -103,7 +103,7 @@
                 "ip_addr" : "127.0.0.1"
               }
             ]
-        2）批量导入，（通过-f选项制定文件目录）
+        2）批量导入，（通过-f选项指定文件目录）
             $ python3 superjumpserver.py import_hosts -f share/examples/hosts.json
         5、导入远端主机用户列表
         1）准备远端主机用户列表(json格式)，例如
@@ -132,7 +132,7 @@
                 "auth_type" : "ssh-password"
               }
             ]
-        2）批量导入，（通过-f选项制定文件目录）
+        2）批量导入，（通过-f选项指定文件目录）
             $ python3 superjumpserver.py import_remoteusers -f share/examples/hostusers.json
         6、导入远端主机用户组列表（注意，是远端用户的组不是主机的组）
         1）准备远端主机用户组列表(json格式)，例如
@@ -153,7 +153,7 @@
                 "hostusers" : [{"username":"root", "hostname":"mysql"}]
               }
             ]
-        2）批量导入，（通过-f选项制定文件目录）
+        2）批量导入，（通过-f选项指定文件目录）
             $ python3 superjumpserver.py import_groups -f share/examples/groups.json
         7、导入堡垒机用户列表（注意，是堡垒机用户）
         1）准备远端主机用户组列表(json格式)，例如
@@ -165,9 +165,9 @@
                 "groups" : ["webgroup"] # 组列表，这里只是组名，要求和组一致
               }
             ]
-        2）批量导入，（通过-f选项制定文件目录）
+        2）批量导入，（通过-f选项指定文件目录）
             $ python3 superjumpserver.py import_users -f share/examples/users.json
-        至此，初始化配置工作就完成了，下面就让我们畅快的使用吧
+        注意：导入顺序不能颠倒，要严格按照流程。至此，初始化配置工作就完成了，下面就让我们畅快的使用吧。
     使用：
         1、启动并登录进入主界面
         $ python3 superjumpserver.py start
