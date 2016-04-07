@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo3</title>
+</head>
+<body>
+    <form action="http://10.0.4.42:8000/django_form/" enctype="multipart/form-data" method="post">
+        <h1>注册</h1>
+        <div>
+            用户名：<input name="username" type="text">
+            密码：<input name="password" type="password">
+        </div>
+        <div>
+            <h2>爱好</h2>
+            Python：<input name="favor" type="checkbox" value="1">
+            Java：<input name="favor" type="checkbox" value="2">
+        </div>
+        <div>
+            <h2>性别</h2>
+            男：<input name="sex" type="radio" value="1">
+            女：<input name="sex" type="radio" value="0">
+        </div>
+        <div>
+            <h2>城市</h2>
+            <select name="city">
+                <option value="sh">上海</option>
+                <option value="bj">北京</option>
+            </select>
+        </div>
+        <div>
+            <h2>自我介绍</h2>
+            <textarea name="content"></textarea>
+        </div>
+        <div>
+            <input name="icon" type="file">
+        </div>
+        <div>
+            <input type="submit" value="提交">
+        </div>
+    </form>
+</body>
+</html>

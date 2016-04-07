@@ -1,0 +1,84 @@
+.main_div{
+        width: 1024px;
+        padding: 30px 100px;
+}
+.clause{
+    height: 550px;
+    overflow-y: scroll;
+    border: 1px solid #7F9DB9;
+    padding: 8px 15px;
+}
+.clause .title{
+    text-align: center;
+}
+.clause p{
+    text-indent: 2em;
+}
+.bt_div{
+    text-align: center;
+    padding: 10px;
+}
+.btn{
+    color: aliceblue;
+    padding: 10px 50px;
+    background: red;
+    border: 0;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+}
+.link{
+    text-align: center;
+    padding: 5px;
+}
+.link span{
+    color: #999;
+}
+.header{
+    width: 1224px;
+    height: 70px;
+    padding-bottom: 10px;
+    background: url("img/headbg.jpg") repeat-x left bottom;
+}
+.header .title{
+    font-size: 24px;
+    font-family: "Microsoft YaHei UI";
+    bottom: 10px;
+    border-left: solid 1px #bbb;
+    padding-left: 10px;
+    float: left; margin-top: 30px;margin-left: 36px;
+}
+.logo{
+    float: left;
+    text-decoration: none;
+
+}
+.form_item{
+    margin-left: 200px;
+    border: solid 1px #ddd;
+    width: 398px;
+    height: 52px;
+    margin-bottom: 30px;
+}
+.item_lebal{
+    float: left;
+    width: 90px;
+    height: 52px;
+    line-height: 52px;
+    padding-left: 20px;
+}
+
+.form_item .field {
+    border: 0 none;
+    font-size: 14px;
+    width: 190px;
+    height: 19px;
+
+    padding-bottom: 11px;
+    padding-left: 20px;
+    padding-top: 16px;
+    outline: 0;
+}
+.form_item div{
+    padding-top: 16px;
+    padding-left: 125px;
+}

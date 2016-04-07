@@ -1,0 +1,380 @@
+body {
+    /* body 标签样式*/
+    font: 12px/150% Arial,Verdana,"\5b8b\4f53";
+    /*
+        按顺序设置如下属性：
+        font-style 大小等
+        font-variant
+        font-weight 宽度
+        font-size/line-height 字体大小
+        font-family 字体 \5b8b\4f53 表示宋体
+    */
+    margin: 0; /* 去掉外边距 */
+    color: #666;  /* 字体颜色 灰色*/
+    background: #fff; /* 背景颜色 #fff 表示白色 */
+}
+a{
+    /* 默认a标签样式 */
+    color: #666;
+    text-decoration: none; /* 无下划线 */
+}
+.main{
+    /* 主体样式，定义了宽和左外边距 */
+    width: 1250px;
+    margin-left: 103.5px;
+}
+.top{
+    background: #F1F1F1;
+}
+.top_left{
+    /* 上方左侧 */
+    float:left;
+    height: 30px;
+    margin-right: 10px;
+    text-align: -webkit-match-parent; /* 对其方式继承父容器 */
+    padding: 7px 5px 0px 15px;  /* 内边距 顺序依次为上右下左 ，也就是顺时针*/
+}
+.top_right{
+    /* 顶部右边 */
+    float: right; /* 向右浮动 */
+    height: 30px;
+    margin-right: 10px;
+    text-align: -webkit-match-parent;
+    padding: 7px 5px 0px 0px;
+
+}
+.gouwuche{
+    /* 购物车按钮（连接）样式 */
+    width: 75px;
+    float: left;
+    height: 34px;
+    margin-top: 8px;
+    margin-left: 120px;
+    border: 1px solid #DFDFDF; /* 边框宽、线形、颜色 solid为实线 */
+    padding: 0 28px 0 28px;
+    background: #F9F9F9;
+    text-align: center; /* 文字居中对齐 */
+    line-height: 34px; /* 行高 */
+    display: block; /* 以块元素的形式呈现 */
+    position: relative; /* position设为relative，用于购物图标定位 */
+    overflow: hidden;
+}
+.ci_left{
+    /* 购物车样式 */
+    top: 9px; /* 距离父容器顶部9px */
+    left: 18px; /* 距离父容器左侧9px */
+    width: 18px;
+    height: 16px;
+    position: absolute; /* 与父容器的position: relative呼应 */
+    background: url("static/img/jd2015img.png") 0 -58px no-repeat; /* 背景图片0 -58px表示图片的移动距离分别为x轴和y周，no-repeat表示不平铺（重复） */
+}
+.searh{
+    /* 搜索输入框样式 */
+    float: left;
+    margin-left: 100px;
+    color: rgb(153, 153, 153);
+    width: 446px;
+    border-width: 2px 0 2px 2px; /* 边框宽度，顺序依次为上右下左，css中所有的边框边距等四周的都是这个顺序 */
+    border-color: #B61D1D;
+    margin-top: 8px;
+    height: 36px;
+    border-style: solid; /* 边框线条样式，实线 */
+    padding: 4px;
+    outline: 0; /* 取消外轮廓，外轮廓指表单获得焦点后都会有一个外边框，谷歌是蓝色的 */
+    height: 24px;
+}
+.searh_btn{
+    /* 搜索按钮样式 */
+    width: 82px;
+    float: left;
+    height: 36px;
+    margin-top: 8px;
+    background: #B61D1D;
+    border: none;
+    line-height: 1;
+    outline: 0;
+    color: #fff;
+    font-family: Microsoft YaHei; /* 字体为雅黑 */
+    font-size: 16px;
+    cursor: pointer; /* 图标样式为小手 默认情况下按钮为指针*/
+}
+.hot_key{
+    /* 热门搜索样式 */
+    float: left;
+    margin-left: 100px;
+    width: 688px;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden; /* 表示内容溢出元素框时如何处理 */
+    /* overflow的常用值*/
+    /*visible	默认值。内容不会被修剪，会呈现在元素框之外。*/
+    /*hidden	内容会被修剪，并且其余内容是不可见的。*/
+    /*scroll	内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。*/
+    /*auto	如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。*/
+    /*inherit	规定应该从父元素继承 overflow 属性的值。*/
+}
+.hot_key a{
+    /* 热门关键词a标签样式 */
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-top: 2px;
+    float: left;
+}
+.red_key{
+    /* 热门中的热门，红色高亮 */
+    color: #C81623;
+}
+.cls{
+    /* 浮动结束样式 */
+    clear: both; /* 浮动结束左右两侧均不允许浮动，用于父div（容器）里面有浮动的 */
+}
+.nav {
+    /* 用于顶部navbar与下面的主题部分画一条红色的线条 */
+    height: 44px;
+    margin-left: 0;
+    width: 1457px;
+    border-bottom: 2px solid #B1191A; /* 底部红颜色的实线 */
+}
+.nav .w{
+    /* navbar div 用于容纳菜单、搜索框、购物车按钮*/
+    position: relative; /* position设置为relative为后面的absolute子div准备 */
+    z-index: 9; /* z-index 属性设置元素的堆叠顺序。拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面。 */
+    height: 44px;
+    margin: 0 auto;
+    margin-left: 103.5px;
+    width: 1250px;
+}
+.w .main_menu{
+    /* navbar上面的“全部商品”容器样式 */
+    display: block;
+    font-family: "Microsoft YaHei";
+    width: 190px;
+    height: 44px;
+    padding: 0 10px;
+    background: #B1191A;
+    font: 400 15px/44px "microsoft yahei"; /* 字体样式 */
+    color: #fff;
+    float: left;
+    text-decoration: none; /* 取消超链接的下划线 */
+}
+.w .menu{
+    /* navbar上横线菜单样式 */
+    height: 44px;
+    padding: 0 20px; /* 居中对齐 */
+    text-align: center;
+    text-decoration: none;
+    font: 400 15px/44px "microsoft yahei";
+    color: #333;
+}
+.bottem{
+    /* 下半部分主div样式 */
+    width: 1470px; /* 这里只设置了一个宽度避免窗口缩小的时候堆叠乱 */
+}
+.left{
+    /* 主题左侧容器，用来盛放分类菜单、广告链接等 */
+    float: left;
+    margin-left: 103.5px;
+    margin-right: 0px;
+    width: 210px;
+}
+.left_menu{
+    /* 左侧分类菜单容器样式 */
+    border-left: 1px solid #b61d1d;
+    /*z-index: 1;*/
+    color: #fff;
+    height: 466px;
+    padding: 0 10px;
+    background: #c81623;
+}
+.left_menu .item{
+    /* 菜单项样式 */
+    border-left: 1px solid #b61d1d;
+    position: relative; /* 用于选项内>符号容器的定位 */
+    padding: 10px 0;
+
+}
+.left_menu a{
+    /* 菜单项目a标签样式 */
+    color: #fff;
+    font-size: 14px;
+    font-family: "microsoft yahei";
+    font-weight: 400;
+}
+.left_menu .gt{
+    /* 分类菜单项>符号样式 */
+    position: absolute;
+    /*z-index: 1;*/
+    top: 10px;
+    right: 1px;
+}
+.today{
+    /* 左侧下方图片广告样式 */
+    margin-top: 10px;
+}
+.right{
+    /* 主体右侧容器 */
+    float: left;
+    width: 1030px;
+    display: block;
+}
+.crumbs_bar{
+    /* 导航条样式 */
+    width: auto;
+    padding-top: 15px;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    /*z-index: 6;*/
+}
+.selector{
+    /* 筛选项主容器 */
+    width: auto;
+    border-top: 1px solid #DDD;
+    background: #FFF;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.selector .sl_wrap{
+    /* 筛选项 */
+    /*position: relative;*/
+    line-height: 34px;
+    width: auto; /* 宽度取决于父容器 */
+    border-bottom: 1px solid #DDD;
+    background: #f3f3f3;
+}
+.selector .sl_key{
+    /* 筛选项左侧选项名称 */
+    float: left;
+    width: 100px;
+    padding-left: 10px;
+}
+.selector .sl_value{
+    /* 筛选项右侧具体内容 */
+    margin-left: 110px;
+    padding-right: 130px;
+    padding-left: 10px;
+    background: #fff;
+}
+.selector .sl_value a{
+    padding-right: 20px;
+}
+.goodslist{
+    /* 商品列表主容器，商品容器基于这个容器左浮动堆叠 */
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.goodslist .item{
+    /* 商品项目容器 */
+    width: 240px;
+    height: 436px;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.goodslist .img_div{
+    /* 商品图片容器 */
+    margin-top: 40px;
+    margin-left: 10px;
+}
+.goodslist .price_div{
+    /* 商品价格容器 */
+    width: 100%;
+    height: 22px;
+    margin-bottom: 8px;
+    position: relative;
+    /*z-index: 4;*/
+}
+.goodslist .price_div strong{
+    /* 价格strong标签样式 */
+    float: left;
+    margin-right: 10px;
+    padding-left: 10px;
+    color: #e4393c;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: Verdana;
+
+}
+.goodslist .price_div strong em{
+    /* 货币符号样式 */
+    font-size: 16px;
+    font-style: normal;
+}
+.goodslist img{
+    /* 商品图片img标签样式 */
+    width: 220px;
+    height: 220px;
+}
+.goodslist .icon{
+    /* 价格后方图片 */
+    background: url(static/img/price.png) no-repeat 0px 0px;
+    position: absolute; /* 相对于价格容器进行定位 */
+    top: 2px;
+    left: 100px;
+    width: 16px;
+    height: 16px;
+}
+.goodslist .pingjia{
+    padding-top: 8px;
+    margin-bottom: 8px;
+}
+.goodslist .pingjia strong{
+    color: #005aa0;
+    font-family: verdana;
+    font-weight: 700;
+}
+.operate{
+    /* 评价下方按钮组容器 */
+    margin-bottom: 10px;
+}
+
+.operate .duibi{
+    /* 按钮组对比按钮 */
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #DDD;
+    padding: 0 3px 0 3px;
+    position: relative;
+    background: #fff;
+    color: #999;
+}
+.operate .guanzhu{
+    /* 按钮组其他按钮样式 其他按钮class="duibi guanzhu"，等于只改了左侧内边距 */
+    padding-left: 24px;
+    /*相当于继承自关注 class="duibi guanzhu"*/
+}
+.operate .duibi input{
+    /* 对比左侧复选框布局样式 */
+    float: left;
+    margin-top: 7px;
+}
+.operate .i-guanzhu{
+    /* 关注按钮图标 */
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    background: url(static/img/icon.png) no-repeat 0px -413px;
+}
+.operate .i-gouwuche{
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    background: url(static/img/icon.png) no-repeat 0px -244px;
+}
+.footer{
+    /*margin-top: 5px;*/
+    padding-top: 10px;
+    border-top: 1px solid #999;
+    padding-bottom: 10px;
+    line-break: ;
+    text-align: center;
+}
+.footer a{
+    padding-right: 10px;
+    padding-left: 10px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="keywords" content="老男孩培训机构,python自动化运维开发,65商城" />
+        <link rel="icon" href="static/img/favicon.ico">
+        <title>65商城-用户注册</title>
+        <link rel="stylesheet" href="static/css/base.css" />
+    </head>
+    <body>
+        <div class="header">
+            <a class="logo" href="index.html">
+                <img src="static/img/logo.jpg" />
+            </a>
+            <div class="title">欢迎注册</div>
+        </div>
+        <div class="main_div">
+            <form class="register" action="http://10.0.4.42:8000/django_form/" enctype="multipart/form-data" method="post">
+                <div class="form_item">
+                    <label class="item_lebal" for="username">用 户 名</label><input id="username" class="field" name="username" type="text" />
+                </div>
+                <div class="form_item">
+                    <label class="item_lebal" for="password">密&nbsp;&nbsp;码</label><input class="field" id="password" name="password" type="password" />
+                </div>
+                <div class="form_item">
+                    <label class="item_lebal" for="passwordrepeat">确认密码</label><input class="field" id="passwordrepeat" name="passwordrepeat" type="passwordrepeat" />
+                </div>
+                <div class="form_item">
+                    <label class="item_lebal" for="province">省&nbsp;&nbsp;份</label>
+                    <div>
+                        <select id="province" name="province" style="border: 0 none; width: 190px">
+                            <option value="beijing">北京</option>
+                            <option value="shanghai">上海</option>
+                            <option value="tianjin">天津</option>
+                            <option value="chongqing">重庆</option>
+                            <option value="hebei">河北</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form_item">
+                    <label class="item_lebal">性&nbsp;&nbsp;别</label>
+                    <div>
+                        <input id="man" name="sex" type="radio" /><label for="man">男&nbsp;&nbsp;</label>
+                        <input id="woman" name="sex" type="radio" /><label for="woman">女</label>
+                    </div>
+                </div>
+                <div class="form_item">
+                    <label class="item_lebal">爱&nbsp;&nbsp;好</label>
+                    <div>
+                        <input id="football" name="hobby" type="checkbox" value="football" /><label for="football">足球&nbsp;</label>
+                        <input id="basketball" name="hobby" type="checkbox" value="basketball" /><label for="basketball">篮球&nbsp;</label>
+                        <input id="python" name="hobby" type="checkbox" value="python" /><label for="python">Python</label>
+                    </div>
+                </div>
+                <div class="bt_div">
+                    <input class="btn" type="submit" value="注册" />
+                </div>
+            </form>
+            <div class="link">
+                <span>老男孩儿培训机构Python12期学员张晓宇版权所有 | 联系电话：18513995368 | QQ：61411916 | Email：61411916@qq.com</span>
+            </div>
+        </div>
+    </body>
+</html>
