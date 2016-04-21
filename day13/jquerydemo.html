@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <div id="n1"></div>
+    <div class="c1"></div>
+    <span></span>
+    <div class="c2"></div>
+    <div id="n2"></div>
+    <a></a>
+    <div class="c3">
+        <li id="n3">
+            <a></a>
+        </li>
+    </div>
+    <script src="jquery-2.2.3.min.js"></script>
+    <script>
+        $('#n1').text('n1');
+        $('.c1').text('c1');
+        $('span').text('t1');
+        $('#n2,.c2,a').text('ok')
+        $('.c3 #n3 a').text('no')
+    </script>
+</body>
+</html>

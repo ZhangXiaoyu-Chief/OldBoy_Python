@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create tag demo</title>
+</head>
+<body>
+<div id="n1">
+</div>
+<a href="//baidu.com" onclick="return addTag();">添加</a>
+<script>
+    function addTag(){
+        nid = document.getElementById('n1');
+        var createObj = document.createElement('a');
+        createObj.href = '//baidu.com';
+        createObj.innerText = '百度';
+        nid.appendChild(createObj);
+        return false;
+
+    }
+</script>
+</body>
+</html>

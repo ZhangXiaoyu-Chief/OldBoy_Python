@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器、timeout</title>
+</head>
+<body>
+<div id="n1" style="color: red; font-size: 36px;">hello&nbsp;world!!!!</div>
+<input type="button" onclick="stop();" value="停下来">
+<script>
+    obj1 = setInterval('Func()', 500);
+    function Func(){
+        text = document.getElementById('n1');
+        fts = text.innerText.charAt(0);
+        oths = text.innerText.substring(1, text.length);
+        new_text = oths + fts;
+        console.log(new_text);
+        text.innerText = new_text;
+    }
+    function stop(){
+        clearInterval(obj1);
+    }
+</script>
+</body>
+</html>

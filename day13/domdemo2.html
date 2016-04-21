@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>domdemo2</title>
+</head>
+<body>
+    <input id="n1" type="text" value="1" />
+    <select id="n2">
+        <option value="1">北京</option>
+        <option value="2">上海</option>
+        <option value="3">广州</option>
+    </select>
+    <input type="button" value="获取值" onclick="getValue()"/>
+    <textarea id="n3">
+        default
+    </textarea>
+    <script>
+        function getValue(){
+            res = document.getElementById('n3');
+            alert(res.value);
+            res.value = "";
+        }
+    </script>
+</body>
+</html>

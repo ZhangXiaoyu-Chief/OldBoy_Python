@@ -1,24 +1,30 @@
 .main_div{
-        width: 1024px;
-        padding: 30px 100px;
+    /* 页面下方主题div样式 */
+    width: 1024px;
+    padding: 30px 100px;
 }
 .clause{
+    /* 协议正文框 */
     height: 550px;
-    overflow-y: scroll;
+    overflow-y: scroll; /* 正文框不够现实的时候加一个滚动条 */
     border: 1px solid #7F9DB9;
     padding: 8px 15px;
 }
 .clause .title{
-    text-align: center;
+    /* 正文标题 */
+    text-align: center; /* 居中 */
 }
 .clause p{
-    text-indent: 2em;
+    /* 协议正文p标签样式 */
+    text-indent: 2em; /* 缩进连个字符 */
 }
 .bt_div{
+    /* 按钮所在的div */
     text-align: center;
     padding: 10px;
 }
 .btn{
+    /* 按钮样式 */
     color: aliceblue;
     padding: 10px 50px;
     background: red;
@@ -27,19 +33,23 @@
     font-family: "Microsoft YaHei";
 }
 .link{
+    /* 页面下方版权联系方式的等信息div样式 */
     text-align: center;
     padding: 5px;
 }
 .link span{
+    /* 页面下方版权联系方式的等信息span标签样式 */
     color: #999;
 }
 .header{
+    /* 页面上方div样式 */
     width: 1224px;
     height: 70px;
     padding-bottom: 10px;
-    background: url("img/headbg.jpg") repeat-x left bottom;
+    background: url("../../static/img/headbg.jpg") repeat-x left bottom; /* 背景图片，x轴平铺 */
 }
 .header .title{
+    /* 页面上方标题样式 */
     font-size: 24px;
     font-family: "Microsoft YaHei UI";
     bottom: 10px;
@@ -48,11 +58,13 @@
     float: left; margin-top: 30px;margin-left: 36px;
 }
 .logo{
+    /* logo图标样式 */
     float: left;
     text-decoration: none;
 
 }
 .form_item{
+    /* 注册页面form每个表单项的样式，其实最主要的就是加了一个边框 */
     margin-left: 200px;
     border: solid 1px #ddd;
     width: 398px;
@@ -60,6 +72,7 @@
     margin-bottom: 30px;
 }
 .item_lebal{
+    /* 表单lebal标签样式 */
     float: left;
     width: 90px;
     height: 52px;
@@ -68,17 +81,18 @@
 }
 
 .form_item .field {
+    /* 表单空间所在的div样式 */
     border: 0 none;
     font-size: 14px;
     width: 190px;
     height: 19px;
-
     padding-bottom: 11px;
     padding-left: 20px;
     padding-top: 16px;
     outline: 0;
 }
 .form_item div{
+    /* 表单项所属的其他div标签样式 */
     padding-top: 16px;
     padding-left: 125px;
 }

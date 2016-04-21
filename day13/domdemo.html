@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>domdemo</title>
+</head>
+<body>
+    <div id="num">1</div>
+    <input type="button" value="+1" onclick="Add()">
+    <div class="h1">
+        xxx
+    </div>
+    <ul>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+    </ul>
+    <p>username:<input name="username" value="123"/></p>
+    <p>username:<input name="password" value="456"/></p>
+    <script>
+        h1 = document.getElementsByClassName('h1');
+        console.log(h1[0].innerText);
+        h1[0].innerText = 'zhangxiaoyu';
+        lis = document.getElementsByTagName('li');
+//        for(i in lis){
+//            var item = lis[i];
+//            console.log(item.innerText);
+//            item.innerText = i
+//        }
+        function Add(){
+            res = document.getElementById('num');
+            console.log(res.innerText)
+            num = parseInt(res.innerText);
+            num += 1;
+            res.innerText = num;
+
+        }
+//        username = document.getElementsByName('username')[0]
+//        password = document.getElementsByName('password')[0]
+//        console.log(username.value, password.value)
+
+    </script>
+
+</body>
+</html>

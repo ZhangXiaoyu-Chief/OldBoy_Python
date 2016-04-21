@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UnionSmart-合众聚智</title>
+    <link rel="stylesheet" href="css/sui.css">
+    <!--<link rel="stylesheet" href="//g.alicdn.com/sj/qnui/1.5.1/css/sui-append.min.css">-->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/sweetalert.css">
+</head>
+<body>
+    <!--top bar 开始-->
+    <div class="top">
+        <div class="back-imge">
+            <div class="logo"><img src="imges/logo.png" style=""></div>
+            <div class="nav" style="line-height: 68px">
+                <a href="#" style="">
+                    HTML+CSS
+                </a>
+                <a href="#" style="">
+                    Javascript
+                </a>
+                <a href="#" style="">
+                    jQurey
+                </a>
+            </div>
+            <div class="right">
+                <a class="username">张晓宇(江湖人称65年哥)</a>
+                <span class="fenge">|</span>
+                <a class="quit">退出</a>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+        <div style="clear: both">
+        </div>
+    </div>
+    <!--top bar 结束-->
+    <!--body开始-->
+    <div class="rbody">
+        <!-- 左侧导航开始-->
+        <div class="left">
+            <li class="item active">
+                <i class="icon note-icon-active">
+                </i>
+                <a href="#" class="a a-active">第13天作业</a>
+            </li>
+            <li class="item">
+                <i class="icon note-icon">
+                </i>
+                <a href="#" class="a">第14天作业</a>
+            </li>
+        </div>
+        <!--左侧导航结束-->
+        <!--title开始-->
+        <div class="title">
+            <span>作业二</span>
+        </div>
+        <!--title结束-->
+        <!--main开始-->
+        <div class="main">
+            <!-- 按钮组 -->
+            <div style="margin-bottom: 10px; text-align: right;">
+                <a href="#" class="sui-btn btn-primary all">全选</a>
+                <a href="#" class="sui-btn btn-primary deselect">反选</a>
+                <a href="#" class="sui-btn btn-primary cancel">取消</a>
+                <a href="#" class="sui-btn btn-primary edit"><i class="sui-icon icon-pencil"></i>编辑模式</a>
+                <a href="#" class="sui-btn btn-primary save">保存</a>
+            </div>
+            <!--表格-->
+            <form id="edithost" action="dfasd" method="get" class="sui-form form-horizontal">
+            <table class="sui-table table-primary table-zebra hostinfo">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;text-align: center">#</th>
+                        <th style="width: 20%;text-align: center">主机名</th>
+                        <th style="width: 15%;text-align: center">IP地址</th>
+                        <th style="width: 35%;text-align: center">配置</th>
+                        <th style="width: 10%;text-align: center">端口</th>
+                        <th style=" text-align: center">状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center"><input type="checkbox"></td>
+                        <td><span class="hostname">nginx服务器1</span><input class="hide" name="hostname" type="text"></td>
+                        <td><span class="ipaddr">10.10.1.2</span><input class="hide" name="ipaddr" type="text"></td>
+                        <td><span class="configuration">至强8核16G*4/8G*4/500G*2</span><input class="hide" name="configuration" type="text"></td>
+                        <td><span class="port">80</span><input class="hide" name="port" type="text"></td>
+                        <td><span class="status">下线</span>
+                            <select class="hide" name="status">
+                                <option>
+                                    在线
+                                </option>
+                                <option>
+                                    下线
+                                </option>
+                            </select>
+                        </td>
+                    </tr >
+                    <tr>
+                        <td style="text-align: center"><input type="checkbox"></td>
+                        <td><span class="hostname">nginx服务器2</span><input class="hide" name="hostname" type="text"></td>
+                        <td><span class="ipaddr">10.10.1.3</span><input class="hide" name="ipaddr" type="text"></td>
+                        <td><span class="configuration">至强8核16G*4/8G*4/500G*2</span><input class="hide" name="configuration" type="text"></td>
+                        <td><span class="port">80</span><input class="hide" name="port" type="text"></td>
+                        <td><span class="status">在线</span>
+                            <select class="hide" name="status">
+                                <option>
+                                    在线
+                                </option>
+                                <option>
+                                    下线
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center"><input type="checkbox"></td>
+                        <td><span class="hostname">MySQL服务器</span><input class="hide" name="hostname" type="text"></td>
+                        <td><span class="ipaddr">10.10.1.4</span><input class="hide" name="ipaddr" type="text"></td>
+                        <td><span class="configuration">至强8核16G*4/8G*8/500G*3</span><input class="hide" name="configuration" type="text"></td>
+                        <td><span class="port">3306</span><input class="hide" name="port" type="text"></td>
+                        <td><span class="status">下线</span>
+                            <select class="hide" name="status">
+                                <option>
+                                    在线
+                                </option>
+                                <option>
+                                    下线
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center"><input type="checkbox"></td>
+                        <td><span class="hostname">备份服务器</span><input class="hide" name="hostname" type="text"></td>
+                        <td><span class="ipaddr">10.10.1.5</span><input class="hide" name="ipaddr" type="text"></td>
+                        <td><span class="configuration">至强8核16G*4/8G*4/500G*2</span><input class="hide" name="configuration" type="text"></td>
+                        <td><span class="port">3306</span><input class="hide" name="port" type="text"></td>
+                        <td><span class="status">在线</span>
+                            <select class="hide" name="status">
+                                <option>
+                                    在线
+                                </option>
+                                <option>
+                                    下线
+                                </option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </form>
+        </div>
+    </div>
+    <!--main结束-->
+    <!--body 结束-->
+    <!--对话框开始-->
+
+    <script src="js/jquery-2.2.3.js"></script>
+    <script src="js/sui.js"></script>
+    <script src="js/prettify.js"></script>
+    <script src="js/sweetalert-dev.js"></script>s
+    <script>
+        function validate(tabs){
+            // 表单验证函数，接收一个tr标签的集合对象，通过遍历表格中每一行的表单判断是否都验证通过，验证通过返回true，验证不通过相应的表单加上红色的框，并且返回false
+            var isvalidate = true;
+            for(i=1; i<tabs.length; i++){
+                // 遍历表格的行
+                tds = $(tabs[i]).children(); // 获取tr标签下的td元素
+                if($(tds[0]).children().eq(0).prop('checked') != false){
+                    // 获取当前行的表单参数的值
+                    var hostname = tds.children("[name='hostname']").val();
+                    var ipaddr = tds.children("[name='ipaddr']").val();
+                    var configuration = tds.children("[name='configuration']").val();
+                    var port = tds.children("[name='port']").val();
+                    if(hostname == ''){// 判断主机名是否为空
+                        isvalidate = false;
+                        // 如果为空，给该表单改成红色边框
+                        tds.children("[name='hostname']").attr('style','border-color: #ff0000;');
+                    }
+                    if(ipaddr == ''){// 判断ip地址是否为空
+                        isvalidate = false;
+                        tds.children("[name='ipaddr']").attr('style','border-color: #ff0000;');
+                    }
+                    if(ipaddr.match(/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/) == null){
+                        // 判断ip地址是否符合规范，正则匹配
+                        isvalidate = false;
+                        tds.children("[name='ipaddr']").attr('style','border-color: #ff0000;');
+                    }
+                    if(configuration == ''){ // 判断配置是否为空
+                        isvalidate = false;
+                        tds.children("[name='configuration']").attr('style','border-color: #ff0000;');
+                    }
+                    if(port == ''){ // 判断port是否为空
+                        isvalidate = false;
+                        tds.children("[name='port']").attr('style','border-color: #ff0000;');
+                    }
+                    if(port.match(/^[0-9]*$/) == null){ // 判断port是否位数字类型
+                        isvalidate = false;
+                        tds.children("[name='port']").attr('style','border-color: #ff0000;');
+                    }
+                    if((0>=parseInt(port)) || (parseInt(port)>=65535)){
+                        // 判断端口号是否在0~65535这个范围内
+                        isvalidate = false;
+                        tds.children("[name='port']").attr('style','border-color: #ff0000;');
+                    }
+                }
+            }
+            return isvalidate;
+        }
+        $(function () {
+            var _jahDivs = $(".rbody");
+            _jahDivs.css("overflow", "auto");
+            $(window).resize(function () {
+                // 监控窗口大小改变，调整左侧导航条高度，使得左侧导航条的高度适应窗体的变化
+                var _addHeight = $(window).height() - $("body").outerHeight(true);
+                var _height = _jahDivs.height();
+                _jahDivs.height(_height + _addHeight - (_jahDivs.outerHeight(true) - _height) / 2);
+            }).resize();
+
+            $(".all").click(function () {
+                // 全选按钮事件
+                $("[type='checkbox']").prop("checked","checked")
+            });
+
+            $(".deselect").click(function () {
+                // 反选按钮事件
+                $("[type='checkbox']").each(function () {
+                    // 遍历每一个checkebox标签，如果该表单checked属性值不为false，表示已经选中，将checked属性设置为checked，否则为选中状态，将值设置为false
+                    if($(this).prop('checked') == false){
+                        $(this).prop("checked", "checked");
+                    }
+                    else{
+                        $(this).prop("checked",false);
+                    }
+                });
+            });
+
+            $(".edit").click(function (){
+                // 编辑模式按钮事件
+                var tabs = $('tr');
+                var table = $('table');
+                table.attr('status','edit'); // 给table标签加一个stauts的属性，让他等于edit，用来告诉保存和取消按钮是否是出于编辑状态
+                for(i=1; i<tabs.length; i++){
+                    // 遍历每一行
+                    tds = $(tabs[i]).children();
+                    tds.children('input,select').removeAttr('style');
+                    if($(tds[0]).children().eq(0).prop('checked') != false){ // 如果该行的checkbox的是选择状态执行
+                        // 隐藏表格正文
+                        tds.children('span').addClass('hide');
+                        // 将表格表单项取消隐藏
+                        tds.children('input,select').removeClass('hide');
+                        // 将表格正文写到表单中
+                        tds.children("[name='hostname']").val(tds.children('.hostname').text());
+                        tds.children("[name='ipaddr']").val(tds.children('.ipaddr').text());
+                        tds.children("[name='configuration']").val(tds.children('.configuration').text());
+                        tds.children("[name='port']").val(tds.children('.port').text());
+                        tds.children("[name='status']").val(tds.children('.status').text());
+                    }
+                }
+                // 将有冲突的按钮禁用，包括自己，也就是进入编辑状态后包括进入编辑状态按钮都不能点击
+                $(this).attr('disabled','true');
+                $(".all").attr('disabled','true');
+                $(".deselect").attr('disabled','true');
+                $("[type='checkbox']").attr('disabled','true');
+            });
+
+            $(".cancel").click(function (){
+                // 取消按钮事件
+                var tabs = $('tr');
+                var table = $('table');
+                if (table.attr('status') == 'edit'){ // 通过表格的自定义属性判断是否在编辑状态，是编辑状态才处理
+                    for(i=1; i<tabs.length; i++){
+                        // 遍历每一行
+                        tds = $(tabs[i]).children();
+                        if($(tds[0]).children().eq(0).prop('checked') != false){ // 如果该行的checkbox的是选择状态执行
+                            tds.children('span').removeClass('hide');  // 恢复显示表格正文
+                            tds.children('input,select').slice(1,6).addClass('hide'); // 隐藏表格内的表单
+                        }
+                    }
+                    // 让编辑状态的禁用的按钮恢复
+                    $(".edit").removeAttr('disabled');
+                    $(".all").removeAttr('disabled');
+                    $(".deselect").removeAttr('disabled');
+                    $("[type='checkbox']").removeAttr('disabled');
+                    table.removeAttr('status'); // 去掉status属性，表示现在是非编进状态
+                }
+            });
+
+            $(".save").click(function (){
+                // 保存按钮事件
+                // 当数据发生变化将变化的数据提交，否则啥也不做
+                var isvalidate = validate($('tr')); // 调用validate函数验证表单
+                var table = $('table');
+                if (table.attr('status') == 'edit'){ // 通过表格的自定义属性判断是否在编辑状态，是编辑状态才处理
+                    var tabs = $('tr');
+                    hostli = []; // 创建一个空的主机列表，用于批量提交
+                    if(isvalidate){ // 验证返回的true才执行
+                        for(i=1; i<tabs.length; i++){
+                            tds = $(tabs[i]).children();
+                            if($(tds[0]).children().eq(0).prop('checked') != false){ // 如果该行的checkbox的是选择状态执行
+                                // 更新表格内的数据
+                                if(tds.children('.hostname').text() != tds.children("[name='hostname']").val() ||
+                                    tds.children('.ipaddr').text() != tds.children("[name='ipaddr']").val() ||
+                                    tds.children('.configuration').text() != tds.children("[name='configuration']").val() ||
+                                    tds.children('.port').text() != tds.children("[name='port']").val() ||
+                                    tds.children('.status').text() != tds.children("[name='status']").val()){ // 判断是否有修改，只有在有修改的情况下才会写到表格中
+//                                    console.log(i);
+                                    // 创建主机对象
+                                    hostinfo = {
+                                        hostname:tds.children("[name='hostname']").val(),
+                                        ipaddr:tds.children("[name='ipaddr']").val(),
+                                        configuration:tds.children("[name='configuration']").val(),
+                                        port:tds.children("[name='port']").val(),
+                                        status:tds.children("[name='status']").val()
+                                    };
+                                    // 追加到主机列表中
+                                    hostli.push(hostinfo);
+                                    // 写回到表格正文中
+                                    tds.children('.hostname').text(tds.children("[name='hostname']").val());
+                                    tds.children('.ipaddr').text(tds.children("[name='ipaddr']").val());
+                                    tds.children('.configuration').text(tds.children("[name='configuration']").val());
+                                    tds.children('.port').text(tds.children("[name='port']").val());
+                                    tds.children('.status').text(tds.children("[name='status']").val());
+                                }
+                                tds.children('span').removeClass('hide'); // 恢复显示表格正文
+                                tds.children('input,select').slice(1,6).addClass('hide'); // 隐藏表格表单
+
+                            }
+                        }
+//                        console.log(hostli)
+                        if(hostli.length != 0){
+                            // 判断数组是否为空，javascript判断一个数组是否为空不能用 数组 == [] 或者 数组 != []来判断，要用长度length来判断
+//                            console.log(1)
+                            // 不为空提交数据
+                            var data = $.param({hostlist:hostli});
+//                        console.log(data);
+//                            $.get("multiple_edit_host",  data);
+                            $.ajax({
+                                type: "GET",
+                                url: "multiple_edit_host",
+                                data: data,
+                                statusCode: {
+                                    404: function (){
+                                        swal("Good job!", "提交成功", "success");
+                                    },
+                                    500: function (){
+                                        swal("错误！！", "提交失败", "error");
+                                    },
+                                    403: function (){
+                                        swal("错误！！", "没有权限", "error");
+                                    }
+                                }
+//                                success: swal("Good job!", "提交成功", "success");
+                            });
+
+                        }
+                        else{
+                            swal("错误！！", "啥都没有改，你让我保存个毛线啊", "error");
+                        }
+                        // 让编辑状态的禁用的按钮恢复
+//                        console.log(data)
+                        $(".edit").removeAttr('disabled');
+                        $(".all").removeAttr('disabled');
+                        $(".deselect").removeAttr('disabled');
+                        $("[type='checkbox']").removeAttr('disabled');
+                        table.removeAttr('status'); // 去掉status属性，表示现在是非编进状态
+                    }
+                    else {
+                        swal("错误！！", "那么多错误，你到底检查过没有", "error");
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>searchdemo</title>
+</head>
+<body>
+    <input type="text" id="search" onfocus="Focus();" onblur="Blur();" value="请输入关键字"/>
+    <script type="text/javascript">
+        function Focus(){
+            var res = document.getElementById('search');
+            if(res.value == '请输入关键字'){
+                res.value = ""
+            }
+        }
+        function Blur(){
+            var res = document.getElementById('search');
+            if(!res.value.trim()){
+                res.value = '请输入关键字'
+            }
+        }
+    </script>
+</body>
+</html>

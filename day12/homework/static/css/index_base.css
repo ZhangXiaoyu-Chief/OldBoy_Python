@@ -1,4 +1,4 @@
-body {
+body{
     /* body 标签样式*/
     font: 12px/150% Arial,Verdana,"\5b8b\4f53";
     /*
@@ -66,7 +66,7 @@ a{
     width: 18px;
     height: 16px;
     position: absolute; /* 与父容器的position: relative呼应 */
-    background: url("static/img/jd2015img.png") 0 -58px no-repeat; /* 背景图片0 -58px表示图片的移动距离分别为x轴和y周，no-repeat表示不平铺（重复） */
+    background: url("../../static/img/jd2015img.png") 0 -58px no-repeat; /* 背景图片0 -58px表示图片的移动距离分别为x轴和y周，no-repeat表示不平铺（重复） */
 }
 .searh{
     /* 搜索输入框样式 */
@@ -307,12 +307,13 @@ a{
 }
 .goodslist .icon{
     /* 价格后方图片 */
-    background: url(static/img/price.png) no-repeat 0px 0px;
+    background: url(../../static/img/price.png) no-repeat 0px 0px;
     position: absolute; /* 相对于价格容器进行定位 */
     top: 2px;
     left: 100px;
     width: 16px;
     height: 16px;
+
 }
 .goodslist .pingjia{
     padding-top: 8px;
@@ -356,7 +357,7 @@ a{
     top: 3px;
     width: 18px;
     height: 18px;
-    background: url(static/img/icon.png) no-repeat 0px -413px;
+    background: url(../../static/img/icon.png) no-repeat 0px -413px;
 }
 .operate .i-gouwuche{
     position: absolute;
@@ -364,14 +365,14 @@ a{
     top: 3px;
     width: 18px;
     height: 18px;
-    background: url(static/img/icon.png) no-repeat 0px -244px;
+    background: url(../../static/img/icon.png) no-repeat 0px -244px;
 }
 .footer{
     /*margin-top: 5px;*/
     padding-top: 10px;
     border-top: 1px solid #999;
     padding-bottom: 10px;
-    line-break: ;
+    /*line-break: ;*/
     text-align: center;
 }
 .footer a{

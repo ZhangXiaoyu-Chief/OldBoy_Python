@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form id="f1" action="//www.sogou.com/web" method="get">
+        <input name="query" type="text">
+        <!--<div onclick="Submit();">提交</div>-->
+        <input type="submit" value="提交" onclick="return mySubmit()">
+    </form>
+    <script>
+        function mySubmit(){
+            res = document.getElementsByName('query')[0]
+            if(res.value.trim()){
+                return true
+            }else{
+                alert('啥都不输入让我搜索毛线啊')
+                return false
+            }
+        }
+    </script>
+</body>
+</html>
